@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="text-center lg:text-left">
-            <span className="text-green-600 font-black uppercase tracking-widest text-xs mb-4 block">Connect with us</span>
+            <span className="text-green-700 font-black uppercase tracking-widest text-xs mb-4 block">Connect with us</span>
             <h1 className="text-4xl md:text-6xl font-black mb-6 lg:mb-8 leading-[0.95] tracking-tighter">
               Get Your <span className="text-gradient">Solar Proposal</span> Today
             </h1>
@@ -35,26 +35,26 @@ const Contact: React.FC = () => {
             <div className="space-y-4 lg:space-y-6 text-left">
               <div className="group p-6 lg:p-8 bg-white rounded-2xl lg:rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
                 <div className="flex gap-4 lg:gap-6">
-                  <div className="bg-green-50 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="bg-green-50 text-green-700 w-12 h-12 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
                     <span className="text-xl">📍</span>
                   </div>
                   <div>
                     <h4 className="font-black text-slate-900 mb-1">Visit Headquarters</h4>
-                    <p className="text-slate-500 font-medium text-xs lg:text-sm">{ADDRESS}</p>
+                    <address className="text-slate-500 font-medium text-xs lg:text-sm not-italic">{ADDRESS}</address>
                   </div>
                 </div>
               </div>
 
               <div className="group p-6 lg:p-8 bg-white rounded-2xl lg:rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
                 <div className="flex gap-4 lg:gap-6">
-                  <div className="bg-green-50 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="bg-green-50 text-green-700 w-12 h-12 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
                     <span className="text-xl">📞</span>
                   </div>
                   <div>
                     <h4 className="font-black text-slate-900 mb-1">Direct Lines</h4>
                     <div className="flex flex-col gap-1">
-                      <a href={`tel:${PHONE_PRIMARY}`} className="text-slate-500 hover:text-green-600 font-bold">{PHONE_PRIMARY}</a>
-                      <a href={`tel:${PHONE_SECONDARY}`} className="text-slate-500 hover:text-green-600 font-bold">{PHONE_SECONDARY}</a>
+                      <a href={`tel:${PHONE_PRIMARY}`} className="text-slate-500 hover:text-green-700 font-bold" aria-label={`Call primary phone ${PHONE_PRIMARY}`}>{PHONE_PRIMARY}</a>
+                      <a href={`tel:${PHONE_SECONDARY}`} className="text-slate-500 hover:text-green-700 font-bold" aria-label={`Call secondary phone ${PHONE_SECONDARY}`}>{PHONE_SECONDARY}</a>
                     </div>
                   </div>
                 </div>
@@ -62,20 +62,20 @@ const Contact: React.FC = () => {
 
               <div className="group p-6 lg:p-8 bg-white rounded-2xl lg:rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
                 <div className="flex gap-4 lg:gap-6">
-                  <div className="bg-green-50 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center shrink-0">
+                  <div className="bg-green-50 text-green-700 w-12 h-12 rounded-xl flex items-center justify-center shrink-0" aria-hidden="true">
                     <span className="text-xl">✉️</span>
                   </div>
                   <div>
                     <h4 className="font-black text-slate-900 mb-1">Support Email</h4>
-                    <a href={`mailto:${EMAIL_ADDRESS}`} className="text-slate-500 hover:text-green-600 font-bold">{EMAIL_ADDRESS}</a>
+                    <a href={`mailto:${EMAIL_ADDRESS}`} className="text-slate-500 hover:text-green-700 font-bold">{EMAIL_ADDRESS}</a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-10 lg:mt-12 h-48 lg:h-64 bg-slate-200 rounded-[2rem] overflow-hidden relative border-4 border-white shadow-xl">
+            <div className="mt-10 lg:mt-12 h-48 lg:h-64 bg-slate-200 rounded-[2rem] overflow-hidden relative border-4 border-white shadow-xl" role="img" aria-label="Map location placeholder for DRG Power Technology">
               <div className="absolute inset-0 bg-slate-100 flex items-center justify-center flex-col text-slate-400 p-8 text-center">
-                <span className="text-5xl mb-4">🗺️</span>
+                <span className="text-5xl mb-4" aria-hidden="true">🗺️</span>
                 <p className="font-black uppercase tracking-widest text-[10px]">Office Location Map Placeholder</p>
                 <p className="text-[10px] font-bold mt-2">Basai, Main Ghari Road, Gurugram</p>
               </div>
@@ -87,22 +87,24 @@ const Contact: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Name</label>
+                  <label htmlFor="name" className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Name</label>
                   <input
+                    id="name"
                     required
                     type="text"
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-green-500 outline-none transition-all font-bold text-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-green-700 outline-none transition-all font-bold text-sm"
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Phone</label>
+                  <label htmlFor="phone" className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Phone</label>
                   <input
+                    id="phone"
                     required
                     type="tel"
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-green-500 outline-none transition-all font-bold text-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-green-700 outline-none transition-all font-bold text-sm"
                     placeholder="Mobile Number"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
@@ -112,20 +114,22 @@ const Contact: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">City</label>
+                  <label htmlFor="city" className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">City</label>
                   <input
+                    id="city"
                     required
                     type="text"
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-green-500 outline-none transition-all font-bold text-sm"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-green-700 outline-none transition-all font-bold text-sm"
                     placeholder="Your City"
                     value={formData.city}
                     onChange={(e) => setFormData({...formData, city: e.target.value})}
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Requirement</label>
+                  <label htmlFor="requirement" className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Requirement</label>
                   <select 
-                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-green-500 outline-none transition-all appearance-none font-bold text-sm"
+                    id="requirement"
+                    className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-green-700 outline-none transition-all appearance-none font-bold text-sm cursor-pointer"
                     value={formData.requirement}
                     onChange={(e) => setFormData({...formData, requirement: e.target.value})}
                   >
@@ -137,10 +141,11 @@ const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Requirement Details</label>
+                <label htmlFor="message" className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Requirement Details</label>
                 <textarea
+                  id="message"
                   rows={4}
-                  className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-green-500 outline-none transition-all font-bold text-sm"
+                  className="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 focus:bg-white focus:ring-2 focus:ring-green-700 outline-none transition-all font-bold text-sm"
                   placeholder="Tell us about your roof area or monthly power bill..."
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -151,7 +156,7 @@ const Contact: React.FC = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={`w-full py-5 rounded-2xl text-white font-black text-xl shadow-xl transition-all active:scale-95 ${
-                  isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'
+                  isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-green-700 hover:bg-green-800'
                 }`}
               >
                 {isSubmitting ? 'Sending...' : 'Send to WhatsApp'}

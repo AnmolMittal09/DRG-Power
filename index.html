@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #16a34a;
+      --primary: #15803d;
       --secondary: #0f172a;
     }
     body {
@@ -21,34 +22,26 @@
     .scroll-smooth {
       scroll-behavior: smooth;
     }
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #15803d;
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      transition: top 0.3s;
     }
-    ::-webkit-scrollbar-track {
-      background: #f1f5f9;
+    .skip-link:focus {
+      top: 0;
     }
-    ::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 10px;
+    :focus-visible {
+      outline: 3px solid #15803d;
+      outline-offset: 2px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #16a34a;
-    }
-    /* 3D Depth Utilities */
-    .perspective-1000 {
-      perspective: 1000px;
-    }
-    .perspective-2000 {
-      perspective: 2000px;
-    }
-    .preserve-3d {
-      transform-style: preserve-3d;
-    }
-    .hover-3d:hover {
-      transform: translateY(-8px) rotateX(4deg) rotateY(-2deg);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-    }
+    .perspective-1000 { perspective: 1000px; }
+    .perspective-2000 { perspective: 2000px; }
+    .preserve-3d { transform-style: preserve-3d; }
     .glass {
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
@@ -64,59 +57,28 @@
       background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
       background-size: 30px 30px;
     }
-    
-    /* Animation Utilities */
     @keyframes float {
-      0% { transform: translateY(0px); }
+      0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
     }
-    .animate-float {
-      animation: float 4s ease-in-out infinite;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideInFromBottom {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes slideInFromLeft {
-      from { transform: translateX(-20px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-
-    .animate-in {
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .fade-in { animation-name: fadeIn; }
-    .slide-in-from-bottom-12 { animation-name: slideInFromBottom; }
-    .slide-in-from-bottom-16 { animation-name: slideInFromBottom; }
-    .slide-in-from-bottom-20 { animation-name: slideInFromBottom; }
-    .slide-in-from-left-8 { animation-name: slideInFromLeft; }
-    
-    .delay-100 { animation-delay: 100ms; }
-    .delay-200 { animation-delay: 200ms; }
-    .delay-300 { animation-delay: 300ms; }
-    .delay-1000 { animation-delay: 1000ms; }
-
+    .animate-float { animation: float 4s ease-in-out infinite; }
   </style>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@7.1.1?external=react,react-dom",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
+    "react/": "https://esm.sh/react@^19.2.3/"
   }
 }
 </script>
 </head>
-<body class="bg-grid text-slate-900 scroll-smooth">
+<body class="bg-grid text-slate-900">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
 </body>
 </html>

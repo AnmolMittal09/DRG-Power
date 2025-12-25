@@ -1,17 +1,17 @@
 
-// Fix: Use namespace import to bypass named export resolution issues in certain environments
 import React from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 const { HashRouter, Routes, Route } = ReactRouterDOM;
 const Router = HashRouter;
-import { Layout } from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import HowItWorks from './pages/HowItWorks';
-import Projects from './pages/Projects';
-import FAQ from './pages/FAQ';
-import Contact from './pages/Contact';
+
+import { Layout } from './components/Layout.tsx';
+import Home from './pages/Home.tsx';
+import About from './pages/About.tsx';
+import Services from './pages/Services.tsx';
+import HowItWorks from './pages/HowItWorks.tsx';
+import Projects from './pages/Projects.tsx';
+import FAQ from './pages/FAQ.tsx';
+import Contact from './pages/Contact.tsx';
 
 const App: React.FC = () => {
   return (

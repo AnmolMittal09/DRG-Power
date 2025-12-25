@@ -1,17 +1,16 @@
 
-// Fix: Use namespace import to bypass named export resolution issues in certain environments
 import React, { useState, useEffect, useRef, useMemo, memo } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 const { Link } = ReactRouterDOM;
-import { SERVICES, TESTIMONIALS, ICONS, PHONE_PRIMARY, BRAND_NAME, TAGLINE, WHATSAPP_LINK } from '../constants';
-import { Service } from '../types';
+import { SERVICES, TESTIMONIALS, ICONS, PHONE_PRIMARY, BRAND_NAME, TAGLINE, WHATSAPP_LINK } from '../constants.tsx';
+import { Service } from '../types.ts';
 
 const Hero = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const requestRef = useRef<number>(null);
+  const [scrollY, setScrollY] = React.useState(0);
+  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
+  const requestRef = React.useRef<number>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -126,7 +125,7 @@ const Hero = () => {
 };
 
 const QuickInquirySection = () => {
-  const [formData, setFormData] = useState({ name: '', phone: '', city: '', requirement: 'Residential' });
+  const [formData, setFormData] = React.useState({ name: '', phone: '', city: '', requirement: 'Residential' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -227,7 +226,7 @@ const QuickInquirySection = () => {
   );
 };
 
-const ServiceCard = memo(({ s }: { s: Service }) => (
+const ServiceCard = React.memo(({ s }: { s: Service }) => (
   <div className="group relative bg-white rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl shadow-slate-200/50 hover-3d transition-all duration-700 border border-slate-100 flex flex-col h-full perspective-1000 overflow-hidden">
     <div className="relative h-64 lg:h-72 overflow-hidden">
       <img 
@@ -271,10 +270,10 @@ const ServiceCard = memo(({ s }: { s: Service }) => (
 ));
 
 const StepCard: React.FC<{ step: any; index: number }> = ({ step, index }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -322,8 +321,8 @@ const StepCard: React.FC<{ step: any; index: number }> = ({ step, index }) => {
   );
 };
 
-const InstallationProcess = memo(() => {
-  const steps = useMemo(() => [
+const InstallationProcess = React.memo(() => {
+  const steps = React.useMemo(() => [
     { 
       title: "Consultation", 
       desc: "Site audit and solar panel mapping by technical leads to assess your specific rooftop capacity.", 
