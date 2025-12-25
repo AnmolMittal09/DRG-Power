@@ -90,10 +90,10 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* Live Map Embed */}
-            <div className="rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50 aspect-video lg:aspect-square relative group">
+            {/* Live Map Embed with Pin Marker */}
+            <div className="rounded-[3rem] overflow-hidden shadow-2xl border-4 border-slate-50 aspect-video lg:aspect-square relative group bg-slate-200">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.961448858853!2d76.99222587528203!3d28.450550075765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19e99a80e4ad%3A0xe53c070f3f20d6f!2sBasai%2C%20Gurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1715870000000!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.828551733224!2d76.97556107528216!3d28.45465717576288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI3JzE2LjgiTiA3Niw1OCc0MS4zIkU!5e0!3m2!1sen!2sin!4v1715870000000!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -101,16 +101,26 @@ const Contact: React.FC = () => {
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
                 title="DRG Power Technology Location Map"
-                className="grayscale-[0.5] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700"
+                className="grayscale-[0.3] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700"
               ></iframe>
+              
+              {/* Overlay Label */}
               <div className="absolute bottom-6 left-6 right-6 glass p-4 rounded-2xl border border-white/20 flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-black uppercase text-slate-900">Visit Us</p>
-                  <p className="text-[10px] font-bold text-slate-500">Open Mon-Sat, 9AM-7PM</p>
+                  <p className="text-xs font-black uppercase text-slate-900 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Visit Office
+                  </p>
+                  <p className="text-[10px] font-bold text-slate-500">28°27'16.8"N 76°58'41.3"E</p>
                 </div>
-                <button className="bg-slate-900 text-white text-[10px] font-black px-4 py-2 rounded-xl hover:bg-green-700 transition-colors">
-                  GET DIRECTIONS
-                </button>
+                <a 
+                  href="https://maps.app.goo.gl/PHDSt8VfqjSSqFeu9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-slate-900 text-white text-[10px] font-black px-4 py-2 rounded-xl hover:bg-green-700 transition-colors flex items-center gap-2"
+                >
+                  DIRECTIONS ↗
+                </a>
               </div>
             </div>
           </div>
