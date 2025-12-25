@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# DRG Power - Solar Company Website
 
-This contains everything you need to run your app locally.
+This is a production-ready, modern React application for **DRG Power Technology Private Limited**. It uses a no-build architecture for maximum performance and ease of deployment.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1AMxbv41Kc7MZdTfPvrbDrzuT3oV2iulB
+## 🚀 Deployment to Vercel
 
-## Run Locally
+1. **Upload to GitHub**: Create a repository and push all files in this directory.
+2. **Connect to Vercel**: Import the GitHub repo into Vercel.
+3. **Automatic Setup**: Vercel will detect the `index.html` and serve it as a static site.
+4. **Custom Domain**:
+   - Go to Project Settings -> Domains.
+   - Add your domain (e.g., `drgpower.in`).
+   - Update your DNS records as instructed by Vercel.
 
-**Prerequisites:**  Node.js
+## 🛠️ How to Edit Content
 
+### 1. Business Info & Contact
+Edit `constants.tsx` to update:
+- Phone Numbers
+- Email Address
+- Physical Office Address
+- WhatsApp Link
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 2. Services & Projects
+- Update `SERVICES` in `constants.tsx` to change service descriptions or features.
+- Update `PROJECTS` in `constants.tsx` to add new installation photos and details.
+
+### 3. Images
+All images are sourced from **Unsplash**. To change an image, simply replace the URL in `constants.tsx` or `pages/Home.tsx` (InstallationProcess section) with your own hosted image link.
+
+## 📈 SEO & Metadata
+Edit `metadata.json` and the `<head>` section of `index.html` to update the site title, description, and keywords for better Google ranking.
