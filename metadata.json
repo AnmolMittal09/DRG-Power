@@ -1,0 +1,7 @@
+{
+  "name": "DRG Power Technology Private Limited",
+  "description": "Looking for Backup? We have the solution for you. Leading solar energy provider for Homes, Housing Societies, and Commercial sectors in Gurugram and beyond.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
