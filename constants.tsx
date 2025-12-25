@@ -29,7 +29,7 @@ export const SERVICES: Service[] = [
     description: "Empower your villa or independent house anywhere in Haryana with clean solar energy. Drastically reduce your monthly electricity bills and contribute to a greener planet.",
     icon: ICONS.Home,
     features: ["Zero Bill Lifestyle", "Govt. Subsidy Assistance", "25-Year Service Life", "Real-time Monitoring"],
-    imageUrl: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200"
+    imageUrl: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=70&w=1000"
   },
   {
     id: "housing-societies",
@@ -37,7 +37,7 @@ export const SERVICES: Service[] = [
     description: "Power elevators, common lighting, and water pumps through collective solar installations. We serve all major RWA complexes across Haryana's urban hubs.",
     icon: ICONS.Society,
     features: ["Common Area Bill Reduction", "EV Charging Ready", "Maintenance-Free Design", "High Collective ROI"],
-    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1200"
+    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=70&w=1000"
   },
   {
     id: "commercial",
@@ -45,15 +45,15 @@ export const SERVICES: Service[] = [
     description: "Optimize business operational costs. Industrial scale solutions designed for Haryana's manufacturing corridors, from Bawal to Rohtak.",
     icon: ICONS.Commercial,
     features: ["Accelerated Depreciation", "Tax Efficiency", "Lowest Levelized Cost", "Carbon Footprint reduction"],
-    imageUrl: "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&q=80&w=1200"
+    imageUrl: "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&q=70&w=1000"
   }
 ];
 
 export const PROJECTS: Project[] = [
-  { id: 1, title: "Heritage Apartments", category: "Society", location: "Gurugram", capacity: "250 kWp", imageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200" },
-  { id: 2, title: "Modern Plastics Factory", category: "Commercial", location: "IMT Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=1200" },
-  { id: 3, title: "Sun City Bungalow", category: "Home", location: "Rohtak", capacity: "15 kWp", imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb5843e03?auto=format&fit=crop&q=80&w=1200" },
-  { id: 4, title: "Green Field Estate", category: "Home", location: "Faridabad", capacity: "20 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" },
+  { id: 1, title: "Heritage Apartments", category: "Society", location: "Gurugram", capacity: "250 kWp", imageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=70&w=1000" },
+  { id: 2, title: "Modern Plastics Factory", category: "Commercial", location: "IMT Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=70&w=1000" },
+  { id: 3, title: "Sun City Bungalow", category: "Home", location: "Rohtak", capacity: "15 kWp", imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb5843e03?auto=format&fit=crop&q=70&w=1000" },
+  { id: 4, title: "Green Field Estate", category: "Home", location: "Faridabad", capacity: "20 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=70&w=1000" },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [

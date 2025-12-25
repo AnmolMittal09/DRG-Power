@@ -37,13 +37,13 @@ const Hero = () => {
   }, []);
 
   const parallaxY = scrollY * 0.25;
-  const rotX = mousePos.y * -6;
-  const rotY = mousePos.x * 6;
-  const shadowX = mousePos.x * 30;
-  const shadowY = mousePos.y * 30;
+  const rotX = mousePos.y * -4;
+  const rotY = mousePos.x * 4;
+  const shadowX = mousePos.x * 20;
+  const shadowY = mousePos.y * 20;
 
   return (
-    <section className="relative min-h-screen lg:min-h-[110vh] flex items-center overflow-hidden bg-slate-950 perspective-2000">
+    <section className="relative min-h-[90vh] lg:min-h-[100vh] flex items-center justify-center overflow-hidden bg-slate-950 perspective-2000 text-center">
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 transition-transform duration-1000 ease-out scale-110 will-change-transform"
@@ -52,77 +52,72 @@ const Hero = () => {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=90&w=2800"
+            src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=90&w=1920"
             alt="Large Premium Solar Panel Installation"
             className="w-full h-full object-cover opacity-60"
             loading="eager"
+            fetchPriority="high"
+            width="1920"
+            height="1080"
             decoding="async"
           />
         </div>
         
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/95 via-slate-950/40 to-slate-950"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/20 to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(22,163,74,0.15)_0%,transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(22,163,74,0.15)_0%,transparent_70%)]"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-24 lg:pt-10">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-32 lg:pt-40 pb-20">
+        <div 
+          className="max-w-5xl mx-auto preserve-3d transition-transform duration-700 ease-out will-change-transform"
+          style={{ 
+            transform: `rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0px)` 
+          }}
+        >
           <div 
-            className="lg:col-span-8 preserve-3d transition-transform duration-700 ease-out will-change-transform"
-            style={{ 
-              transform: `rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0px)` 
-            }}
+            className="inline-flex items-center gap-3 bg-green-600/20 backdrop-blur-3xl px-5 py-2.5 rounded-full mb-10 border border-green-500/30 shadow-[0_0_50px_rgba(22,163,74,0.2)] animate-in fade-in slide-in-from-bottom-8 duration-1000 will-change-transform"
+            style={{ transform: `translateZ(60px)` }}
           >
-            <div 
-              className="inline-flex items-center gap-3 bg-green-600/20 backdrop-blur-3xl px-5 py-2.5 rounded-full mb-10 border border-green-500/30 shadow-[0_0_50px_rgba(22,163,74,0.2)] animate-in fade-in slide-in-from-left-8 duration-1000 will-change-transform"
-              style={{ transform: `translateZ(60px)` }}
-            >
-              <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_15px_#16a34a]"></span>
-              <span className="text-white text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] whitespace-nowrap">Group of Sanduja Enterprises</span>
-            </div>
-
-            <h1 
-              className="text-6xl sm:text-7xl lg:text-[10rem] font-[900] text-white leading-[0.85] mb-12 tracking-[-0.05em] animate-in fade-in slide-in-from-bottom-12 duration-1000 will-change-transform select-none"
-              style={{ 
-                transform: `translateZ(120px)`,
-                textShadow: `${-shadowX}px ${-shadowY}px 60px rgba(0,0,0,0.8)`
-              }}
-            >
-              POWER <br />
-              <span className="text-gradient">FREEDOM.</span>
-            </h1>
-
-            <p 
-              className="text-lg md:text-3xl text-slate-100 mb-16 leading-relaxed max-w-2xl font-medium animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-200 will-change-transform"
-              style={{ transform: `translateZ(80px)` }}
-            >
-              {TAGLINE} "Looking for Backup? We have the solution for you." Tier-1 solar panels for a greener Haryana.
-            </p>
-
-            <div 
-              className="flex flex-col sm:flex-row flex-wrap gap-5 lg:gap-8 animate-in fade-in slide-in-from-bottom-20 duration-1000 delay-300 will-change-transform"
-              style={{ transform: `translateZ(100px)`, transformStyle: 'preserve-3d' }}
-            >
-              <a 
-                href={`tel:${PHONE_PRIMARY}`} 
-                className="group relative bg-green-600 text-white px-10 lg:px-14 py-5 lg:py-6 rounded-[1.8rem] text-center font-black text-xl lg:text-2xl transition-all hover:scale-110 active:scale-95 shadow-[0_40px_80px_-20px_rgba(22,163,74,0.6)] border-t border-white/30"
-              >
-                Call Now
-              </a>
-              <a 
-                href={WHATSAPP_LINK} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white/5 backdrop-blur-xl border border-white/10 text-white px-10 lg:px-14 py-5 lg:py-6 rounded-[1.8rem] text-center font-black text-xl lg:text-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-5 shadow-2xl active:scale-95"
-              >
-                WhatsApp Us
-              </a>
-            </div>
+            <span className="flex h-2.5 w-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_15px_#16a34a]"></span>
+            <span className="text-white text-[10px] lg:text-xs font-black uppercase tracking-[0.3em] whitespace-nowrap">Group of Sanduja Enterprises</span>
           </div>
 
-          <div className="hidden lg:block lg:col-span-4 perspective-2000 pt-10">
-            <LeadForm />
+          <h1 
+            className="text-6xl sm:text-7xl lg:text-[11rem] font-[900] text-white leading-[0.85] mb-12 tracking-[-0.05em] animate-in fade-in slide-in-from-bottom-12 duration-1000 will-change-transform select-none"
+            style={{ 
+              transform: `translateZ(120px)`,
+              textShadow: `${-shadowX}px ${-shadowY}px 60px rgba(0,0,0,0.8)`
+            }}
+          >
+            POWER <br />
+            <span className="text-gradient">FREEDOM.</span>
+          </h1>
+
+          <p 
+            className="text-lg md:text-3xl text-slate-100 mb-16 leading-relaxed max-w-3xl mx-auto font-medium animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-200 will-change-transform"
+            style={{ transform: `translateZ(80px)` }}
+          >
+            {TAGLINE} "Looking for Backup? We have the solution for you." Tier-1 solar panels for a greener Haryana.
+          </p>
+
+          <div 
+            className="flex flex-col sm:flex-row flex-wrap justify-center gap-5 lg:gap-8 animate-in fade-in slide-in-from-bottom-20 duration-1000 delay-300 will-change-transform"
+            style={{ transform: `translateZ(100px)`, transformStyle: 'preserve-3d' }}
+          >
+            <a 
+              href={`tel:${PHONE_PRIMARY}`} 
+              className="group relative bg-green-600 text-white px-10 lg:px-14 py-5 lg:py-6 rounded-[1.8rem] text-center font-black text-xl lg:text-2xl transition-all hover:scale-110 active:scale-95 shadow-[0_40px_80px_-20px_rgba(22,163,74,0.6)] border-t border-white/30"
+            >
+              Call Now
+            </a>
+            <a 
+              href={WHATSAPP_LINK} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white/5 backdrop-blur-xl border border-white/10 text-white px-10 lg:px-14 py-5 lg:py-6 rounded-[1.8rem] text-center font-black text-xl lg:text-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-5 shadow-2xl active:scale-95"
+            >
+              WhatsApp Us
+            </a>
           </div>
         </div>
       </div>
@@ -130,7 +125,7 @@ const Hero = () => {
   );
 };
 
-const LeadForm = () => {
+const QuickInquirySection = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', city: '', requirement: 'Residential' });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -140,59 +135,95 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="glass p-10 rounded-[3rem] shadow-[0_80px_150px_rgba(0,0,0,0.6)] border border-white/20 transition-transform duration-1000 ease-out group overflow-hidden will-change-transform preserve-3d">
-      <h3 className="text-white text-2xl font-black mb-6 tracking-tight">Free Solar Audit</h3>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-[8px] font-black uppercase tracking-widest text-slate-400 mb-1">Full Name</label>
-          <input 
-            required 
-            type="text" 
-            placeholder="John Doe" 
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition-all outline-none" 
-            value={formData.name}
-            onChange={(e) => setFormData({...formData, name: e.target.value})}
-          />
+    <section className="relative z-20 py-16 -mt-12">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto bg-white rounded-[3rem] lg:rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 overflow-hidden">
+          <div className="grid lg:grid-cols-2">
+            <div className="p-10 lg:p-16 bg-slate-900 text-white flex flex-col justify-center">
+              <h2 className="text-4xl lg:text-5xl font-black mb-6 tracking-tight leading-none">Get a Free <br /><span className="text-green-500">Solar Audit.</span></h2>
+              <p className="text-slate-400 text-lg lg:text-xl font-medium mb-10 leading-relaxed">
+                Our experts will analyze your roof capacity, monthly power bills, and available subsidies to design your perfect energy roadmap.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-green-600/20 rounded-xl flex items-center justify-center text-green-500">
+                    {ICONS.Check}
+                  </div>
+                  <span className="font-bold text-slate-200">Custom 3D Shadow Analysis</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-green-600/20 rounded-xl flex items-center justify-center text-green-500">
+                    {ICONS.Check}
+                  </div>
+                  <span className="font-bold text-slate-200">Government Subsidy Assistance</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-green-600/20 rounded-xl flex items-center justify-center text-green-500">
+                    {ICONS.Check}
+                  </div>
+                  <span className="font-bold text-slate-200">DHBVN/UHBVN Net Metering</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-10 lg:p-16 bg-white">
+              <h3 className="text-2xl font-black mb-8 tracking-tight text-slate-900">Inquiry Form</h3>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Full Name</label>
+                    <input 
+                      required 
+                      type="text" 
+                      placeholder="Your Name" 
+                      className="w-full bg-slate-50 border border-slate-100 rounded-xl px-5 py-4 text-slate-900 focus:bg-white focus:border-green-500 transition-all outline-none font-bold" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Phone Number</label>
+                    <input 
+                      required 
+                      type="tel" 
+                      placeholder="+91" 
+                      className="w-full bg-slate-50 border border-slate-100 rounded-xl px-5 py-4 text-slate-900 focus:bg-white focus:border-green-500 transition-all outline-none font-bold" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">City</label>
+                  <input 
+                    required 
+                    type="text" 
+                    placeholder="e.g. Gurugram" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-xl px-5 py-4 text-slate-900 focus:bg-white focus:border-green-500 transition-all outline-none font-bold" 
+                    value={formData.city}
+                    onChange={(e) => setFormData({...formData, city: e.target.value})}
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Requirement</label>
+                  <select 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-xl px-5 py-4 text-slate-900 focus:bg-white focus:border-green-500 transition-all outline-none appearance-none font-bold cursor-pointer"
+                    value={formData.requirement}
+                    onChange={(e) => setFormData({...formData, requirement: e.target.value})}
+                  >
+                    <option value="Residential">Residential Solar</option>
+                    <option value="Commercial">Commercial Solar</option>
+                    <option value="Industrial">Industrial Solar</option>
+                  </select>
+                </div>
+                <button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white font-black py-5 rounded-2xl transition-all shadow-xl shadow-green-600/20 active:scale-95 mt-4 text-lg">
+                  Get WhatsApp Quote
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div>
-          <label className="block text-[8px] font-black uppercase tracking-widest text-slate-400 mb-1">Phone Number</label>
-          <input 
-            required 
-            type="tel" 
-            placeholder="+91 00000 00000" 
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition-all outline-none" 
-            value={formData.phone}
-            onChange={(e) => setFormData({...formData, phone: e.target.value})}
-          />
-        </div>
-        <div>
-          <label className="block text-[8px] font-black uppercase tracking-widest text-slate-400 mb-1">City</label>
-          <input 
-            required 
-            type="text" 
-            placeholder="Gurugram" 
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition-all outline-none" 
-            value={formData.city}
-            onChange={(e) => setFormData({...formData, city: e.target.value})}
-          />
-        </div>
-        <div>
-          <label className="block text-[8px] font-black uppercase tracking-widest text-slate-400 mb-1">Requirement</label>
-          <select 
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:bg-white/10 transition-all outline-none appearance-none"
-            value={formData.requirement}
-            onChange={(e) => setFormData({...formData, requirement: e.target.value})}
-          >
-            <option value="Residential" className="bg-slate-900">Residential Solar</option>
-            <option value="Commercial" className="bg-slate-900">Commercial Solar</option>
-            <option value="Industrial" className="bg-slate-900">Industrial Solar</option>
-          </select>
-        </div>
-        <button type="submit" className="w-full bg-green-600 hover:bg-green-500 text-white font-black py-4 rounded-xl transition-all shadow-xl shadow-green-600/20 active:scale-95 mt-4">
-          Get WhatsApp Quote
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
   );
 };
 
@@ -203,6 +234,10 @@ const ServiceCard = memo(({ s }: { s: Service }) => (
         src={s.imageUrl} 
         alt={s.title} 
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+        loading="lazy"
+        width="600"
+        height="400"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent"></div>
       <div className="absolute bottom-6 left-10">
@@ -256,36 +291,32 @@ const StepCard: React.FC<{ step: any; index: number }> = ({ step, index }) => {
   return (
     <div 
       ref={ref} 
-      className={`group relative transition-all duration-1000 ease-out transform ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      className={`group relative perspective-2000 transition-all duration-1000 ease-out transform ${
+        isVisible ? 'opacity-100 rotate-x-0 translate-z-0 translate-y-0' : 'opacity-0 rotate-x-45 translate-z-[-200px] translate-y-24'
       }`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="absolute -top-8 -left-4 text-9xl lg:text-[12rem] font-black text-slate-50 leading-none -z-10 transition-colors group-hover:text-green-50/70 select-none">
-        0{index + 1}
-      </div>
-
-      <div className="relative mb-10 overflow-hidden rounded-[2.5rem] shadow-xl aspect-[4/3] group-hover:shadow-2xl transition-all duration-500">
-        <img 
-          src={step.img} 
-          alt={step.title} 
-          className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
-        <div className="absolute top-6 left-6 text-5xl lg:text-6xl group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-500">
+      <div className="relative bg-white p-12 lg:p-16 rounded-[3rem] border border-slate-100 shadow-2xl transition-all duration-700 hover:shadow-[0_80px_120px_-30px_rgba(0,0,0,0.15)] hover:-translate-y-4 hover:border-green-200 h-full flex flex-col group/card preserve-3d">
+        <div className="absolute -top-10 -left-6 text-[10rem] lg:text-[14rem] font-black text-slate-50 leading-none -z-10 group-hover/card:text-green-50 transition-colors pointer-events-none select-none">
+          {index + 1}
+        </div>
+        
+        <div className="text-7xl mb-12 group-hover/card:scale-110 group-hover/card:rotate-6 transition-transform duration-500 origin-left">
           {step.icon}
         </div>
-      </div>
 
-      <div className="px-2">
-        <h4 className="text-2xl lg:text-3xl font-black mb-4 lg:mb-6 text-slate-900 tracking-tight flex items-center gap-3">
-          <span className="w-1 h-8 bg-green-500 rounded-full"></span>
+        <h4 className="text-3xl lg:text-4xl font-black mb-6 text-slate-900 tracking-tighter leading-none group-hover/card:text-green-600 transition-colors">
           {step.title}
         </h4>
-        <p className="text-slate-500 font-medium text-base lg:text-lg leading-relaxed">
+        
+        <p className="text-slate-500 font-medium text-lg lg:text-xl leading-relaxed">
           {step.desc}
         </p>
+
+        <div className="mt-12 pt-8 border-t border-slate-50 flex items-center gap-3">
+          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Phase 0{index + 1} Verified</span>
+        </div>
       </div>
     </div>
   );
@@ -295,45 +326,45 @@ const InstallationProcess = memo(() => {
   const steps = useMemo(() => [
     { 
       title: "Consultation", 
-      desc: "Site audit and solar panel mapping by technical leads.", 
-      icon: "📋",
-      img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" 
+      desc: "Site audit and solar panel mapping by technical leads to assess your specific rooftop capacity.", 
+      icon: "📋"
     },
     { 
       title: "Design", 
-      desc: "Advanced 3D shadow analysis tailored to your specific roof.", 
-      icon: "📐",
-      img: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=800"
+      desc: "Advanced 3D shadow analysis tailored to your specific roof to ensure maximum solar yield.", 
+      icon: "📐"
     },
     { 
       title: "Deployment", 
-      desc: "Tier-1 solar panel installation by certified professionals.", 
-      icon: "⚡",
-      img: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=800"
+      desc: "Tier-1 solar panel installation by certified professionals using high-strength structures.", 
+      icon: "⚡"
     },
     { 
       title: "Connectivity", 
-      desc: "Seamless net-metering integration with Haryana utility hubs.", 
-      icon: "🔌",
-      img: "https://images.unsplash.com/photo-1558444479-c84750339fd0?auto=format&fit=crop&q=80&w=800"
+      desc: "Seamless net-metering integration with Haryana utility hubs for immediate savings.", 
+      icon: "🔌"
     }
   ], []);
 
   return (
-    <section className="py-24 lg:py-44 relative overflow-hidden bg-white">
+    <section className="py-32 lg:py-56 relative overflow-hidden bg-white">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-24 lg:mb-40">
-          <h2 className="text-5xl md:text-9xl font-black tracking-tighter mb-8 italic uppercase">
-            THE <span className="text-gradient">PROCESS.</span>
+        <div className="text-center mb-32 lg:mb-48">
+          <span className="text-green-600 font-black uppercase tracking-[0.5em] text-xs mb-6 block animate-in fade-in duration-1000">The Roadmap</span>
+          <h2 className="text-6xl md:text-9xl font-black tracking-tighter mb-10 italic uppercase leading-none">
+            HOW IT <span className="text-gradient">WORKS.</span>
           </h2>
-          <p className="text-slate-400 font-black uppercase tracking-[0.4em] text-[10px] lg:text-xs">
-            How we bring clean solar energy to your doorstep
+          <p className="text-slate-500 text-xl lg:text-3xl max-w-3xl mx-auto font-medium leading-relaxed">
+            A frictionless, high-precision transition to renewable energy.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 relative">
+          {/* Vertical connecting line for desktop */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-slate-100 to-transparent -translate-x-1/2"></div>
+          
           {steps.map((step, i) => (
             <StepCard key={i} step={step} index={i} />
           ))}
@@ -347,6 +378,8 @@ const Home: React.FC = () => {
   return (
     <div className="animate-in fade-in duration-1000">
       <Hero />
+      
+      <QuickInquirySection />
       
       <section className="py-24 lg:py-44 relative bg-slate-50/50">
         <div className="container mx-auto px-4">

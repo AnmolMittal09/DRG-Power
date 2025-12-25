@@ -5,7 +5,7 @@ import { ICONS, PHONE_PRIMARY } from '../constants';
 const StepCard: React.FC<{ number: string; title: string; desc: string; icon: string; delay: string }> = ({ number, title, desc, icon, delay }) => (
   <div className={`group perspective-1000 animate-in fade-in slide-in-from-bottom-12 duration-1000 ${delay}`}>
     <div className="relative bg-white p-8 lg:p-12 rounded-[3rem] border border-slate-100 shadow-xl transition-all duration-700 hover:rotate-y-6 hover:-translate-y-4 hover:shadow-2xl hover:border-green-200 h-full flex flex-col">
-      <div className="absolute -top-6 -right-6 w-20 h-20 bg-slate-900 text-white rounded-full flex items-center justify-center text-2xl font-black border-4 border-white shadow-xl z-20 group-hover:scale-110 transition-transform">
+      <div className="absolute -top-6 -right-6 w-20 h-20 bg-slate-950 text-white rounded-full flex items-center justify-center text-2xl font-black border-4 border-white shadow-xl z-20 group-hover:scale-110 transition-transform">
         {number}
       </div>
       <div className="text-6xl mb-8 group-hover:animate-float">{icon}</div>
@@ -30,7 +30,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-40 lg:pt-48 pb-24">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-green-600 font-black uppercase tracking-[0.4em] text-xs mb-4 block">The Roadmap</span>

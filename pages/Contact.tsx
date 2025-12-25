@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="pt-24 lg:pt-32 pb-24 perspective-1000">
+    <div className="pt-40 lg:pt-48 pb-24 perspective-1000">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div className="text-center lg:text-left">

@@ -15,7 +15,7 @@ const ServicesHero = () => {
   }, []);
 
   return (
-    <section className="relative h-[60vh] lg:h-[70vh] flex items-center overflow-hidden bg-slate-950 perspective-2000">
+    <section className="relative h-[70vh] lg:h-[80vh] flex items-center overflow-hidden bg-slate-950 perspective-2000">
       {/* Background Layer */}
       <div className="absolute inset-0 z-0">
         <div 
@@ -23,16 +23,22 @@ const ServicesHero = () => {
           style={{ transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.0001})` }}
         >
           <img
-            src="https://images.unsplash.com/photo-1611365892117-00ac5ef4365c?auto=format&fit=crop&q=90&w=2400"
+            src="https://images.unsplash.com/photo-1611365892117-00ac5ef4365c?auto=format&fit=crop&q=90&w=1920"
             alt="Close up of Solar Panels"
             className="w-full h-full object-cover opacity-50 grayscale-[10%]"
+            loading="eager"
+            // Fix: Changed fetchpriority to fetchPriority to match React type expectations
+            fetchPriority="high"
+            width="1920"
+            height="1080"
+            decoding="async"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(22,163,74,0.15)_0%,transparent_50%)]"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-32 lg:pt-48">
         <div className="max-w-4xl preserve-3d">
           <div 
             className="inline-flex items-center gap-3 bg-green-600/10 backdrop-blur-2xl px-4 py-2 rounded-full mb-6 border border-green-500/20 shadow-2xl animate-in fade-in slide-in-from-left-8 duration-1000"
@@ -114,6 +120,10 @@ const Services: React.FC = () => {
                       src={s.imageUrl} 
                       alt={s.title} 
                       className="w-full h-[400px] lg:h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0" 
+                      loading="lazy"
+                      width="800"
+                      height="600"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   </div>

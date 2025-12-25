@@ -6,7 +6,7 @@ const FAQ: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-40 lg:pt-48 pb-24">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 italic">COMMON <span className="text-gradient">QUESTIONS.</span></h1>

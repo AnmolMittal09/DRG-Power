@@ -20,7 +20,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-slate-50/50 min-h-screen">
+    <div className="pt-40 lg:pt-48 pb-24 bg-slate-50/50 min-h-screen">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 italic">PROVEN <span className="text-gradient">IMPACT.</span></h1>

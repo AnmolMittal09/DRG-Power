@@ -4,7 +4,7 @@ import { COMPANY_NAME, GROUP_NAME, ICONS } from '../constants';
 
 const About: React.FC = () => {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-40 lg:pt-48 pb-24">
       <div className="container mx-auto px-4">
         {/* Story Section */}
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
