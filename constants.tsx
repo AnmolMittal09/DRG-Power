@@ -4,7 +4,7 @@ import { Service, Project, Testimonial, FAQItem } from './types';
 
 export const COMPANY_NAME = "DRG Power Technology Private Limited";
 export const BRAND_NAME = "DRG POWER";
-export const TAGLINE = "Looking for Backup? We have the solution for you.";
+export const TAGLINE = "Haryana's Leading Solar Energy Network.";
 export const GROUP_NAME = "Group of Sanduja Enterprises";
 export const PHONE_PRIMARY = "+91 9211592425";
 export const PHONE_SECONDARY = "+91 9313481712";
@@ -26,7 +26,7 @@ export const SERVICES: Service[] = [
   {
     id: "homes",
     title: "Solar for Homes",
-    description: "Empower your villa or independent house with clean solar energy. Drastically reduce your monthly electricity bills and contribute to a greener planet.",
+    description: "Empower your villa or independent house anywhere in Haryana with clean solar energy. Drastically reduce your monthly electricity bills and contribute to a greener planet.",
     icon: ICONS.Home,
     features: ["Zero Bill Lifestyle", "Govt. Subsidy Assistance", "25-Year Service Life", "Real-time Monitoring"],
     imageUrl: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200"
@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
   {
     id: "housing-societies",
     title: "Housing Societies",
-    description: "Manage common area loads effectively. Power elevators, common lighting, and water pumps through collective solar installations for massive savings.",
+    description: "Power elevators, common lighting, and water pumps through collective solar installations. We serve all major RWA complexes across Haryana's urban hubs.",
     icon: ICONS.Society,
     features: ["Common Area Bill Reduction", "EV Charging Ready", "Maintenance-Free Design", "High Collective ROI"],
     imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1200"
@@ -42,7 +42,7 @@ export const SERVICES: Service[] = [
   {
     id: "commercial",
     title: "Commercial & Industrial",
-    description: "Optimize your business operational costs. Industrial scale multi-megawatt solutions designed for heavy machinery and 24/7 office loads.",
+    description: "Optimize business operational costs. Industrial scale solutions designed for Haryana's manufacturing corridors, from Bawal to Rohtak.",
     icon: ICONS.Commercial,
     features: ["Accelerated Depreciation", "Tax Efficiency", "Lowest Levelized Cost", "Carbon Footprint reduction"],
     imageUrl: "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&q=80&w=1200"
@@ -52,8 +52,8 @@ export const SERVICES: Service[] = [
 export const PROJECTS: Project[] = [
   { id: 1, title: "Heritage Apartments", category: "Society", location: "Gurugram", capacity: "250 kWp", imageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80&w=1200" },
   { id: 2, title: "Modern Plastics Factory", category: "Commercial", location: "IMT Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80&w=1200" },
-  { id: 3, title: "Sun City Bungalow", category: "Home", location: "Basai", capacity: "15 kWp", imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb5843e03?auto=format&fit=crop&q=80&w=1200" },
-  { id: 4, title: "Sanduja Tech Park", category: "Commercial", location: "Gurugram", capacity: "450 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" },
+  { id: 3, title: "Sun City Bungalow", category: "Home", location: "Rohtak", capacity: "15 kWp", imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb5843e03?auto=format&fit=crop&q=80&w=1200" },
+  { id: 4, title: "Green Field Estate", category: "Home", location: "Faridabad", capacity: "20 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -69,7 +69,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 2,
     name: "Sunita Verma",
     role: "Resident Secretary",
-    content: "Transitioning our society common areas to solar was the best decision. The maintenance team at DRG is incredibly responsive.",
+    content: "Transitioning our society common areas to solar was the best decision. Their reach across Haryana makes maintenance very reliable.",
     rating: 5,
     imageUrl: "https://i.pravatar.cc/150?u=sunita"
   },
@@ -77,7 +77,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 3,
     name: "Vikram Batra",
     role: "MD, Batra Industries",
-    content: "High-quality engineering. They used premium Tier-1 modules as promised. The backup solution is robust and reliable.",
+    content: "High-quality engineering. They used premium Tier-1 modules as promised. The backup solution is robust for our industrial plant in Bawal.",
     rating: 5,
     imageUrl: "https://i.pravatar.cc/150?u=vikram"
   }
@@ -85,19 +85,19 @@ export const TESTIMONIALS: Testimonial[] = [
 
 export const FAQS: FAQItem[] = [
   {
-    question: "What is the typical ROI for a solar project?",
-    answer: "For residential projects, the payback period is usually 3-4 years. For commercial projects with tax benefits, it can be as low as 2.5 years."
+    question: "Do you serve all cities in Haryana?",
+    answer: "Yes, DRG Power provides full sales, installation, and maintenance services across all 22 districts of Haryana, including Gurugram, Faridabad, Rohtak, Karnal, and Hisar."
   },
   {
     question: "How long is the warranty on the panels?",
     answer: "We provide Tier-1 panels with a 10-year product warranty and a 25-year performance warranty (linear power output)."
   },
   {
-    question: "Do you provide on-grid or off-grid solutions?",
-    answer: "We specialize in both. On-grid for maximum savings via net metering, and hybrid/off-grid systems for reliable power backup in areas with frequent outages."
+    question: "Do you handle DHBVN/UHBVN net-metering?",
+    answer: "Absolutely. We manage the entire net-metering application and coordination process with both Dakshin Haryana Bijli Vitran Nigam and Uttar Haryana Bijli Vitran Nigam."
   },
   {
-    question: "How much space is needed for a 5kW system?",
-    answer: "A 5kW system typically requires about 400-500 square feet of shadow-free rooftop area."
+    question: "What is the typical ROI for a solar project?",
+    answer: "For residential projects in Haryana, the payback period is usually 3-4 years. For commercial projects with tax benefits, it can be as low as 2.5 years."
   }
 ];
