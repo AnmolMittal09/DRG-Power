@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Service, Project, Testimonial, FAQItem } from './types';
 
@@ -19,8 +20,8 @@ export const ADDRESS = "Khasra no 253, Gali No 1, Basai Enclave, VPO, Gurugram, 
 export const WHATSAPP_LINK = "https://wa.me/919211592425";
 
 /** 
- * CUSTOM LOGO: 
- * Updated to the raw GitHub URL for reliable image loading.
+ * BRANDING LOGO: 
+ * Direct link to the branding asset provided.
  */
 export const LOGO_IMAGE = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/logo.png"; 
 

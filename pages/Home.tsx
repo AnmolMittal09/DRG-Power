@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect, useRef, useMemo, memo } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 const { Link } = ReactRouterDOM;
-import { SERVICES, ICONS, PHONE_PRIMARY, BRAND_NAME, TAGLINE, SUB_TAGLINE, WHATSAPP_LINK } from '../constants.tsx';
+import { SERVICES, ICONS, PHONE_PRIMARY, BRAND_NAME, TAGLINE, SUB_TAGLINE, WHATSAPP_LINK, LOGO_IMAGE } from '../constants.tsx';
 import { Service } from '../types.ts';
 import { SEO } from '../components/SEO';
 
@@ -64,11 +65,24 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 relative z-10 pt-32 lg:pt-40">
         <div 
-          className="max-w-6xl mx-auto preserve-3d transition-transform duration-700 ease-out"
+          className="max-w-6xl mx-auto preserve-3d transition-transform duration-700 ease-out flex flex-col items-center"
           style={{ 
             transform: `rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0px)` 
           }}
         >
+          {/* Hero Branding Logo - Transparent and clean */}
+          <div 
+            className="w-32 lg:w-48 mb-12 animate-in fade-in slide-in-from-top-12 duration-1000"
+            style={{ transform: `translateZ(120px)` }}
+          >
+            <img 
+              src={LOGO_IMAGE} 
+              alt={BRAND_NAME} 
+              className="w-full h-auto drop-shadow-2xl" 
+              loading="eager"
+            />
+          </div>
+
           <div 
             className="inline-flex items-center gap-3 bg-red-600/10 backdrop-blur-3xl px-6 py-2.5 rounded-full mb-12 border border-red-500/20 shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000"
             style={{ transform: `translateZ(50px)` }}

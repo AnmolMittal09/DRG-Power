@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 const { Link, useLocation } = ReactRouterDOM;
@@ -16,30 +17,34 @@ import {
 } from '../constants';
 
 const Logo: React.FC<{ light?: boolean; scrolled?: boolean }> = ({ light, scrolled }) => (
-  <div className="flex items-center group">
-    <div className={`relative transition-all duration-500 group-hover:scale-105 bg-black rounded-xl overflow-hidden p-1 shadow-2xl ${
-      scrolled ? 'h-12 lg:h-14' : 'h-16 lg:h-20'
+  <div className="flex items-center group cursor-pointer">
+    <div className={`relative transition-all duration-500 transform group-hover:scale-110 flex items-center justify-center ${
+      scrolled ? 'h-10 lg:h-12 w-10 lg:w-12' : 'h-14 lg:h-16 w-14 lg:w-16'
     }`}>
       <img 
         src={LOGO_IMAGE} 
         alt={COMPANY_NAME}
-        className="h-full w-auto object-contain"
+        className="h-full w-full object-contain transition-all duration-500 drop-shadow-md"
         loading="eager"
         onError={(e) => {
-          e.currentTarget.src = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/logo.png";
+          (e.target as HTMLImageElement).style.display = 'none';
         }}
       />
     </div>
-    {!light && (
-      <div className="ml-3 flex flex-col justify-center">
-        <span className="text-xl font-black tracking-tighter leading-none text-black">
+    <div className="ml-4 flex flex-col justify-center border-l border-slate-400/20 pl-4">
+      <div className="flex flex-col">
+        <span className={`text-xl font-black tracking-tighter leading-none transition-colors duration-500 ${
+          light && !scrolled ? 'text-white' : 'text-black'
+        }`}>
           DRG <span className="text-[#BE1E2D]">POWER</span>
         </span>
-        <span className="text-[8px] font-bold uppercase tracking-[0.3em] leading-none mt-1 text-slate-500">
+        <span className={`text-[8px] font-bold uppercase tracking-[0.4em] leading-none mt-1 transition-colors duration-500 ${
+          light && !scrolled ? 'text-white/60' : 'text-slate-500'
+        }`}>
           Technology
         </span>
       </div>
-    )}
+    </div>
   </div>
 );
 
@@ -207,9 +212,20 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-12 mb-24">
           <div className="lg:col-span-5 space-y-12">
             <div className="flex items-center gap-4">
-               <Logo light />
-               <div className="flex flex-col">
-                  <span className="text-2xl font-black tracking-tighter text-white">DRG <span className="text-[#BE1E2D]">POWER</span></span>
+               <div className="w-16 h-16 relative flex items-center justify-center">
+                  <img 
+                    src={LOGO_IMAGE} 
+                    alt={BRAND_NAME} 
+                    className="w-full h-full object-contain drop-shadow-lg" 
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
+               </div>
+               <div className="flex flex-col border-l border-white/10 pl-6">
+                  <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
+                    DRG <span className="text-[#BE1E2D]">POWER</span>
+                  </span>
                   <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-600">Technology</span>
                </div>
             </div>
@@ -283,21 +299,20 @@ const Footer: React.FC = () => {
   );
 };
 
-const WhatsAppButton: React.FC = () => {
-  return (
-    <a
-      href={WHATSAPP_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-10 right-10 z-[70] bg-[#25D366] text-white p-5 rounded-full shadow-[0_20px_50px_rgba(37,211,102,0.4)] hover:scale-110 transition-all duration-500 active:scale-95 group"
-      aria-label="Contact us on WhatsApp"
-    >
-      <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
-        <path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.461 3.42 1.268 4.861l-1.306 4.762 4.887-1.282c1.408.766 3.012 1.201 4.714 1.201 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.797 14.131c-.244.686-1.42 1.261-1.943 1.343-.48.075-.989.109-2.585-.544-2.04-.84-3.359-2.909-3.46-3.047-.101-.137-.822-1.092-.822-2.083 0-.991.514-1.478.697-1.681.183-.203.4-.254.534-.254l.381.006c.125.006.292-.047.458.35.17.408.577 1.405.626 1.503.05.098.083.213.017.347-.067.133-.1.216-.2.333-.1.117-.21.261-.3.35-.1.101-.205.212-.089.41.116.198.513.844 1.102 1.369.759.676 1.397.886 1.594.985.197.1.314.083.431-.051.117-.135.5-0.584.634-.784.133-.2.267-.166.45-.1.183.066 1.166.55 1.366.65.201.1.334.151.384.234.05.084.05.485-.194 1.171z"/>
-      </svg>
-    </a>
-  );
-};
+// Fixed the "Cannot find name 'WhatsAppButton'" error by defining the component here
+const WhatsAppButton: React.FC = () => (
+  <a
+    href={WHATSAPP_LINK}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all animate-bounce"
+    aria-label="Contact on WhatsApp"
+  >
+    <svg className="w-10 h-10 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.461 3.42 1.268 4.861l-1.306 4.762 4.887-1.282c1.408.766 3.012 1.201 4.714 1.201 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.797 14.131c-.244.686-1.42 1.261-1.943 1.343-.48.075-.989.109-2.585-.544-2.04-.84-3.359-2.909-3.46-3.047-.101-.137-.822-1.092-.822-2.083 0-.991.514-1.478.697-1.681.183-.203.4-.254.534-.254l.381.006c.125.006.292-.047.458.35.17.408.577 1.405.626 1.503.05.098.083.213.017.347-.067.133-.1.216-.2.333-.1.117-.21.261-.3.35-.1.101-.205.212-.089.41.116.198.513.844 1.102 1.369.759.676 1.397.886 1.594.985.197.1.314.083.431-.051.117-.135.5-0.584.634-.784.133-.2.267-.166.45-.1.183.066 1.166.55 1.366.65.201.1.334.151.384.234.05.084.05.485-.194 1.171z" />
+    </svg>
+  </a>
+);
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { pathname } = useLocation();
