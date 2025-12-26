@@ -4,26 +4,22 @@ import { Service, Project, Testimonial, FAQItem } from './types';
 
 export const COMPANY_NAME = "DRG Power Technology Private Limited";
 export const BRAND_NAME = "DRG POWER";
-export const TAGLINE = "Clean. Renewable. Affordable.";
+export const TAGLINE = "CLEAN. RENEWABLE. AFFORDABLE.";
 export const SUB_TAGLINE = "India's Leading Solar Energy Network.";
 export const GROUP_NAME = "Sanduja Enterprises";
 export const ESTABLISHED_YEAR = "2021";
-export const PARTNERSHIP_YEAR = "2012"; // Sanduja Enterprises group partnership with Livguard
+export const GROUP_LEGACY_YEAR = "2012";
 export const PARTNER_BRAND = "Livguard";
 
-export const PHONE_JATIN = "+91 9211592425";
-export const PHONE_DHIRAJ = "+91 9313481712";
+export const PHONE_JATIN = "9211592425";
+export const PHONE_DHIRAJ = "9313481712";
 export const PHONE_PRIMARY = PHONE_JATIN;
 export const PHONE_SECONDARY = PHONE_DHIRAJ;
 export const EMAIL_ADDRESS = "drgpower712@gmail.com";
-export const ADDRESS = "Khasra no 253, Gali No 1, Basai Enclave, VPO, Gurugram, HR 122006";
+export const ADDRESS = "Khasra No. 246, Gali No. 1, Main Ghari Road Basai, Gurugram Haryana-122006";
 export const WHATSAPP_LINK = "https://wa.me/919211592425";
 
-/** 
- * BRANDING LOGO: 
- * Direct link to the branding asset provided.
- */
-export const LOGO_IMAGE = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/logo.png"; 
+export const LOGO_IMAGE = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/Untitled%20design%20(2).png"; 
 
 export const VISION = "Powering a cleaner, greener tomorrow — one rooftop at a time.";
 export const MISSION = "Delivering smart, efficient, and affordable rooftop solar energy solutions that empower our customers and reduce carbon footprints.";
@@ -32,21 +28,21 @@ export const LEADERSHIP = [
   { 
     name: "Dhiraj Sanduja", 
     role: "Co-Founder & Director", 
-    bio: "Forming a strong leadership foundation that blends technical expertise with strategic vision." 
+    bio: "Brings extensive technical expertise and strategic vision, guiding DRG toward sustainable growth and a greener future." 
   },
   { 
     name: "Jatin Batheja", 
     role: "Director", 
-    bio: "Guiding DRG Power Technology toward sustainable growth and a greener future." 
+    bio: "Specializes in project management and operational excellence, ensuring every solar deployment meets the highest standards of reliability." 
   }
 ];
 
 export const CORE_VALUES = [
-  { title: "Customer-Centric Approach", desc: "Prioritizing our customers' needs to deliver bespoke solar energy solutions.", icon: "🎯" },
-  { title: "Quality and Reliability", desc: "Ensuring long-standing reliability through high-quality Tier-1 hardware and engineering.", icon: "🛡️" },
-  { title: "Innovation & Technology", desc: "Utilizing modern technology to design and install the most efficient solar power systems.", icon: "⚙️" },
-  { title: "Integrity & Transparency", desc: "Building trust through honest communication and transparent project management.", icon: "💎" },
-  { title: "Teamwork & Excellence", desc: "Fostering a culture of excellence through unified technical expertise and dedication.", icon: "🤝" }
+  { title: "Customer-centric approach", desc: "Tailoring bespoke solar setups to meet varying energy requirements and budgets.", icon: "🎯" },
+  { title: "Quality and Reliability", desc: "Ensuring long-standing commitment to delivering trusted energy solutions.", icon: "🛡️" },
+  { title: "Innovation & Technology", desc: "Forward-looking approach to designing and supplying the most efficient solar systems.", icon: "⚙️" },
+  { title: "Integrity & Transparency", desc: "Building trust through honest communication and professional excellence.", icon: "💎" },
+  { title: "Teamwork & Excellence", desc: "Unified leadership foundation dedicated to high-performance energy infrastructure.", icon: "🤝" }
 ];
 
 export const ICONS = {

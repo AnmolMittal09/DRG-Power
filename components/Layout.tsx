@@ -6,198 +6,98 @@ import {
   COMPANY_NAME, 
   BRAND_NAME, 
   PHONE_PRIMARY, 
-  PHONE_SECONDARY, 
+  PHONE_JATIN,
+  PHONE_DHIRAJ,
   WHATSAPP_LINK, 
-  ICONS, 
   ADDRESS, 
   EMAIL_ADDRESS,
-  GROUP_NAME,
-  ESTABLISHED_YEAR,
   LOGO_IMAGE 
 } from '../constants';
 
-const Logo: React.FC<{ light?: boolean; scrolled?: boolean }> = ({ light, scrolled }) => (
+const Logo: React.FC<{ footer?: boolean }> = ({ footer }) => (
   <div className="flex items-center group cursor-pointer">
-    <div className={`relative transition-all duration-500 transform group-hover:scale-110 flex items-center justify-center ${
-      scrolled ? 'h-10 lg:h-12 w-10 lg:w-12' : 'h-14 lg:h-16 w-14 lg:w-16'
+    <div className={`relative transition-all duration-500 transform group-hover:scale-105 flex items-center justify-center ${
+      footer ? 'h-14 w-14' : 'h-12 w-12'
     }`}>
-      <img 
-        src={LOGO_IMAGE} 
-        alt={COMPANY_NAME}
-        className="h-full w-full object-contain transition-all duration-500 drop-shadow-md"
-        loading="eager"
-        onError={(e) => {
-          (e.target as HTMLImageElement).style.display = 'none';
-        }}
-      />
+      <div className="h-10 w-10 bg-[#BE1E2D] rounded-lg flex items-center justify-center shadow-lg border border-white/20">
+        <svg viewBox="0 0 24 24" className="w-6 h-6 text-white fill-current" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+        </svg>
+      </div>
     </div>
-    <div className="ml-4 flex flex-col justify-center border-l border-slate-400/20 pl-4">
+    <div className="ml-4 flex flex-col justify-center border-l border-white/10 pl-4">
       <div className="flex flex-col">
-        <span className={`text-xl font-black tracking-tighter leading-none transition-colors duration-500 ${
-          light && !scrolled ? 'text-white' : 'text-black'
-        }`}>
-          DRG <span className="text-[#BE1E2D]">POWER</span>
+        <span className="text-xl font-black tracking-tighter leading-none text-white uppercase">
+          DRG <span className={`${footer ? 'text-white' : 'text-[#BE1E2D]'}`}>{footer ? 'TECH' : 'POWER'}</span>
         </span>
-        <span className={`text-[8px] font-bold uppercase tracking-[0.4em] leading-none mt-1 transition-colors duration-500 ${
-          light && !scrolled ? 'text-white/60' : 'text-slate-500'
-        }`}>
-          Technology
-        </span>
+        {!footer && <span className="text-[7px] font-black uppercase tracking-[0.4em] text-white/40 leading-none mt-1.5">Technology</span>}
       </div>
     </div>
   </div>
 );
 
-const TopBar: React.FC<{ isScrolled: boolean; isHome: boolean }> = ({ isScrolled, isHome }) => {
-  return (
-    <div className={`hidden lg:block border-b transition-all duration-300 ${
-      isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-10 opacity-100 py-2'
-    } ${isHome && !isScrolled ? 'bg-black/20 border-white/10 text-white/80' : 'bg-slate-50 border-slate-200 text-slate-600'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
-        <div className="flex gap-8" role="list">
-          <div className="flex items-center gap-2" role="listitem">
-            <span className="text-[#BE1E2D]" aria-hidden="true">📍</span>
-            <span>Serving Pan-India Projects</span>
-          </div>
-          <div className="flex items-center gap-2" role="listitem">
-            <span className="text-[#BE1E2D]" aria-hidden="true">⏰</span>
-            <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
-          </div>
-        </div>
-        <div>
-          <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-[#BE1E2D] transition-colors flex items-center gap-2">
-            <span className="text-[#BE1E2D]" aria-hidden="true">✉️</span> {EMAIL_ADDRESS}
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => { document.body.style.overflow = 'unset'; };
-  }, [isOpen]);
-
-  useEffect(() => { setIsOpen(false); }, [location]);
-
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'How It Works', path: '/how-it-works' },
-    { name: 'Projects', path: '/projects' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'Contact', path: '/contact' },
-  ];
+  useEffect(() => setIsOpen(false), [location]);
 
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-        isScrolled || isOpen 
-          ? 'glass py-3 shadow-xl border-b border-slate-200/50' 
-          : 'bg-transparent py-0'
+        isScrolled ? 'bg-black/90 backdrop-blur-xl py-4 shadow-2xl border-b border-white/5' : 'bg-transparent py-8'
       }`}>
-        <TopBar isScrolled={isScrolled} isHome={isHome} />
-        
-        <div className={`container mx-auto px-4 md:px-6 transition-all duration-500 ${isScrolled ? 'py-1' : 'py-4'}`}>
-          <nav className="flex items-center justify-between" aria-label="Main Navigation">
-            <Link to="/" className="z-10" aria-label={`${BRAND_NAME} Home`}>
-              <Logo light={isHome && !isScrolled && !isOpen} scrolled={isScrolled} />
+        <div className="container mx-auto px-6">
+          <nav className="flex items-center justify-between">
+            <Link to="/" className="z-10">
+              <Logo />
             </Link>
 
-            <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:text-[#BE1E2D] relative group py-2 ${
-                    location.pathname === link.path
-                      ? 'text-[#BE1E2D]'
-                      : !isScrolled && isHome ? 'text-white/90' : 'text-slate-800'
-                  }`}
-                  aria-current={location.pathname === link.path ? 'page' : undefined}
-                >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#BE1E2D] transition-all duration-300 ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`} aria-hidden="true"></span>
-                </Link>
-              ))}
-              <div className="flex items-center gap-4 border-l border-slate-200/30 pl-8">
-                <a
-                  href={`tel:${PHONE_PRIMARY}`}
-                  className="bg-[#BE1E2D] hover:bg-red-700 text-white px-8 py-3.5 rounded-sm text-[10px] font-black transition-all shadow-xl shadow-red-900/20 active:scale-95 flex items-center gap-2"
-                >
-                  FREE CONSULTATION
-                </a>
-              </div>
+            <div className="hidden lg:flex items-center gap-10">
+              <Link to="/about" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-all">Why DRG</Link>
+              <Link to="/services" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-all">Services</Link>
+              <Link to="/projects" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-all">Projects</Link>
+              <Link to="/contact" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-all">Contact</Link>
+              <a
+                href={`tel:${PHONE_PRIMARY}`}
+                className="bg-white text-black hover:bg-[#BE1E2D] hover:text-white px-8 py-3 rounded-xl text-[10px] font-black tracking-[0.2em] transition-all flex items-center gap-2 group shadow-lg uppercase"
+              >
+                CALL US <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
+              </a>
             </div>
 
             <button
-              className={`lg:hidden p-3 rounded-xl transition-all duration-300 z-10 ${!isScrolled && isHome && !isOpen ? 'text-white bg-white/10' : 'text-slate-900 bg-slate-100'}`}
+              className="lg:hidden p-3 text-white bg-white/5 rounded-xl border border-white/10"
               onClick={() => setIsOpen(!isOpen)}
-              aria-label={isOpen ? "Close Menu" : "Open Menu"}
-              aria-expanded={isOpen}
-              aria-controls="mobile-menu"
             >
-              <div className="relative w-6 h-5" aria-hidden="true">
-                <span className={`absolute block h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isOpen ? 'rotate-45 top-2' : 'top-0'}`}></span>
-                <span className={`absolute block h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-2 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`absolute block h-0.5 w-6 bg-current transform transition duration-300 ease-in-out ${isOpen ? '-rotate-45 top-2' : 'top-4'}`}></span>
+              <div className="w-6 h-5 relative">
+                <span className={`absolute block h-0.5 w-6 bg-current transition-all ${isOpen ? 'rotate-45 top-2' : 'top-0'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-current transition-all top-2 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-current transition-all ${isOpen ? '-rotate-45 top-2' : 'top-4'}`}></span>
               </div>
             </button>
           </nav>
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <div id="mobile-menu" className={`fixed inset-0 z-[55] lg:hidden transition-all duration-500 ease-in-out ${isOpen ? 'visible' : 'invisible'}`} aria-hidden={!isOpen}>
-        <div className={`absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsOpen(false)} />
-        <div className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-md bg-white transition-transform duration-500 ease-out shadow-2xl flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex flex-col h-full pt-32 pb-12 px-10">
-            <nav className="flex flex-col gap-8" aria-label="Mobile Navigation">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  style={{ transitionDelay: `${index * 50}ms` }}
-                  className={`text-4xl font-black transition-all duration-500 transform tracking-tighter ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'} ${
-                    location.pathname === link.path ? 'text-[#BE1E2D]' : 'text-slate-900 hover:text-[#BE1E2D]'
-                  }`}
-                  aria-current={location.pathname === link.path ? 'page' : undefined}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-            <div className="mt-auto pt-10 border-t border-slate-100">
-              <a href={`tel:${PHONE_PRIMARY}`} className="flex items-center gap-4 group">
-                <div className="w-14 h-14 bg-red-50 text-[#BE1E2D] rounded-2xl flex items-center justify-center font-bold shadow-sm" aria-hidden="true">
-                  📞
-                </div>
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Project Desk</p>
-                  <p className="text-xl font-black text-slate-900">{PHONE_PRIMARY}</p>
-                </div>
-              </a>
-            </div>
+      {/* Mobile Nav */}
+      <div className={`fixed inset-0 z-[55] lg:hidden transition-all duration-500 ${isOpen ? 'visible' : 'invisible'}`}>
+        <div className={`absolute inset-0 bg-black/98 backdrop-blur-3xl transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsOpen(false)} />
+        <div className={`absolute inset-y-0 right-0 w-full md:w-[70%] bg-[#050505] flex flex-col p-12 transition-transform duration-700 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="flex flex-col gap-8 mt-24">
+            <Link to="/" className="text-4xl font-black text-white uppercase italic tracking-tighter">Home</Link>
+            <Link to="/about" className="text-4xl font-black text-white uppercase italic tracking-tighter">About</Link>
+            <Link to="/services" className="text-4xl font-black text-white uppercase italic tracking-tighter">Services</Link>
+            <Link to="/projects" className="text-4xl font-black text-white uppercase italic tracking-tighter">Projects</Link>
+            <Link to="/contact" className="text-4xl font-black text-white uppercase italic tracking-tighter">Contact</Link>
+            <a href={`tel:${PHONE_PRIMARY}`} className="mt-12 bg-[#BE1E2D] text-white py-6 rounded-2xl text-center font-black tracking-widest uppercase text-xl shadow-2xl">Call Project Desk</a>
           </div>
         </div>
       </div>
@@ -205,124 +105,122 @@ const Header: React.FC = () => {
   );
 };
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-black text-slate-400 pt-32 pb-12 overflow-hidden relative border-t border-white/5">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 lg:gap-12 mb-24">
-          <div className="lg:col-span-5 space-y-12">
-            <div className="flex items-center gap-4">
-               <div className="w-16 h-16 relative flex items-center justify-center">
-                  <img 
-                    src={LOGO_IMAGE} 
-                    alt={BRAND_NAME} 
-                    className="w-full h-full object-contain drop-shadow-lg" 
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-               </div>
-               <div className="flex flex-col border-l border-white/10 pl-6">
-                  <span className="text-2xl font-black tracking-tighter text-white uppercase italic">
-                    DRG <span className="text-[#BE1E2D]">POWER</span>
-                  </span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-600">Technology</span>
-               </div>
-            </div>
-            <p className="text-slate-500 leading-relaxed text-base font-medium max-w-sm">
-              Engineering high-performance solar infrastructure since {ESTABLISHED_YEAR}. Trusted industrial engineering for residential and commercial rooftop segments nationwide.
-            </p>
-            <div className="flex gap-4">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white hover:bg-[#25D366] transition-all" aria-label="WhatsApp">
-                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.461 3.42 1.268 4.861l-1.306 4.762 4.887-1.282c1.408.766 3.012 1.201 4.714 1.201 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.797 14.131c-.244.686-1.42 1.261-1.943 1.343-.48.075-.989.109-2.585-.544-2.04-.84-3.359-2.909-3.46-3.047-.101-.137-.822-1.092-.822-2.083 0-.991.514-1.478.697-1.681.183-.203.4-.254.534-.254l.381.006c.125.006.292-.047.458.35.17.408.577 1.405.626 1.503.05.098.083.213.017.347-.067.133-.1.216-.2.333-.1.117-.21.261-.3.35-.1.101-.205.212-.089.41.116.198.513.844 1.102 1.369.759.676 1.397.886 1.594.985.197.1.314.083.431-.051.117-.135.5-0.584.634-.784.133-.2.267-.166.45-.1.183.066 1.166.55 1.366.65.201.1.334.151.384.234.05.084.05.485-.194 1.171z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          <nav className="lg:col-span-2 space-y-8" aria-label="Quick Links Navigation">
-            <h3 className="text-white font-black uppercase tracking-[0.4em] text-[10px] opacity-40">Company</h3>
-            <ul className="space-y-4 text-sm font-bold">
-              {['Home', 'About', 'Services', 'How It Works', 'Projects', 'FAQ', 'Contact'].map(item => (
-                <li key={item}>
-                  <Link to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/ /g, '-')}`} className="hover:text-[#BE1E2D] transition-colors inline-block tracking-tight">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav className="lg:col-span-2 space-y-8" aria-label="Solutions Navigation">
-            <h3 className="text-white font-black uppercase tracking-[0.4em] text-[10px] opacity-40">Solutions</h3>
-            <ul className="space-y-4 text-sm font-bold">
-              {['Residential', 'Commercial', 'Industrial'].map(item => (
-                <li key={item}>
-                  <Link to="/services" className="hover:text-[#BE1E2D] transition-colors inline-block tracking-tight">
-                    {item} Solar
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <div className="lg:col-span-3 space-y-8">
-            <h3 className="text-white font-black uppercase tracking-[0.4em] text-[10px] opacity-40">Contact HQ</h3>
-            <address className="not-italic space-y-8 text-sm">
-              <div className="flex gap-4">
-                <span className="text-[#BE1E2D]">📍</span>
-                <span className="leading-relaxed font-medium text-slate-400">
-                  {ADDRESS}
-                </span>
-              </div>
-              <div className="flex gap-4">
-                <span className="text-[#BE1E2D]">📞</span>
-                <div className="flex flex-col gap-1 font-black tracking-tight text-white">
-                  <a href={`tel:${PHONE_PRIMARY}`} className="hover:text-[#BE1E2D] transition-colors">{PHONE_PRIMARY}</a>
-                  <a href={`tel:${PHONE_SECONDARY}`} className="hover:text-[#BE1E2D] transition-colors">{PHONE_SECONDARY}</a>
-                </div>
-              </div>
-            </address>
+const Footer: React.FC = () => (
+  <footer className="bg-black text-white pt-24 pb-8 font-sans">
+    <div className="container mx-auto px-6 lg:px-12">
+      <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+        
+        {/* Brand Column */}
+        <div className="space-y-6">
+          <Logo footer />
+          <p className="text-slate-500 text-sm leading-relaxed max-w-xs mt-6">
+            Industrial grade solar solutions for the next generation of infrastructure. High precision, zero compromise.
+          </p>
+          <div className="flex gap-4 pt-4">
+            <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center rounded-lg hover:border-[#BE1E2D] transition-colors">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center rounded-lg hover:border-[#BE1E2D] transition-colors">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black uppercase tracking-[0.4em] opacity-40">
-          <p>
-            © {new Date().getFullYear()} {COMPANY_NAME.toUpperCase()}.
-          </p>
-          <nav className="flex gap-10">
-            <a href="#" className="hover:text-white transition-colors">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms</a>
-          </nav>
+        {/* Solutions Column */}
+        <div className="space-y-6">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white">Solutions</h3>
+          <ul className="space-y-4">
+            <li><Link to="/services" className="text-sm font-semibold text-slate-500 hover:text-white transition-colors">Residential Units</Link></li>
+            <li><Link to="/services" className="text-sm font-semibold text-slate-500 hover:text-white transition-colors">Industrial Solar</Link></li>
+            <li><Link to="/services" className="text-sm font-semibold text-slate-500 hover:text-white transition-colors">Grid Management</Link></li>
+            <li><Link to="/services" className="text-sm font-semibold text-slate-500 hover:text-white transition-colors">O&M Contracts</Link></li>
+          </ul>
+        </div>
+
+        {/* HQ Info Column */}
+        <div className="space-y-6">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white">HQ Info</h3>
+          <div className="space-y-6">
+            <div className="flex gap-4 items-start">
+              <div className="mt-1 text-[#BE1E2D]">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <p className="text-sm text-slate-500 leading-snug">{ADDRESS}</p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <div className="text-[#BE1E2D]">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <p className="text-lg font-black tracking-tighter">{PHONE_PRIMARY}</p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <div className="text-[#BE1E2D]">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <p className="text-sm text-slate-500 font-semibold">{EMAIL_ADDRESS}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Direct Connect Column */}
+        <div className="space-y-6">
+          <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white">Direct Connect</h3>
+          <div className="space-y-4">
+            <div className="bg-[#0A0A0A] p-5 rounded-2xl border border-white/5 flex flex-col gap-1">
+              <span className="text-[9px] font-black uppercase tracking-widest text-[#BE1E2D]">Jatin Batheja</span>
+              <div className="flex items-center gap-3">
+                <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span className="text-lg font-black tracking-tight">{PHONE_JATIN}</span>
+              </div>
+            </div>
+            <div className="bg-[#0A0A0A] p-5 rounded-2xl border border-white/5 flex flex-col gap-1">
+              <span className="text-[9px] font-black uppercase tracking-widest text-[#BE1E2D]">Dhiraj Sanduja</span>
+              <div className="flex items-center gap-3">
+                <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span className="text-lg font-black tracking-tight">{PHONE_DHIRAJ}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="flex flex-col items-center gap-6 pt-12 border-t border-white/5 text-center">
+        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-white/30">
+          © 2024 DRG POWER TECHNOLOGY PRIVATE LIMITED. BUILT FOR POWER.
+        </p>
+        <div className="flex gap-10 text-[9px] font-black uppercase tracking-[0.4em] text-white/40">
+          <a href="#" className="hover:text-white transition-colors">Privacy</a>
+          <a href="#" className="hover:text-white transition-colors">Systems</a>
+          <a href="#" className="hover:text-white transition-colors">Security</a>
         </div>
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
-// Fixed the "Cannot find name 'WhatsAppButton'" error by defining the component here
 const WhatsAppButton: React.FC = () => (
   <a
     href={WHATSAPP_LINK}
     target="_blank"
     rel="noopener noreferrer"
-    className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all animate-bounce"
-    aria-label="Contact on WhatsApp"
+    className="fixed bottom-10 right-10 z-50 bg-[#BE1E2D] text-white w-16 h-16 rounded-3xl shadow-3xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all border border-white/20 group"
+    aria-label="WhatsApp"
   >
-    <svg className="w-10 h-10 fill-current" viewBox="0 0 24 24">
-      <path d="M12.031 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.461 3.42 1.268 4.861l-1.306 4.762 4.887-1.282c1.408.766 3.012 1.201 4.714 1.201 5.517 0 9.993-4.476 9.993-9.993s-4.476-9.993-9.993-9.993zm5.797 14.131c-.244.686-1.42 1.261-1.943 1.343-.48.075-.989.109-2.585-.544-2.04-.84-3.359-2.909-3.46-3.047-.101-.137-.822-1.092-.822-2.083 0-.991.514-1.478.697-1.681.183-.203.4-.254.534-.254l.381.006c.125.006.292-.047.458.35.17.408.577 1.405.626 1.503.05.098.083.213.017.347-.067.133-.1.216-.2.333-.1.117-.21.261-.3.35-.1.101-.205.212-.089.41.116.198.513.844 1.102 1.369.759.676 1.397.886 1.594.985.197.1.314.083.431-.051.117-.135.5-0.584.634-.784.133-.2.267-.166.45-.1.183.066 1.166.55 1.366.65.201.1.334.151.384.234.05.084.05.485-.194 1.171z" />
+    <svg className="w-8 h-8 fill-current text-white" viewBox="0 0 24 24">
+      <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
     </svg>
   </a>
 );
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => window.scrollTo(0, 0), [pathname]);
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main id="main-content" className="grow" tabIndex={-1}>
-        {children}
-      </main>
+      <main id="main-content" className="grow">{children}</main>
       <Footer />
       <WhatsAppButton />
     </div>
