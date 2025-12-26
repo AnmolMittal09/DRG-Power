@@ -66,6 +66,16 @@ const Header: React.FC = () => {
 
   useEffect(() => setIsOpen(false), [location]);
 
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'How It Works', path: '/how-it-works' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
@@ -75,18 +85,25 @@ const Header: React.FC = () => {
       }`}>
         <div className="container mx-auto px-6">
           <nav className="flex items-center justify-between">
-            <Link to="/" className="z-10">
+            <Link to="/" className="z-10 shrink-0">
               <Logo />
             </Link>
 
-            <div className="hidden lg:flex items-center gap-10">
-              <Link to="/about" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 hover:text-white transition-all">Why DRG</Link>
-              <Link to="/services" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 hover:text-white transition-all">Services</Link>
-              <Link to="/projects" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 hover:text-white transition-all">Projects</Link>
-              <Link to="/contact" className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 hover:text-white transition-all">Contact</Link>
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.path}
+                  to={link.path} 
+                  className={`text-[9px] font-black uppercase tracking-[0.3em] transition-all hover:text-white ${
+                    location.pathname === link.path ? 'text-white' : 'text-white/60'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
               <a
                 href={`tel:${PHONE_PRIMARY}`}
-                className="bg-white text-black hover:bg-[#BE1E2D] hover:text-white px-8 py-3 rounded-xl text-[10px] font-black tracking-[0.2em] transition-all flex items-center gap-2 group shadow-lg uppercase"
+                className="bg-white text-black hover:bg-[#BE1E2D] hover:text-white px-6 py-2.5 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all flex items-center gap-2 group shadow-lg uppercase shrink-0"
               >
                 CALL US <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
               </a>
@@ -111,13 +128,19 @@ const Header: React.FC = () => {
       <div className={`fixed inset-0 z-[55] lg:hidden transition-all duration-500 ${isOpen ? 'visible' : 'invisible'}`}>
         <div className={`absolute inset-0 bg-black/98 backdrop-blur-3xl transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsOpen(false)} />
         <div className={`absolute inset-y-0 right-0 w-full md:w-[70%] bg-[#050505] flex flex-col p-12 transition-transform duration-700 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-          <div className="flex flex-col gap-8 mt-24">
-            <Link to="/" className="text-4xl font-black text-white uppercase italic tracking-tighter">Home</Link>
-            <Link to="/about" className="text-4xl font-black text-white uppercase italic tracking-tighter">About</Link>
-            <Link to="/services" className="text-4xl font-black text-white uppercase italic tracking-tighter">Services</Link>
-            <Link to="/projects" className="text-4xl font-black text-white uppercase italic tracking-tighter">Projects</Link>
-            <Link to="/contact" className="text-4xl font-black text-white uppercase italic tracking-tighter">Contact</Link>
-            <a href={`tel:${PHONE_PRIMARY}`} className="mt-12 bg-[#BE1E2D] text-white py-6 rounded-2xl text-center font-black tracking-widest uppercase text-xl shadow-2xl">Call Project Desk</a>
+          <div className="flex flex-col gap-6 mt-24">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.path}
+                to={link.path} 
+                className={`text-3xl font-black uppercase italic tracking-tighter transition-all ${
+                  location.pathname === link.path ? 'text-[#BE1E2D]' : 'text-white'
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            <a href={`tel:${PHONE_PRIMARY}`} className="mt-8 bg-[#BE1E2D] text-white py-5 rounded-2xl text-center font-black tracking-widest uppercase text-lg shadow-2xl">Call Project Desk</a>
           </div>
         </div>
       </div>
