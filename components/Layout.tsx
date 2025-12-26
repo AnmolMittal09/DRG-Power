@@ -91,7 +91,7 @@ const Header: React.FC = () => {
                 </Link>
               ))}
               <a
-                href={`tel:${PHONE_PRIMARY}`}
+                href={`tel:+91${PHONE_PRIMARY}`}
                 className="bg-white text-black hover:bg-[#BE1E2D] hover:text-white px-6 py-2.5 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all flex items-center gap-2 group shadow-lg uppercase shrink-0"
               >
                 CALL US <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
@@ -128,7 +128,7 @@ const Header: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <a href={`tel:${PHONE_PRIMARY}`} className="mt-8 bg-[#BE1E2D] text-white py-5 rounded-2xl text-center font-black tracking-widest uppercase text-lg shadow-2xl">Call Project Desk</a>
+            <a href={`tel:+91${PHONE_PRIMARY}`} className="mt-8 bg-[#BE1E2D] text-white py-5 rounded-2xl text-center font-black tracking-widest uppercase text-lg shadow-2xl">Call Project Desk</a>
           </div>
         </div>
       </div>
@@ -205,11 +205,11 @@ const Footer: React.FC = () => (
           <div className="space-y-6">
             <div className="flex flex-col gap-2">
               <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#BE1E2D]">Project Desk</span>
-              <a href={`tel:${PHONE_JATIN}`} className="text-xl font-black tracking-tighter text-white hover:text-[#BE1E2D] transition-colors">{PHONE_JATIN}</a>
+              <a href={`tel:+91${PHONE_JATIN}`} className="text-xl font-black tracking-tighter text-white hover:text-[#BE1E2D] transition-colors">{PHONE_JATIN}</a>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#BE1E2D]">Technical Leads</span>
-              <a href={`tel:${PHONE_DHIRAJ}`} className="text-xl font-black tracking-tighter text-white hover:text-[#BE1E2D] transition-colors">{PHONE_DHIRAJ}</a>
+              <a href={`tel:+91${PHONE_DHIRAJ}`} className="text-xl font-black tracking-tighter text-white hover:text-[#BE1E2D] transition-colors">{PHONE_DHIRAJ}</a>
             </div>
             <div className="pt-2 border-t border-white/10 mt-4">
               <a href={`mailto:${EMAIL_ADDRESS}`} className="text-xs font-bold text-slate-500 hover:text-white transition-colors block mb-4 italic break-all">{EMAIL_ADDRESS}</a>

@@ -46,14 +46,14 @@ const Contact: React.FC = () => {
             <div className="space-y-6">
               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">Strategic Leads</h2>
               <div className="grid sm:grid-cols-2 gap-4">
-                <a href={`tel:${PHONE_JATIN}`} className="group p-8 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl">
+                <a href={`tel:+91${PHONE_JATIN}`} className="group p-8 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl">
                   <span className="text-2xl opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all origin-left">📞</span>
                   <div>
                     <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Project Director</p>
                     <p className="text-lg font-black text-slate-900 group-hover:text-white transition-colors">{PHONE_JATIN}</p>
                   </div>
                 </a>
-                <a href={`tel:${PHONE_DHIRAJ}`} className="group p-8 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl">
+                <a href={`tel:+91${PHONE_DHIRAJ}`} className="group p-8 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl">
                   <span className="text-2xl opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all origin-left">⚙️</span>
                   <div>
                     <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Technical Ops</p>

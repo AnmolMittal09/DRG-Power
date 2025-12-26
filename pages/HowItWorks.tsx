@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ICONS, PHONE_PRIMARY } from '../constants';
 
@@ -55,7 +56,7 @@ const HowItWorks: React.FC = () => {
                 Schedule your industrial-grade site audit today. Verified technical advice on your facility's energy potential.
               </p>
               <div className="flex flex-wrap gap-8">
-                <a href={`tel:${PHONE_PRIMARY}`} className="bg-[#BE1E2D] text-white px-16 py-8 rounded-sm font-black text-2xl hover:scale-110 transition-all shadow-3xl shadow-red-900/40 uppercase tracking-widest active:scale-95">
+                <a href={`tel:+91${PHONE_PRIMARY}`} className="bg-[#BE1E2D] text-white px-16 py-8 rounded-sm font-black text-2xl hover:scale-110 transition-all shadow-3xl shadow-red-900/40 uppercase tracking-widest active:scale-95">
                   Book Project Audit
                 </a>
               </div>
