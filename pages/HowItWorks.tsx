@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ICONS, PHONE_PRIMARY } from '../constants';
 
@@ -21,12 +20,12 @@ const StepCard: React.FC<{ number: string; title: string; desc: string; icon: st
 
 const HowItWorks: React.FC = () => {
   const steps = [
-    { number: "01", title: "Site Assessment", desc: "Our engineers visit your location to measure roof space, check structural integrity, and analyze shadow patterns using 3D mapping software.", icon: "🔍", delay: "delay-100" },
-    { number: "02", title: "Custom Design", desc: "We create a tailored solar layout designed to maximize solar harvesting based on Haryana's sun path and your specific energy needs.", icon: "📐", delay: "delay-200" },
-    { number: "03", title: "Approval & Subsidy", desc: "We handle the entire net-metering application with DHBVN/UHBVN and help you secure available government solar subsidies.", icon: "📄", delay: "delay-300" },
-    { number: "04", title: "Swift Installation", desc: "Our certified team installs Tier-1 panels and robust mounting structures rated for 150km/h wind speeds within 48-72 hours.", icon: "⚡", delay: "delay-400" },
-    { number: "05", title: "Grid Sync", desc: "After safety tests, we coordinate the net-metering sync. Watch your meter run backwards as you start generating profit!", icon: "🔌", delay: "delay-500" },
-    { number: "06", title: "Live Monitoring", desc: "Access our mobile app to track your energy generation and savings in real-time, 24/7, with lifetime support from DRG Power.", icon: "📱", delay: "delay-600" }
+    { number: "01", title: "Site Assessment", desc: "Our engineers evaluate your location to measure roof space, check structural integrity, and analyze shadow patterns using advanced software.", icon: "🔍", delay: "delay-100" },
+    { number: "02", title: "Custom Design", desc: "We create a tailored solar layout designed to maximize solar harvesting based on local environmental conditions and your specific energy needs.", icon: "📐", delay: "delay-200" },
+    { number: "03", title: "Approval & Subsidy", desc: "We handle the entire net-metering application with your local utility and help you secure available government solar subsidies.", icon: "📄", delay: "delay-300" },
+    { number: "04", title: "Swift Installation", desc: "Our certified team installs Tier-1 panels and robust mounting structures rated for high-speed wind resistance within 48-72 hours.", icon: "⚡", delay: "delay-400" },
+    { number: "05", title: "Grid Sync", desc: "After safety tests, we coordinate the net-metering sync. Watch your energy bills drop as you start generating clean power!", icon: "🔌", delay: "delay-500" },
+    { number: "06", title: "Live Monitoring", desc: "Access our monitoring tools to track your energy generation and savings in real-time, 24/7, with lifetime support from DRG Power.", icon: "📱", delay: "delay-600" }
   ];
 
   return (
@@ -37,7 +36,7 @@ const HowItWorks: React.FC = () => {
           <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-[0.95] tracking-tighter">
             Your Journey to <span className="text-gradient">Energy Independence</span>
           </h1>
-          <p className="text-xl text-slate-500 font-medium">Simple, transparent, and engineered for long-term performance.</p>
+          <p className="text-xl text-slate-500 font-medium">Simple, transparent, and engineered for long-term performance across India.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -52,11 +51,11 @@ const HowItWorks: React.FC = () => {
             <div>
               <h2 className="text-4xl lg:text-6xl font-black mb-8 tracking-tighter">Ready for the first step?</h2>
               <p className="text-xl text-slate-400 font-medium mb-12 leading-relaxed">
-                Schedule your free site assessment today. No obligations, just expert advice on how much you can save.
+                Schedule your free site evaluation today. No obligations, just expert advice on how much you can save.
               </p>
               <div className="flex flex-wrap gap-6">
                 <a href={`tel:${PHONE_PRIMARY}`} className="bg-green-600 text-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-all shadow-xl shadow-green-600/20">
-                  Book Free Audit
+                  Book Free Evaluation
                 </a>
               </div>
             </div>

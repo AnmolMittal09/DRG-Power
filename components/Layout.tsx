@@ -1,5 +1,4 @@
 
-// Fix: Use namespace import to bypass named export resolution issues in certain environments
 import React, { useState, useEffect } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 const { Link, useLocation } = ReactRouterDOM;
@@ -12,7 +11,8 @@ import {
   ICONS, 
   ADDRESS, 
   EMAIL_ADDRESS,
-  GROUP_NAME 
+  GROUP_NAME,
+  ESTABLISHED_YEAR 
 } from '../constants';
 
 const TopBar: React.FC<{ isScrolled: boolean; isHome: boolean }> = ({ isScrolled, isHome }) => {
@@ -24,7 +24,7 @@ const TopBar: React.FC<{ isScrolled: boolean; isHome: boolean }> = ({ isScrolled
         <div className="flex gap-8" role="list">
           <div className="flex items-center gap-2" role="listitem">
             <span className="text-green-700" aria-hidden="true">📍</span>
-            <span>Serving Gurugram & All Haryana</span>
+            <span>Serving Pan-India Projects</span>
           </div>
           <div className="flex items-center gap-2" role="listitem">
             <span className="text-green-700" aria-hidden="true">⏰</span>
@@ -207,8 +207,9 @@ const Footer: React.FC = () => {
                 </div>
               </div>
             </Link>
+            {/* Added ESTABLISHED_YEAR to imports from constants to fix "Cannot find name 'ESTABLISHED_YEAR'" error */}
             <p className="text-slate-500 leading-relaxed text-base font-medium max-w-sm">
-              Providing Tier-1 solar panel solutions for Haryana since 2014. From Villas to Industrial Plants, we are your trusted EPC partner.
+              Delivering high-performance solar solutions since {ESTABLISHED_YEAR}. Trusted partner for residential and commercial energy across India.
             </p>
             <div className="flex gap-4">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white hover:bg-green-700 transition-all" aria-label="WhatsApp">

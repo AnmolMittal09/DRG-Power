@@ -1,16 +1,46 @@
-
 import React from 'react';
 import { Service, Project, Testimonial, FAQItem } from './types';
 
 export const COMPANY_NAME = "DRG Power Technology Private Limited";
 export const BRAND_NAME = "DRG POWER";
-export const TAGLINE = "Haryana's Leading Solar Energy Network.";
-export const GROUP_NAME = "Group of Sanduja Enterprises";
-export const PHONE_PRIMARY = "+91 9211592425";
-export const PHONE_SECONDARY = "+91 9313481712";
-export const EMAIL_ADDRESS = "drgpower172@gmail.com";
-export const ADDRESS = "Khasra No. 246, Gali No.1, Main Ghari Road, Basai, Gurugram, Haryana – 122006";
+export const TAGLINE = "Clean. Renewable. Affordable.";
+export const SUB_TAGLINE = "India's Leading Solar Energy Network.";
+export const GROUP_NAME = "Sanduja Enterprises";
+export const ESTABLISHED_YEAR = "2021";
+export const PARTNERSHIP_YEAR = "2012"; // Sanduja Enterprises group partnership with Livguard
+export const PARTNER_BRAND = "Livguard";
+
+export const PHONE_JATIN = "+91 9211592425";
+export const PHONE_DHIRAJ = "+91 9313481712";
+export const PHONE_PRIMARY = PHONE_JATIN;
+export const PHONE_SECONDARY = PHONE_DHIRAJ;
+export const EMAIL_ADDRESS = "drgpower712@gmail.com";
+export const ADDRESS = "Khasra no 253, Gali No 1, Basai Enclave, VPO, Gurugram, HR 122006";
 export const WHATSAPP_LINK = "https://wa.me/919211592425";
+
+export const VISION = "Powering a cleaner, greener tomorrow — one rooftop at a time.";
+export const MISSION = "Delivering smart, efficient, and affordable rooftop solar energy solutions that empower our customers and reduce carbon footprints.";
+
+export const LEADERSHIP = [
+  { 
+    name: "Dhiraj Sanduja", 
+    role: "Co-Founder & Director", 
+    bio: "Forming a strong leadership foundation that blends technical expertise with strategic vision." 
+  },
+  { 
+    name: "Jatin Batheja", 
+    role: "Director", 
+    bio: "Guiding DRG Power Technology toward sustainable growth and a greener future." 
+  }
+];
+
+export const CORE_VALUES = [
+  { title: "Customer-Centric Approach", desc: "Prioritizing our customers' needs to deliver bespoke solar energy solutions.", icon: "🎯" },
+  { title: "Quality and Reliability", desc: "Ensuring long-standing reliability through high-quality Tier-1 hardware and engineering.", icon: "🛡️" },
+  { title: "Innovation & Technology", desc: "Utilizing modern technology to design and install the most efficient solar power systems.", icon: "⚙️" },
+  { title: "Integrity & Transparency", desc: "Building trust through honest communication and transparent project management.", icon: "💎" },
+  { title: "Teamwork & Excellence", desc: "Fostering a culture of excellence through unified technical expertise and dedication.", icon: "🤝" }
+];
 
 export const ICONS = {
   Sun: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>,
@@ -25,33 +55,25 @@ export const ICONS = {
 export const SERVICES: Service[] = [
   {
     id: "homes",
-    title: "Solar for Homes",
-    description: "Empower your villa or independent house anywhere in Haryana with clean solar energy. Drastically reduce your monthly electricity bills and contribute to a greener planet.",
+    title: "Solar for Households",
+    description: "Designing, supplying, and installing solar power systems tailored for modern homes across India. Empower your family with renewable energy.",
     icon: ICONS.Home,
-    features: ["Zero Bill Lifestyle", "Govt. Subsidy Assistance", "25-Year Service Life", "Real-time Monitoring"],
+    features: ["End-to-end Solutions", "Site Evaluation", "Bespoke System Design", "After-sales Support"],
     imageUrl: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=70&w=1000"
   },
   {
-    id: "housing-societies",
-    title: "Housing Societies",
-    description: "Power elevators, common lighting, and water pumps through collective solar installations. We serve all major RWA complexes across Haryana's urban hubs.",
-    icon: ICONS.Society,
-    features: ["Common Area Bill Reduction", "EV Charging Ready", "Maintenance-Free Design", "High Collective ROI"],
-    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=70&w=1000"
-  },
-  {
     id: "commercial",
-    title: "Commercial & Industrial",
-    description: "Optimize business operational costs. Industrial scale solutions designed for Haryana's manufacturing corridors, from Bawal to Rohtak.",
+    title: "Commercial Spaces",
+    description: "Forward-looking solar solutions for commercial establishments. Reduce operational costs and carbon footprint through smart energy firm expertise.",
     icon: ICONS.Commercial,
-    features: ["Accelerated Depreciation", "Tax Efficiency", "Lowest Levelized Cost", "Carbon Footprint reduction"],
+    features: ["Cost-effective Solutions", "Scalable Projects", "System Monitoring", "Expert Installation"],
     imageUrl: "https://images.unsplash.com/photo-1594818379496-da1e345b0ded?auto=format&fit=crop&q=70&w=1000"
   }
 ];
 
 export const PROJECTS: Project[] = [
   { id: 1, title: "Heritage Apartments", category: "Society", location: "Gurugram", capacity: "250 kWp", imageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=70&w=1000" },
-  { id: 2, title: "Modern Plastics Factory", category: "Commercial", location: "IMT Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=70&w=1000" },
+  { id: 2, title: "Modern Plastics Factory", category: "Commercial", location: "Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=70&w=1000" },
   { id: 3, title: "Sun City Bungalow", category: "Home", location: "Rohtak", capacity: "15 kWp", imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb5843e03?auto=format&fit=crop&q=70&w=1000" },
   { id: 4, title: "Green Field Estate", category: "Home", location: "Faridabad", capacity: "20 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=70&w=1000" },
 ];
@@ -64,40 +86,16 @@ export const TESTIMONIALS: Testimonial[] = [
     content: "Our energy overheads dropped by 65% in the first quarter itself. DRG Power Technology's installation was seamless and professional.",
     rating: 5,
     imageUrl: "https://i.pravatar.cc/150?u=aman"
-  },
-  {
-    id: 2,
-    name: "Sunita Verma",
-    role: "Resident Secretary",
-    content: "Transitioning our society common areas to solar was the best decision. Their reach across Haryana makes maintenance very reliable.",
-    rating: 5,
-    imageUrl: "https://i.pravatar.cc/150?u=sunita"
-  },
-  {
-    id: 3,
-    name: "Vikram Batra",
-    role: "MD, Batra Industries",
-    content: "High-quality engineering. They used premium Tier-1 modules as promised. The backup solution is robust for our industrial plant in Bawal.",
-    rating: 5,
-    imageUrl: "https://i.pravatar.cc/150?u=vikram"
   }
 ];
 
 export const FAQS: FAQItem[] = [
   {
-    question: "Do you serve all cities in Haryana?",
-    answer: "Yes, DRG Power provides full sales, installation, and maintenance services across all 22 districts of Haryana, including Gurugram, Faridabad, Rohtak, Karnal, and Hisar."
+    question: "Do you serve all cities in India?",
+    answer: "Yes, DRG Power Technology Pvt Ltd provides end-to-end solar solutions across India, from site evaluation to installation and support."
   },
   {
-    question: "How long is the warranty on the panels?",
-    answer: "We provide Tier-1 panels with a 10-year product warranty and a 25-year performance warranty (linear power output)."
-  },
-  {
-    question: "Do you handle DHBVN/UHBVN net-metering?",
-    answer: "Absolutely. We manage the entire net-metering application and coordination process with both Dakshin Haryana Bijli Vitran Nigam and Uttar Haryana Bijli Vitran Nigam."
-  },
-  {
-    question: "What is the typical ROI for a solar project?",
-    answer: "For residential projects in Haryana, the payback period is usually 3-4 years. For commercial projects with tax benefits, it can be as low as 2.5 years."
+    question: "How long has the group been in the energy sector?",
+    answer: "The Sanduja Enterprises group has been a trusted partner in energy storage and power solutions since 2012, collaborating with top brands like Livguard."
   }
 ];

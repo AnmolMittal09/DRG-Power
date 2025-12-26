@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { PHONE_PRIMARY, PHONE_SECONDARY, EMAIL_ADDRESS, ADDRESS, ICONS, BRAND_NAME } from '../constants';
+import { PHONE_JATIN, PHONE_DHIRAJ, EMAIL_ADDRESS, ADDRESS, ICONS, BRAND_NAME } from '../constants';
 import { SEO } from '../components/SEO';
 
 const Contact: React.FC = () => {
@@ -28,20 +27,20 @@ const Contact: React.FC = () => {
     <div className="pt-32 lg:pt-48 pb-24 bg-white selection:bg-green-100">
       <SEO 
         title="Contact Us" 
-        description="Get a free solar audit in Haryana. Contact DRG Power Technology for residential, commercial, and industrial solar inquiries. Visit our regional HQ in Gurugram."
+        description="Get a free solar audit. Contact DRG Power Technology for residential, commercial, and industrial solar inquiries. Visit our regional HQ in Gurugram."
       />
       <div className="container mx-auto px-4 md:px-6">
         
         <div className="max-w-4xl mb-16 lg:mb-24">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-100 mb-6">
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-green-700">Available across Haryana</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-green-700">India-Wide Service Coverage</span>
           </div>
           <h1 className="text-5xl md:text-8xl font-[900] text-slate-950 leading-[0.9] tracking-tighter mb-8">
             LET'S <span className="text-gradient">CONNECT.</span>
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 font-medium max-w-2xl leading-relaxed">
-            Switching to solar is a big decision. Our engineering team is here to make the transition transparent, affordable, and professional.
+            Switching to solar is a big decision. Our team is here to make the transition transparent, affordable, and professional.
           </p>
         </div>
 
@@ -50,16 +49,26 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-5 space-y-12">
             
             <div className="grid gap-6">
-              <a href={`tel:${PHONE_PRIMARY}`} className="group p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 flex items-start gap-6">
-                <div className="w-14 h-14 bg-white text-green-700 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-transform">
-                  <span className="text-2xl">📞</span>
-                </div>
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Call Technical Sales</p>
-                  <p className="text-xl font-black text-slate-900 group-hover:text-green-700 transition-colors">{PHONE_PRIMARY}</p>
-                  <p className="text-sm font-bold text-slate-400 mt-1">Available 9 AM - 7 PM</p>
-                </div>
-              </a>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <a href={`tel:${PHONE_JATIN}`} className="group p-6 bg-slate-50 rounded-[2rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 flex flex-col gap-4">
+                  <div className="w-10 h-10 bg-white text-green-700 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                    📞
+                  </div>
+                  <div>
+                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Director - Jatin</p>
+                    <p className="text-sm font-black text-slate-900 group-hover:text-green-700 transition-colors">{PHONE_JATIN}</p>
+                  </div>
+                </a>
+                <a href={`tel:${PHONE_DHIRAJ}`} className="group p-6 bg-slate-50 rounded-[2rem] border border-slate-100 hover:bg-white hover:shadow-2xl transition-all duration-500 flex flex-col gap-4">
+                  <div className="w-10 h-10 bg-white text-green-700 rounded-xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                    📞
+                  </div>
+                  <div>
+                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Director - Dhiraj</p>
+                    <p className="text-sm font-black text-slate-900 group-hover:text-green-700 transition-colors">{PHONE_DHIRAJ}</p>
+                  </div>
+                </a>
+              </div>
 
               <a href={`mailto:${EMAIL_ADDRESS}`} className="group p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 flex items-start gap-6">
                 <div className="w-14 h-14 bg-white text-green-700 rounded-2xl flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-transform">
@@ -79,7 +88,7 @@ const Contact: React.FC = () => {
                     <span className="text-2xl">📍</span>
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Regional HQ</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">Corporate HQ</p>
                     <address className="text-lg font-bold leading-snug not-italic">
                       {ADDRESS}
                     </address>
@@ -100,24 +109,6 @@ const Contact: React.FC = () => {
                 title="DRG Power Technology Location Map in Gurugram"
                 className="grayscale-[0.3] contrast-[1.1] group-hover:grayscale-0 transition-all duration-700"
               ></iframe>
-              
-              <div className="absolute bottom-6 left-6 right-6 glass p-4 rounded-2xl border border-white/20 flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-black uppercase text-slate-900 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    Visit Office
-                  </p>
-                  <p className="text-[10px] font-bold text-slate-500">28°27'16.8"N 76°58'41.3"E</p>
-                </div>
-                <a 
-                  href="https://maps.app.goo.gl/PHDSt8VfqjSSqFeu9" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-slate-900 text-white text-[10px] font-black px-4 py-2 rounded-xl hover:bg-green-700 transition-colors flex items-center gap-2"
-                >
-                  DIRECTIONS ↗
-                </a>
-              </div>
             </div>
           </div>
 
@@ -127,7 +118,7 @@ const Contact: React.FC = () => {
                 <h2 className="text-3xl font-black mb-4 tracking-tight text-slate-950 italic uppercase">
                   Project <span className="text-gradient">Inquiry.</span>
                 </h2>
-                <p className="text-slate-500 font-medium">Fill in the details below for a customized 3D solar design and payback analysis.</p>
+                <p className="text-slate-500 font-medium">Fill in the details below for a customized solar design and payback analysis.</p>
               </div>
 
               {showSuccess ? (
@@ -194,15 +185,12 @@ const Contact: React.FC = () => {
                           <option value="Industrial">Industrial Plant</option>
                           <option value="AMC/Service">Maintenance Only</option>
                         </select>
-                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-40">
-                          {ICONS.ChevronRight}
-                        </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Tell us about your roof space</label>
+                    <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 ml-1">Additional Details</label>
                     <textarea
                       id="message"
                       rows={4}
@@ -221,45 +209,12 @@ const Contact: React.FC = () => {
                         isSubmitting ? 'bg-slate-400 cursor-not-allowed' : 'bg-slate-950 hover:bg-green-700 shadow-slate-200'
                       }`}
                     >
-                      {isSubmitting ? (
-                        <span className="flex items-center gap-3">
-                          <svg className="animate-spin h-6 w-6 text-white" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                          </svg>
-                          PROCESSING
-                        </span>
-                      ) : (
-                        <>
-                          TALK TO AN ENGINEER
-                          <span className="group-hover:translate-x-2 transition-transform">→</span>
-                        </>
-                      )}
+                      TALK TO AN EXPERT
                     </button>
-                    <p className="text-center text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mt-6">
-                      No spam. We only contact you regarding your inquiry.
-                    </p>
                   </div>
                 </form>
               )}
             </div>
-          </div>
-        </div>
-
-        <div className="mt-32 pt-20 border-t border-slate-100">
-          <div className="grid md:grid-cols-3 gap-12 lg:gap-20">
-            <section>
-              <p className="text-3xl font-black text-slate-950 mb-4 tracking-tight leading-none italic uppercase">HARYANA <br /><span className="text-green-600">CERTIFIED.</span></p>
-              <p className="text-slate-500 font-medium leading-relaxed">DRG Power is an empaneled EPC provider with full DHBVN/UHBVN compliance across the state.</p>
-            </section>
-            <section>
-              <p className="text-3xl font-black text-slate-950 mb-4 tracking-tight leading-none italic uppercase">TECHNICAL <br /><span className="text-green-600">AUDITS.</span></p>
-              <p className="text-slate-500 font-medium leading-relaxed">Our solar audits include 3D shadow mapping and structural integrity certification as standard.</p>
-            </section>
-            <section>
-              <p className="text-3xl font-black text-slate-950 mb-4 tracking-tight leading-none italic uppercase">LIFETIME <br /><span className="text-green-600">SUPPORT.</span></p>
-              <p className="text-slate-500 font-medium leading-relaxed">We provide 24/7 monitoring systems and local maintenance teams based in Gurugram and Rohtak.</p>
-            </section>
           </div>
         </div>
       </div>
