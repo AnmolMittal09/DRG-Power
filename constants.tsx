@@ -18,6 +18,7 @@ export const PHONE_SECONDARY = PHONE_DHIRAJ;
 export const EMAIL_ADDRESS = "drgpower712@gmail.com";
 export const ADDRESS = "Khasra No. 246, Gali No. 1, Main Ghari Road Basai, Gurugram Haryana-122006";
 export const WHATSAPP_LINK = "https://wa.me/919211592425";
+export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/rsmXnAT8ZN6qRCdy9";
 
 // Official Brand Logo URL
 export const LOGO_IMAGE = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/Untitled%20design%20%282%29.png"; 
@@ -173,5 +174,21 @@ export const FAQS: FAQItem[] = [
   {
     question: "How long has the group been in the energy sector?",
     answer: "The Sanduja Enterprises group has been a trusted partner in energy storage and power solutions since 2012, collaborating with top brands like Livguard."
+  },
+  {
+    question: "Will solar panels work during cloudy days or rain?",
+    answer: "Yes. Solar panels still generate electricity on cloudy or rainy days, but at a reduced efficiency. Expect 70–80% performance, not zero — a common misconception. Solar panels work on sunlight, not heat."
+  },
+  {
+    question: "Will solar panels reduce my electricity bill?",
+    answer: "Yes. A properly sized solar system can reduce your electricity bill by 50% to 90%, depending on usage and system type."
+  },
+  {
+    question: "What is net metering?",
+    answer: "Net metering allows you to export unused solar power to the grid and receive credits, reducing your electricity bill. Availability depends on state electricity board policies."
+  },
+  {
+    question: "Is solar worth the investment?",
+    answer: "Yes. Most systems recover their cost within 4–6 years, while continuing to generate savings for 20+ years. Few investments give guaranteed returns like solar."
   }
 ];
