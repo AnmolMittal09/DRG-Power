@@ -15,11 +15,11 @@ import {
   LOGO_IMAGE 
 } from '../constants';
 
-// Updated Logo component to include the company name text
+// High-impact Brand Identity Component with specific 'DRG POWER Technology Pvt Ltd' branding
 const Logo: React.FC<{ light?: boolean; scrolled?: boolean }> = ({ light, scrolled }) => (
   <div className="flex items-center gap-3 lg:gap-4 group">
-    {/* Logo Image Container */}
-    <div className={`relative transition-all duration-500 group-hover:scale-105 bg-slate-900 rounded-xl overflow-hidden p-1 shadow-2xl ${
+    {/* Local Image Logo Container */}
+    <div className={`relative transition-all duration-500 group-hover:scale-105 bg-slate-900 rounded-xl overflow-hidden p-1.5 shadow-2xl ring-1 ring-white/10 ${
       scrolled ? 'h-10 lg:h-12' : 'h-14 lg:h-16'
     }`}>
       <img 
@@ -28,22 +28,23 @@ const Logo: React.FC<{ light?: boolean; scrolled?: boolean }> = ({ light, scroll
         className="h-full w-auto object-contain"
         loading="eager"
         onError={(e) => {
-          e.currentTarget.src = "https://i.ibb.co/p6V0fR8m/drg-logo.png";
+          // Fallback to GitHub raw link if local path is not resolved in development
+          e.currentTarget.src = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/logo.png";
         }}
       />
     </div>
     
-    {/* Company Name Text */}
+    {/* Corporate Typography for DRG POWER Technology Pvt Ltd */}
     <div className="flex flex-col justify-center">
-      <div className={`flex items-center gap-1.5 transition-colors duration-500 ${
+      <div className={`flex items-center transition-colors duration-500 ${
         light && !scrolled ? 'text-white' : 'text-slate-950'
       }`}>
         <span className="text-lg lg:text-2xl font-black tracking-tighter leading-none">
           DRG <span className="text-green-600">POWER</span>
         </span>
       </div>
-      <span className={`text-[7px] lg:text-[9px] font-black uppercase tracking-[0.25em] leading-none mt-1 transition-colors duration-500 ${
-        light && !scrolled ? 'text-white/60' : 'text-slate-400'
+      <span className={`text-[7px] lg:text-[9px] font-black uppercase tracking-[0.3em] leading-none mt-1 transition-colors duration-500 ${
+        light && !scrolled ? 'text-white/60' : 'text-slate-500'
       }`}>
         Technology Pvt Ltd
       </span>
