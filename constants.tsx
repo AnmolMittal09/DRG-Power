@@ -16,7 +16,7 @@ export const PHONE_DHIRAJ = "9313481712";
 export const PHONE_PRIMARY = PHONE_JATIN;
 export const PHONE_SECONDARY = PHONE_DHIRAJ;
 export const EMAIL_ADDRESS = "drgpower712@gmail.com";
-export const ADDRESS = "Khasra No. 246, Gali No. 1, Main Ghari Road Basai, Gurugram Haryana-122006";
+export const ADDRESS = "Khasra no 253, Gali No 1, Basai Enclave, VPO, Gurugram, HR 122006.";
 export const WHATSAPP_LINK = "https://wa.me/919211592425";
 export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/rsmXnAT8ZN6qRCdy9";
 
