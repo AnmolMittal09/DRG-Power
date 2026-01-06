@@ -2,8 +2,8 @@
 import React from 'react';
 import { Service, Project, Testimonial, FAQItem } from './types';
 
-export const COMPANY_NAME = "DRG Power Technology Private Limited";
-export const BRAND_NAME = "DRG POWER";
+export const COMPANY_NAME = "DRG POWER TECHNOLOGY PVT. LTD.";
+export const BRAND_NAME = "DRG POWER TECHNOLOGY";
 export const TAGLINE = "CLEAN. RENEWABLE. AFFORDABLE.";
 export const SUB_TAGLINE = "India's Leading Solar Energy Network.";
 export const GROUP_NAME = "Sanduja Enterprises";
@@ -91,7 +91,7 @@ export const SOLUTIONS = [
     title: "On-Grid Systems",
     desc: "The most efficient way to reduce bills. Export excess power to the utility grid and earn credits through Net-metering.",
     icon: "🔌",
-    benefits: ["Zero Battery Costs", "Maximizes ROI", "Govt. Subsidies", "No Maintenance"]
+    benefits: [" Zero Battery Costs", "Maximizes ROI", "Govt. Subsidies", "No Maintenance"]
   },
   {
     id: "off-grid",
@@ -160,7 +160,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: 1,
     name: "Aman Sanduja",
     role: "Proprietor",
-    content: "Our energy overheads dropped by 65% in the first quarter itself. DRG Power Technology's installation was seamless and professional.",
+    content: "Our energy overheads dropped by 65% in the first quarter itself. DRG POWER TECHNOLOGY's installation was seamless and professional.",
     rating: 5,
     imageUrl: "https://i.pravatar.cc/150?u=aman"
   }
@@ -169,7 +169,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS: FAQItem[] = [
   {
     question: "Do you serve all cities in India?",
-    answer: "Yes, DRG Power Technology Pvt Ltd provides end-to-end solar solutions across India, from site evaluation to installation and support."
+    answer: "Yes, DRG POWER TECHNOLOGY PVT. LTD. provides end-to-end solar solutions across India, from site evaluation to installation and support."
   },
   {
     question: "How long has the group been in the energy sector?",

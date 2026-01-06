@@ -15,7 +15,7 @@ const ExpertiseHero = () => {
   }, []);
 
   return (
-    <section className="relative h-[60vh] md:h-[70vh] flex items-center overflow-hidden bg-black">
+    <section className="relative h-[70vh] md:h-[80vh] flex items-center overflow-hidden bg-black">
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 transition-transform duration-300 ease-out scale-110 opacity-50 grayscale contrast-125"
@@ -30,7 +30,7 @@ const ExpertiseHero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-white"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-20 md:pt-24">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-48 md:pt-64 lg:pt-80">
         <div className="max-w-5xl">
           <div className="inline-flex items-center gap-3 bg-red-600/10 backdrop-blur-2xl px-4 md:px-5 py-1.5 md:py-2 rounded-full mb-6 md:mb-8 border border-red-500/20 shadow-2xl">
             <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#BE1E2D] animate-pulse"></span>

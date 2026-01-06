@@ -5,7 +5,7 @@ import { SEO } from '../components/SEO';
 
 const About: React.FC = () => {
   return (
-    <div className="pt-32 md:pt-48 pb-16 md:pb-32 bg-white">
+    <div className="pt-56 md:pt-64 lg:pt-72 pb-16 md:pb-32 bg-white">
       <SEO 
         title="Industrial Heritage" 
         description={`DRG Power Technology, established in ${ESTABLISHED_YEAR}, is an industrial solar energy firm under the umbrella of ${GROUP_NAME}. Partnered with ${PARTNER_BRAND} since ${GROUP_LEGACY_YEAR}.`}

@@ -30,7 +30,7 @@ const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <div className="pt-32 md:pt-48 pb-16 md:pb-32">
+    <div className="pt-56 md:pt-64 lg:pt-80 pb-16 md:pb-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-4xl mx-auto mb-16 md:mb-32">
           <span className="text-[#BE1E2D] font-black uppercase tracking-[0.5em] text-[10px] mb-4 md:mb-8 block">The Workflow</span>

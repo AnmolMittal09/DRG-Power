@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
         description="Direct terminal for DRG Power technical audits. Connect with our engineering leads for high-performance solar infrastructure."
       />
       
-      <section className="pt-32 md:pt-48 pb-16 md:pb-24 container mx-auto px-4 md:px-6">
+      <section className="pt-56 md:pt-64 lg:pt-80 pb-16 md:pb-24 container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24">
           
           {/* Left: Strategic Leads & Info */}

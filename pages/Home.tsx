@@ -16,7 +16,7 @@ const Hero = () => {
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-32 lg:pt-32 pb-16 lg:pb-20">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-56 md:pt-64 lg:pt-80 pb-16 lg:pb-20">
         <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
           
           {/* Left Content (Cols 1-7) */}
