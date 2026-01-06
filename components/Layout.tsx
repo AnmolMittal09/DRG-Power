@@ -19,26 +19,26 @@ import {
 const Logo: React.FC<{ footer?: boolean }> = ({ footer }) => {
   return (
     <div className="flex items-center group cursor-pointer">
-      <div className={`relative transition-all duration-500 transform group-hover:scale-105 flex items-center justify-center bg-white/5 rounded-2xl border border-white/10 p-2 shrink-0 ${
-        footer ? 'h-24 w-24 md:h-32 md:w-32' : 'h-16 w-16 md:h-24 md:w-24'
+      {/* Increased logo size and removed background box */}
+      <div className={`relative transition-all duration-500 transform group-hover:scale-105 flex items-center justify-center shrink-0 ${
+        footer ? 'h-36 w-36 md:h-52 md:w-52' : 'h-24 w-24 md:h-32 md:w-32'
       }`}>
         <img 
           src={LOGO_IMAGE} 
           alt={`${BRAND_NAME} Logo`}
-          className="w-full h-full object-contain filter brightness-110 group-hover:brightness-125 transition-all"
-          style={{ imageRendering: 'auto' }}
+          className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_15px_rgba(190,30,45,0.3)] group-hover:brightness-125 transition-all"
         />
-        <div className="absolute inset-0 bg-[#BE1E2D]/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
       </div>
-      <div className="ml-4 md:ml-6 flex flex-col justify-center border-l-2 border-white/20 pl-4 md:pl-6">
+      <div className="ml-2 md:ml-4 flex flex-col justify-center border-l-2 border-white/10 pl-4 md:pl-6">
         <div className="flex flex-col">
-          <span className="text-xl md:text-3xl font-black tracking-tighter leading-none text-white uppercase flex flex-col">
-            <span className="flex items-center gap-2">
-              DRG <span className="text-[#BE1E2D]">POWER</span>
+          <span className="text-xl md:text-3xl lg:text-4xl font-black tracking-tighter leading-none text-white uppercase">
+            <span className="block mb-1">DRG <span className="text-[#BE1E2D]">POWER</span></span>
+            <span className="flex items-baseline gap-2">
+              <span className="text-lg md:text-2xl lg:text-3xl">TECHNOLOGY</span>
+              {/* "Pvt. Ltd." now placed AFTER Technology */}
+              <span className="text-[10px] md:text-sm font-bold tracking-widest text-white/40 whitespace-nowrap">PVT. LTD.</span>
             </span>
-            <span className="text-sm md:text-xl font-black mt-1">TECHNOLOGY</span>
           </span>
-          <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.3em] text-white/50 leading-none mt-2 md:mt-4">Pvt. Ltd.</span>
         </div>
       </div>
     </div>
@@ -72,8 +72,8 @@ const Header: React.FC = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
         isScrolled || !isHomePage 
-          ? 'bg-black/95 backdrop-blur-xl py-4 md:py-6 shadow-2xl border-b border-white/5' 
-          : 'bg-gradient-to-b from-black/60 to-transparent py-6 md:py-10'
+          ? 'bg-black/95 backdrop-blur-xl py-3 md:py-4 shadow-2xl border-b border-white/5' 
+          : 'bg-gradient-to-b from-black/60 to-transparent py-6 md:py-8'
       }`}>
         <div className="container mx-auto px-4 md:px-6">
           <nav className="flex items-center justify-between">
