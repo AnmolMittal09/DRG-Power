@@ -19,9 +19,9 @@ import {
 const Logo: React.FC<{ footer?: boolean }> = ({ footer }) => {
   return (
     <div className="flex items-center group cursor-pointer">
-      {/* Increased logo size and removed background box */}
+      {/* Footer logo size decreased to be more proportional */}
       <div className={`relative transition-all duration-500 transform group-hover:scale-105 flex items-center justify-center shrink-0 ${
-        footer ? 'h-36 w-36 md:h-52 md:w-52' : 'h-24 w-24 md:h-32 md:w-32'
+        footer ? 'h-20 w-20 md:h-24 md:w-24' : 'h-24 w-24 md:h-32 md:w-32'
       }`}>
         <img 
           src={LOGO_IMAGE} 
@@ -29,15 +29,15 @@ const Logo: React.FC<{ footer?: boolean }> = ({ footer }) => {
           className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_15px_rgba(190,30,45,0.3)] group-hover:brightness-125 transition-all"
         />
       </div>
-      <div className="ml-2 md:ml-4 flex flex-col justify-center border-l-2 border-white/10 pl-4 md:pl-6">
+      <div className="ml-3 md:ml-4 flex flex-col justify-center border-l-2 border-white/10 pl-4 md:pl-5">
         <div className="flex flex-col">
-          <span className="text-xl md:text-3xl lg:text-4xl font-black tracking-tighter leading-none text-white uppercase">
-            <span className="block mb-1">DRG <span className="text-[#BE1E2D]">POWER</span></span>
-            <span className="flex items-baseline gap-2">
-              <span className="text-lg md:text-2xl lg:text-3xl">TECHNOLOGY</span>
-              {/* "Pvt. Ltd." now placed AFTER Technology */}
-              <span className="text-[10px] md:text-sm font-bold tracking-widest text-white/40 whitespace-nowrap">PVT. LTD.</span>
-            </span>
+          <span className="text-xl md:text-2xl lg:text-3xl font-black tracking-tighter leading-none text-white uppercase">
+            DRG <span className="text-[#BE1E2D]">POWER</span>
+          </span>
+          <span className="flex items-baseline gap-2 mt-1">
+            <span className="text-lg md:text-xl lg:text-2xl font-black text-white/90 uppercase">TECHNOLOGY</span>
+            {/* "Pvt. Ltd." placed AFTER Technology horizontally */}
+            <span className="text-[9px] md:text-xs font-bold tracking-widest text-white/40 whitespace-nowrap uppercase">Pvt. Ltd.</span>
           </span>
         </div>
       </div>
@@ -72,8 +72,8 @@ const Header: React.FC = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
         isScrolled || !isHomePage 
-          ? 'bg-black/95 backdrop-blur-xl py-3 md:py-4 shadow-2xl border-b border-white/5' 
-          : 'bg-gradient-to-b from-black/60 to-transparent py-6 md:py-8'
+          ? 'bg-black/95 backdrop-blur-xl py-2 md:py-3 shadow-2xl border-b border-white/5' 
+          : 'bg-gradient-to-b from-black/60 to-transparent py-4 md:py-6'
       }`}>
         <div className="container mx-auto px-4 md:px-6">
           <nav className="flex items-center justify-between">
