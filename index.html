@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRG POWER TECHNOLOGY PVT. LTD. | Leading Solar Energy Solutions</title>
-  <meta name="description" content="Leading solar energy provider for Homes, Housing Societies, and Commercial sectors. High-efficiency solar panels and professional engineering by DRG POWER TECHNOLOGY PVT. LTD.">
-  <meta name="keywords" content="Solar Panels Gurugram, Solar Energy Haryana, DRG POWER TECHNOLOGY PVT. LTD., Solar Installation India, Residential Solar Haryana, Industrial Solar Manesar">
+  <title>SOLAR FLARE | Leading Solar Energy Solutions</title>
+  <meta name="description" content="Leading solar energy provider for Homes, Housing Societies, and Commercial sectors. High-efficiency solar panels and professional engineering by SOLAR FLARE.">
+  <meta name="keywords" content="Solar Panels Gurugram, Solar Energy Haryana, Solar Flare, Solar Installation India, Residential Solar Haryana, Industrial Solar Manesar">
   
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/Untitled%20design%20%282%29.png">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://drgpower.com/">
-  <meta property="og:title" content="DRG POWER TECHNOLOGY PVT. LTD. | Solar Energy Solutions">
+  <meta property="og:title" content="SOLAR FLARE | Solar Energy Solutions">
   <meta property="og:description" content="India's Leading Solar Energy Network. Premium Tier-1 Solar Panels for Homes and Businesses.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://drgpower.com/">
-  <meta property="twitter:title" content="DRG POWER TECHNOLOGY PVT. LTD. | Solar Energy Solutions">
+  <meta property="twitter:title" content="SOLAR FLARE | Solar Energy Solutions">
   <meta property="twitter:description" content="India's Leading Solar Energy Network. Premium Tier-1 Solar Panels for Homes and Businesses.">
   <meta property="twitter:image" content="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200">
 
@@ -32,6 +32,7 @@
     :root {
       --primary: #BE1E2D;
       --primary-dark: #8b1520;
+      --accent-flare: #FF8A00;
       --secondary: #000000;
       --accent: #FFFFFF;
     }
@@ -48,7 +49,7 @@
       position: absolute;
       top: -40px;
       left: 0;
-      background: #BE1E2D;
+      background: var(--primary);
       color: white;
       padding: 8px;
       z-index: 100;
@@ -58,7 +59,7 @@
       top: 0;
     }
     :focus-visible {
-      outline: 3px solid #BE1E2D;
+      outline: 3px solid var(--accent-flare);
       outline-offset: 2px;
     }
     .perspective-1000 { perspective: 1000px; }
@@ -71,7 +72,7 @@
       border: 1px solid rgba(0, 0, 0, 0.05);
     }
     .text-gradient {
-      background: linear-gradient(135deg, #BE1E2D 0%, #000000 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent-flare) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -94,9 +95,9 @@
       transition: all 0.3s ease;
     }
     .btn-red:hover {
-      background-color: var(--primary-dark);
+      background-color: var(--accent-flare);
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px -5px rgba(190, 30, 45, 0.4);
+      box-shadow: 0 10px 20px -5px rgba(255, 138, 0, 0.4);
     }
   </style>
   <script type="importmap">

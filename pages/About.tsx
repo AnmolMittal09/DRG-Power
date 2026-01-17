@@ -8,7 +8,7 @@ const About: React.FC = () => {
     <div className="pt-56 md:pt-64 lg:pt-72 pb-16 md:pb-32 bg-white">
       <SEO 
         title="Industrial Heritage" 
-        description={`DRG Power Technology, established in ${ESTABLISHED_YEAR}, is an industrial solar energy firm under the umbrella of ${GROUP_NAME}. Partnered with ${PARTNER_BRAND} since ${GROUP_LEGACY_YEAR}.`}
+        description={`SOLAR FLARE, established in ${ESTABLISHED_YEAR}, is an industrial solar energy firm under the umbrella of ${GROUP_NAME}. Partnered with ${PARTNER_BRAND} since ${GROUP_LEGACY_YEAR}.`}
       />
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
         {/* Hero Section */}
@@ -20,7 +20,7 @@ const About: React.FC = () => {
             </div>
             <div className="space-y-6 md:space-y-8 text-base sm:text-lg md:text-2xl text-slate-500 font-medium leading-relaxed italic">
               <p>
-                DRG Power Technology Pvt Ltd is a forward-looking solar energy firm under the umbrella of <span className="text-slate-900 font-bold">{GROUP_NAME}</span>, dedicated to bringing sustainable, cost-effective solutions to Gurugram and beyond.
+                SOLAR FLARE is a forward-looking solar energy firm under the umbrella of <span className="text-slate-900 font-bold">{GROUP_NAME}</span>, dedicated to bringing sustainable, cost-effective solutions to Gurugram and beyond.
               </p>
               <p>
                 Since <span className="text-[#BE1E2D] font-bold">{GROUP_LEGACY_YEAR}</span>, our group has proudly partnered with <span className="text-slate-900 font-bold">{PARTNER_BRAND}</span>, one of India's leading power solution brands, managing a complete distribution network with professional excellence.
@@ -29,7 +29,7 @@ const About: React.FC = () => {
             <div className="flex gap-10 md:gap-16 pt-4 md:pt-8 border-t border-slate-50">
               <div>
                 <span className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 italic block">2021</span>
-                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.4em] text-slate-400">Founded DRG</span>
+                <span className="text-[9px] md:text-[11px] font-black uppercase tracking-[0.4em] text-slate-400">Founded Flare</span>
               </div>
               <div>
                 <span className="text-4xl sm:text-5xl md:text-6xl font-black text-[#BE1E2D] italic block">{GROUP_LEGACY_YEAR}</span>
@@ -43,7 +43,7 @@ const About: React.FC = () => {
                <img 
                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=1200" 
                  className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
-                 alt="DRG Power Industrial Context"
+                 alt="SOLAR FLARE Industrial Context"
                />
              </div>
           </div>

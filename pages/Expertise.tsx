@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import * as ReactRouterDOM from 'react-router-dom';
 const { Link } = ReactRouterDOM;
-import { SERVICES, SOLUTIONS, ICONS } from '../constants';
+import { SERVICES, SOLUTIONS, ICONS, BRAND_NAME } from '../constants';
 import { SEO } from '../components/SEO';
 
 const ExpertiseHero = () => {
@@ -32,14 +32,14 @@ const ExpertiseHero = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 pt-48 md:pt-64 lg:pt-80">
         <div className="max-w-5xl">
-          <div className="inline-flex items-center gap-3 bg-red-600/10 backdrop-blur-2xl px-4 md:px-5 py-1.5 md:py-2 rounded-full mb-6 md:mb-8 border border-red-500/20 shadow-2xl">
-            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#BE1E2D] animate-pulse"></span>
+          <div className="inline-flex items-center gap-3 bg-orange-600/10 backdrop-blur-2xl px-4 md:px-5 py-1.5 md:py-2 rounded-full mb-6 md:mb-8 border border-orange-500/20 shadow-2xl">
+            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#FF8A00] animate-pulse"></span>
             <span className="text-white text-[9px] md:text-[11px] font-black uppercase tracking-[0.4em]">Precision Engineering</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-[8rem] font-black text-white leading-[0.9] lg:leading-[0.8] mb-6 md:mb-10 tracking-tighter uppercase italic">
             TECHNICAL <br />
-            <span className="text-[#BE1E2D]">SOLUTIONS.</span>
+            <span className="text-[#FF8A00]">SOLUTIONS.</span>
           </h1>
 
           <p className="text-lg md:text-3xl text-slate-400 max-w-2xl font-medium leading-relaxed italic">
@@ -64,8 +64,8 @@ const Expertise: React.FC = () => {
       <section id="solutions" className="py-20 md:py-40 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16 md:mb-32">
-            <span className="text-[#BE1E2D] font-black uppercase tracking-[0.6em] text-[10px] mb-4 md:mb-8 block">Technical Architecture</span>
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic leading-none">ENERGY <span className="text-gradient">MODALITIES.</span></h2>
+            <span className="text-[#FF8A00] font-black uppercase tracking-[0.6em] text-[10px] mb-4 md:mb-8 block">Technical Architecture</span>
+            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic leading-none">ENERGY <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BE1E2D] to-[#FF8A00]">MODALITIES.</span></h2>
             <p className="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium italic mt-6 md:mt-8">
               Choose the protocol that fits your energy autonomy goals.
             </p>
@@ -73,14 +73,14 @@ const Expertise: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {SOLUTIONS.map((sol) => (
-              <div key={sol.id} className="bg-slate-50 p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-slate-100 hover:border-[#BE1E2D]/20 transition-all group shadow-sm hover:shadow-2xl">
+              <div key={sol.id} className="bg-slate-50 p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-slate-100 hover:border-[#FF8A00]/20 transition-all group shadow-sm hover:shadow-2xl">
                 <div className="text-5xl md:text-7xl mb-6 md:mb-10 group-hover:scale-110 transition-transform origin-left">{sol.icon}</div>
                 <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 tracking-tight text-slate-900 uppercase italic">{sol.title}</h3>
                 <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed mb-8 md:mb-10 italic">{sol.desc}</p>
                 <div className="space-y-3 md:space-y-4">
                   {sol.benefits.map((benefit, idx) => (
                     <div key={idx} className="flex items-center gap-3 md:gap-4 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-400">
-                      <span className="w-1.5 h-1.5 bg-[#BE1E2D] rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-[#FF8A00] rounded-full"></span>
                       {benefit}
                     </div>
                   ))}
@@ -96,7 +96,7 @@ const Expertise: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16 md:mb-32">
             <span className="text-[#BE1E2D] font-black uppercase tracking-[0.6em] text-[10px] mb-4 md:mb-8 block">Sector Domains</span>
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic leading-none">CORE <span className="text-[#BE1E2D]">SERVICES.</span></h2>
+            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic leading-none">CORE <span className="text-[#FF8A00]">SERVICES.</span></h2>
           </div>
 
           <div className="space-y-24 md:space-y-48">
@@ -113,14 +113,14 @@ const Expertise: React.FC = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 md:mb-12">
                     {s.features.map((f, i) => (
                       <div key={i} className="flex items-center gap-3 md:gap-4 bg-white p-4 md:p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <div className="w-6 h-6 md:w-8 md:h-8 bg-[#BE1E2D] text-white rounded-lg flex items-center justify-center shrink-0">
+                        <div className="w-6 h-6 md:w-8 md:h-8 bg-[#FF8A00] text-white rounded-lg flex items-center justify-center shrink-0">
                           {ICONS.Check}
                         </div>
                         <span className="font-black text-slate-900 text-[9px] md:text-[10px] uppercase tracking-widest">{f}</span>
                       </div>
                     ))}
                   </div>
-                  <Link to="/contact" className="inline-flex items-center gap-4 md:gap-6 bg-black text-white px-8 md:px-10 py-4 md:py-6 rounded-xl font-black text-base md:text-lg hover:bg-[#BE1E2D] transition-all uppercase tracking-widest w-full sm:w-auto justify-center">
+                  <Link to="/contact" className="inline-flex items-center gap-4 md:gap-6 bg-black text-white px-8 md:px-10 py-4 md:py-6 rounded-xl font-black text-base md:text-lg hover:bg-[#FF8A00] transition-all uppercase tracking-widest w-full sm:w-auto justify-center">
                     Request Audit Desk <span>→</span>
                   </Link>
                 </div>
@@ -152,12 +152,12 @@ const Expertise: React.FC = () => {
                 { title: "Maintenance", desc: "Annual technical health checks and cleaning." }
               ].map((item, i) => (
                 <div key={i} className="p-6 md:p-8 bg-white/5 rounded-2xl md:rounded-3xl border border-white/10">
-                  <h4 className="text-base md:text-lg font-black uppercase mb-2 md:mb-3 text-[#BE1E2D] italic">{item.title}</h4>
+                  <h4 className="text-base md:text-lg font-black uppercase mb-2 md:mb-3 text-[#FF8A00] italic">{item.title}</h4>
                   <p className="text-white/50 text-[11px] md:text-sm font-medium italic">{item.desc}</p>
                 </div>
               ))}
             </div>
-            <Link to="/contact" className="inline-block mt-10 md:mt-16 bg-[#BE1E2D] text-white px-10 md:px-16 py-4 md:py-7 rounded-2xl font-black text-lg md:text-xl hover:scale-105 transition-all shadow-3xl uppercase tracking-widest w-full sm:w-auto">
+            <Link to="/contact" className="inline-block mt-10 md:mt-16 bg-[#BE1E2D] hover:bg-[#FF8A00] text-white px-10 md:px-16 py-4 md:py-7 rounded-2xl font-black text-lg md:text-xl hover:scale-105 transition-all shadow-3xl uppercase tracking-widest w-full sm:w-auto">
               Schedule Feasibility
             </Link>
           </div>

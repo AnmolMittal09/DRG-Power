@@ -19,25 +19,19 @@ import {
 const Logo: React.FC<{ footer?: boolean }> = ({ footer }) => {
   return (
     <div className="flex items-center group cursor-pointer">
-      {/* Footer logo size decreased to be more proportional */}
       <div className={`relative transition-all duration-500 transform group-hover:scale-105 flex items-center justify-center shrink-0 ${
-        footer ? 'h-20 w-20 md:h-24 md:w-24' : 'h-24 w-24 md:h-32 md:w-32'
+        footer ? 'h-16 w-16 md:h-20 md:w-20' : 'h-20 w-20 md:h-24 md:w-24'
       }`}>
         <img 
           src={LOGO_IMAGE} 
           alt={`${BRAND_NAME} Logo`}
-          className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_15px_rgba(190,30,45,0.3)] group-hover:brightness-125 transition-all"
+          className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_15px_rgba(255,138,0,0.3)] group-hover:brightness-125 transition-all"
         />
       </div>
       <div className="ml-3 md:ml-4 flex flex-col justify-center border-l-2 border-white/10 pl-4 md:pl-5">
         <div className="flex flex-col">
-          <span className="text-xl md:text-2xl lg:text-3xl font-black tracking-tighter leading-none text-white uppercase">
-            DRG <span className="text-[#BE1E2D]">POWER</span>
-          </span>
-          <span className="flex items-baseline gap-2 mt-1">
-            <span className="text-lg md:text-xl lg:text-2xl font-black text-white/90 uppercase">TECHNOLOGY</span>
-            {/* "Pvt. Ltd." placed AFTER Technology horizontally */}
-            <span className="text-[9px] md:text-xs font-bold tracking-widest text-white/40 whitespace-nowrap uppercase">Pvt. Ltd.</span>
+          <span className="text-xl md:text-2xl lg:text-3xl font-black tracking-tighter leading-none uppercase">
+            <span className="text-[#BE1E2D]">SOLAR</span> <span className="text-[#FF8A00]">FLARE</span>
           </span>
         </div>
       </div>
@@ -73,7 +67,7 @@ const Header: React.FC = () => {
       <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
         isScrolled || !isHomePage 
           ? 'bg-black/95 backdrop-blur-xl py-2 md:py-3 shadow-2xl border-b border-white/5' 
-          : 'bg-gradient-to-b from-black/60 to-transparent py-4 md:py-6'
+          : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
       }`}>
         <div className="container mx-auto px-4 md:px-6">
           <nav className="flex items-center justify-between">
@@ -86,7 +80,7 @@ const Header: React.FC = () => {
                 <Link 
                   key={link.path}
                   to={link.path} 
-                  className={`text-[9px] font-black uppercase tracking-[0.3em] transition-all hover:text-white ${
+                  className={`text-[9px] font-black uppercase tracking-[0.3em] transition-all hover:text-[#FF8A00] ${
                     location.pathname === link.path ? 'text-white' : 'text-white/60'
                   }`}
                 >
@@ -95,7 +89,7 @@ const Header: React.FC = () => {
               ))}
               <a
                 href={`tel:+91${PHONE_PRIMARY}`}
-                className="bg-white text-black hover:bg-[#BE1E2D] hover:text-white px-6 py-3 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all flex items-center gap-2 group shadow-lg uppercase shrink-0"
+                className="bg-white text-black hover:bg-[#FF8A00] hover:text-white px-6 py-3 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all flex items-center gap-2 group shadow-lg uppercase shrink-0"
               >
                 CALL US <span className="text-lg group-hover:translate-x-1 transition-transform">→</span>
               </a>
@@ -125,13 +119,13 @@ const Header: React.FC = () => {
                 key={link.path}
                 to={link.path} 
                 className={`text-2xl md:text-3xl font-black uppercase italic tracking-tighter transition-all ${
-                  location.pathname === link.path ? 'text-[#BE1E2D]' : 'text-white'
+                  location.pathname === link.path ? 'text-[#FF8A00]' : 'text-white'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <a href={`tel:+91${PHONE_PRIMARY}`} className="mt-8 bg-[#BE1E2D] text-white py-4 md:py-5 rounded-2xl text-center font-black tracking-widest uppercase text-base md:text-lg shadow-2xl">Call Project Desk</a>
+            <a href={`tel:+91${PHONE_PRIMARY}`} className="mt-8 bg-[#BE1E2D] text-white py-4 md:py-5 rounded-2xl text-center font-black tracking-widest uppercase text-base md:text-lg shadow-2xl hover:bg-[#FF8A00] transition-colors">Call Project Desk</a>
           </div>
         </div>
       </div>
@@ -148,15 +142,15 @@ const Footer: React.FC = () => (
         <div className="lg:col-span-1 space-y-8 md:space-y-10">
           <Logo footer />
           <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-xs italic">
-            Delivering high-performance solar infrastructure for residential and commercial assets. Built for longevity and yield.
+            Delivering high-performance solar infrastructure for residential and commercial assets. Built for longevity and extreme thermal yield.
           </p>
           <div className="flex gap-4">
-            <a href="https://www.instagram.com/drg_solar_/?igsh=Nm5laW0waHNscTRt#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#BE1E2D] hover:text-[#BE1E2D] transition-all" aria-label="Instagram">
+            <a href="https://www.instagram.com/drg_solar_/?igsh=Nm5laW0waHNscTRt#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all" aria-label="Instagram">
               <svg className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <a href="#" className="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#BE1E2D] hover:text-[#BE1E2D] transition-all" aria-label="Facebook">
+            <a href="#" className="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all" aria-label="Facebook">
               <svg className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </a>
           </div>
@@ -168,7 +162,7 @@ const Footer: React.FC = () => (
           <ul className="space-y-4 md:space-y-5">
             {SOLUTIONS.map(sol => (
               <li key={sol.id}>
-                <Link to="/expertise#solutions" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest block">
+                <Link to="/expertise#solutions" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest block">
                   {sol.title}
                 </Link>
               </li>
@@ -182,7 +176,7 @@ const Footer: React.FC = () => (
           <ul className="space-y-4 md:space-y-5">
             {SERVICES.map(service => (
               <li key={service.id}>
-                <Link to="/expertise#services" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest block">
+                <Link to="/expertise#services" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest block">
                   {service.title}
                 </Link>
               </li>
@@ -194,11 +188,11 @@ const Footer: React.FC = () => (
         <div className="space-y-6 md:space-y-8">
           <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Company</h3>
           <ul className="space-y-4 md:space-y-5">
-            <li><Link to="/about" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">About Us</Link></li>
-            <li><Link to="/brands" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">Brands</Link></li>
-            <li><Link to="/projects" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">Projects</Link></li>
-            <li><Link to="/faq" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">Knowledge Hub</Link></li>
-            <li><Link to="/how-it-works" className="text-xs md:text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">Protocol</Link></li>
+            <li><Link to="/about" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">About Us</Link></li>
+            <li><Link to="/brands" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Brands</Link></li>
+            <li><Link to="/projects" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Projects</Link></li>
+            <li><Link to="/faq" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Knowledge Hub</Link></li>
+            <li><Link to="/how-it-works" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Protocol</Link></li>
           </ul>
         </div>
 
@@ -207,12 +201,12 @@ const Footer: React.FC = () => (
           <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Reach Us</h3>
           <div className="space-y-4 md:space-y-6">
             <div className="flex flex-col gap-1 md:gap-2">
-              <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] text-[#BE1E2D]">Project Desk</span>
-              <a href={`tel:+91${PHONE_JATIN}`} className="text-lg md:text-xl font-black tracking-tighter text-white hover:text-[#BE1E2D] transition-colors">{PHONE_JATIN}</a>
+              <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] text-[#FF8A00]">Project Desk</span>
+              <a href={`tel:+91${PHONE_JATIN}`} className="text-lg md:text-xl font-black tracking-tighter text-white hover:text-[#FF8A00] transition-colors">{PHONE_JATIN}</a>
             </div>
             <div className="flex flex-col gap-1 md:gap-2">
               <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] text-[#BE1E2D]">Technical Leads</span>
-              <a href={`tel:+91${PHONE_DHIRAJ}`} className="text-lg md:text-xl font-black tracking-tighter text-white hover:text-[#BE1E2D] transition-colors">{PHONE_DHIRAJ}</a>
+              <a href={`tel:+91${PHONE_DHIRAJ}`} className="text-lg md:text-xl font-black tracking-tighter text-white hover:text-[#FF8A00] transition-colors">{PHONE_DHIRAJ}</a>
             </div>
             <div className="pt-2 border-t border-white/10 mt-2 md:mt-4">
               <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-white transition-colors block mb-2 md:mb-4 italic break-all">{EMAIL_ADDRESS}</a>
@@ -225,13 +219,13 @@ const Footer: React.FC = () => (
 
       <div className="flex flex-col items-center gap-4 md:gap-6 pt-10 md:pt-12 border-t border-white/5 text-center">
         <p className="text-[7px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/20 px-4">
-          © 2024 {COMPANY_NAME} ENGINEERING THE FUTURE.
+          © 2024 {COMPANY_NAME} FLARING THE FUTURE.
         </p>
         <div className="flex flex-wrap justify-center gap-4 md:gap-10 text-[7px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/30 px-4">
-          <a href="#" className="hover:text-white transition-colors">Compliance</a>
-          <a href="#" className="hover:text-white transition-colors">Grid Health</a>
-          <a href="#" className="hover:text-white transition-colors">Security</a>
-          <Link to="/contact" className="hover:text-white transition-colors">Support Terminal</Link>
+          <a href="#" className="hover:text-[#FF8A00] transition-colors">Compliance</a>
+          <a href="#" className="hover:text-[#FF8A00] transition-colors">Grid Health</a>
+          <a href="#" className="hover:text-[#FF8A00] transition-colors">Security</a>
+          <Link to="/contact" className="hover:text-[#FF8A00] transition-colors">Support Terminal</Link>
         </div>
       </div>
     </div>
@@ -243,7 +237,7 @@ const WhatsAppButton: React.FC = () => (
     href={WHATSAPP_LINK}
     target="_blank"
     rel="noopener noreferrer"
-    className="fixed bottom-6 md:bottom-10 right-6 md:right-10 z-50 bg-[#BE1E2D] text-white w-12 h-12 md:w-16 md:h-16 rounded-2xl md:rounded-3xl shadow-3xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all border border-white/20 group"
+    className="fixed bottom-6 md:bottom-10 right-6 md:right-10 z-50 bg-[#FF8A00] text-white w-12 h-12 md:w-16 md:h-16 rounded-2xl md:rounded-3xl shadow-3xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all border border-white/20 group"
     aria-label="WhatsApp"
   >
     <svg className="w-6 h-6 md:w-8 md:h-8 fill-current text-white" viewBox="0 0 24 24">
@@ -256,12 +250,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const { pathname, hash } = useLocation();
   
   useEffect(() => {
-    // If there's an anchor hash (e.g., #solutions), scroll to that element
     if (hash) {
       try {
         const element = document.querySelector(hash);
         if (element) {
-          // Adding a slight delay to ensure the page has rendered
           setTimeout(() => {
             element.scrollIntoView({ behavior: 'smooth' });
           }, 100);
@@ -270,7 +262,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         console.warn("Invalid selector in hash:", hash);
       }
     } else {
-      // Normal page navigation, scroll to top
       window.scrollTo(0, 0);
     }
   }, [pathname, hash]);
