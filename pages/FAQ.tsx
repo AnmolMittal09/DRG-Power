@@ -14,7 +14,7 @@ const FAQ: React.FC = () => {
       />
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-24">
-           <span className="text-[#BE1E2D] font-black uppercase tracking-[0.5em] text-[10px] mb-8 block">Project Support</span>
+           <span className="text-[#F97316] font-black uppercase tracking-[0.5em] text-[10px] mb-8 block">Project Support</span>
            <h1 className="text-6xl md:text-[8rem] font-[900] mb-8 italic uppercase italic tracking-tighter leading-none text-white">COMMON <br /><span className="text-gradient">QUERIES.</span></h1>
            <p className="text-2xl text-slate-500 font-medium italic">Everything you need to verify before your energy transition.</p>
         </div>
@@ -30,7 +30,7 @@ const FAQ: React.FC = () => {
                 className="w-full text-left p-10 flex items-center justify-between hover:bg-[#111] transition-colors focus:outline-none"
               >
                 <span className="text-xl lg:text-2xl font-black text-white tracking-tighter uppercase italic">{faq.question}</span>
-                <span className={`text-4xl transition-all duration-500 font-black ${activeIndex === i ? 'rotate-180 text-[#BE1E2D]' : 'text-slate-600'}`} aria-hidden="true">
+                <span className={`text-4xl transition-all duration-500 font-black ${activeIndex === i ? 'rotate-180 text-[#F97316]' : 'text-slate-600'}`} aria-hidden="true">
                   {activeIndex === i ? '−' : '+'}
                 </span>
               </button>
@@ -48,7 +48,7 @@ const FAQ: React.FC = () => {
         </div>
 
         <div className="mt-32 p-16 lg:p-24 bg-black text-white rounded-sm border border-white/10 shadow-3xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/5 blur-[150px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-600/5 blur-[150px] rounded-full pointer-events-none"></div>
           <h2 className="text-4xl lg:text-6xl font-[900] mb-8 tracking-tighter uppercase italic italic">Deeper Analysis?</h2>
           <p className="text-2xl text-slate-500 font-medium mb-16 max-w-2xl mx-auto leading-relaxed italic">
             Technical desks are available for live consultation regarding project-specific load requirements.
@@ -56,7 +56,7 @@ const FAQ: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-8">
             <a 
               href={`mailto:${EMAIL_ADDRESS}`} 
-              className="bg-white text-black px-16 py-6 rounded-sm font-black text-xl hover:bg-[#BE1E2D] hover:text-white transition-all shadow-3xl uppercase tracking-widest active:scale-95"
+              className="bg-white text-black px-16 py-6 rounded-sm font-black text-xl hover:bg-[#F97316] hover:text-white transition-all shadow-3xl uppercase tracking-widest active:scale-95"
             >
               Email Desk
             </a>

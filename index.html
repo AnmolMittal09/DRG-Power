@@ -4,101 +4,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOLAR FLARE | Leading Solar Energy Solutions</title>
-  <meta name="description" content="Leading solar energy provider for Homes, Housing Societies, and Commercial sectors. High-efficiency solar panels and professional engineering by SOLAR FLARE.">
-  <meta name="keywords" content="Solar Panels Gurugram, Solar Energy Haryana, Solar Flare, Solar Installation India, Residential Solar Haryana, Industrial Solar Manesar">
+  <title>SOLAR FLARE | High-Performance Industrial Solar</title>
+  <meta name="description" content="Leading industrial solar energy provider. Premium engineering and high-yield infrastructure for a sustainable legacy.">
   
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/Untitled%20design%20%282%29.png">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://drgpower.com/">
-  <meta property="og:title" content="SOLAR FLARE | Solar Energy Solutions">
-  <meta property="og:description" content="India's Leading Solar Energy Network. Premium Tier-1 Solar Panels for Homes and Businesses.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://drgpower.com/">
-  <meta property="twitter:title" content="SOLAR FLARE | Solar Energy Solutions">
-  <meta property="twitter:description" content="India's Leading Solar Energy Network. Premium Tier-1 Solar Panels for Homes and Businesses.">
-  <meta property="twitter:image" content="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #BE1E2D;
-      --primary-dark: #8b1520;
-      --accent-flare: #FF8A00;
-      --secondary: #000000;
-      --accent: #FFFFFF;
+      --primary: #DC2626;
+      --primary-bright: #FF1F1F;
+      --primary-maroon: #A80000;
+      --accent-orange: #F97316;
+      --background: #050505;
+      --text-slate: #94A3B8;
     }
     body {
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
-      background-color: #050505;
+      background-color: var(--background);
       color: #eeeeee;
+    }
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Outfit', sans-serif;
     }
     .scroll-smooth {
       scroll-behavior: smooth;
     }
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--primary);
-      color: white;
-      padding: 8px;
-      z-index: 100;
-      transition: top 0.3s;
-    }
-    .skip-link:focus {
-      top: 0;
-    }
-    :focus-visible {
-      outline: 3px solid var(--accent-flare);
-      outline-offset: 2px;
-    }
-    .perspective-1000 { perspective: 1000px; }
-    .perspective-2000 { perspective: 2000px; }
-    .preserve-3d { transform-style: preserve-3d; }
     .glass {
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
     .text-gradient {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent-flare) 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent-orange) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .bg-grid {
-      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+      background-image: radial-gradient(rgba(220, 38, 38, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    .btn-glow:hover {
+      box-shadow: 0 0 25px rgba(220, 38, 38, 0.3), 0 0 15px rgba(249, 115, 22, 0.2);
     }
-    .animate-float { animation: float 4s ease-in-out infinite; }
-    
-    .industrial-border {
-      border-left: 4px solid var(--primary);
-    }
-
-    .btn-red {
-      background-color: var(--primary);
-      transition: all 0.3s ease;
-    }
-    .btn-red:hover {
-      background-color: var(--accent-flare);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px -5px rgba(255, 138, 0, 0.4);
-    }
+    .perspective-2000 { perspective: 2000px; }
+    .preserve-3d { transform-style: preserve-3d; }
   </style>
   <script type="importmap">
 {
@@ -114,7 +69,6 @@
 </script>
 </head>
 <body class="bg-grid">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div id="root"></div>
   <script type="module" src="./index.tsx"></script>
 </body>
