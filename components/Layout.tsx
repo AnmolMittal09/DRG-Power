@@ -1,44 +1,60 @@
 
 import React, { useState, useEffect } from 'react';
-import * as ReactRouterDOM from 'react-router-dom';
-const { Link, useLocation } = ReactRouterDOM;
-import { 
-  COMPANY_NAME, 
-  BRAND_NAME, 
-  PHONE_PRIMARY, 
-  PHONE_JATIN, 
+import { Link, useLocation } from 'react-router-dom';
+import {
+  COMPANY_NAME,
+  BRAND_NAME,
+  PHONE_PRIMARY,
+  PHONE_JATIN,
   PHONE_DHIRAJ,
-  WHATSAPP_LINK, 
-  ADDRESS, 
+  WHATSAPP_LINK,
+  ADDRESS,
   EMAIL_ADDRESS,
   LOGO_IMAGE,
   SOLUTIONS,
-  SERVICES
+  SERVICES,
 } from '../constants';
 
-const Logo: React.FC<{ footer?: boolean }> = ({ footer }) => {
+/* ----------------------------------
+   LOGO COMPONENT
+---------------------------------- */
+const Logo: React.FC<{ variant?: 'header' | 'footer' }> = ({ variant = 'header' }) => {
+  const isFooter = variant === 'footer';
+  
   return (
     <div className="flex items-center group cursor-pointer">
-      <div className={`relative transition-all duration-500 transform group-hover:scale-105 flex items-center justify-center shrink-0 ${
-        footer ? 'h-16 w-16 md:h-20 md:w-20' : 'h-20 w-20 md:h-24 md:w-24'
+      <div className={`relative flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
+        isFooter ? 'h-10 w-10 md:h-16 md:w-16' : 'h-12 w-12 md:h-20 md:w-20 lg:h-24 lg:w-24'
       }`}>
-        <img 
-          src={LOGO_IMAGE} 
+        <img
+          src={LOGO_IMAGE}
           alt={`${BRAND_NAME} Logo`}
-          className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_15px_rgba(255,138,0,0.3)] group-hover:brightness-125 transition-all"
+          className={`w-full h-full object-contain ${
+            isFooter ? 'opacity-90' : 'filter brightness-110 drop-shadow-[0_0_15px_rgba(255,138,0,0.35)]'
+          }`}
         />
       </div>
-      <div className="ml-3 md:ml-4 flex flex-col justify-center border-l-2 border-white/10 pl-4 md:pl-5">
-        <div className="flex flex-col">
-          <span className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter leading-none uppercase">
-            <span className="text-[#BE1E2D]">SOLAR</span> <span className="text-[#FF8A00]">FLARE</span>
-          </span>
-        </div>
+
+      <div className={`ml-2 md:ml-4 pl-2 md:pl-4 border-l border-white/10 ${isFooter ? 'leading-tight' : 'leading-[0.85]'}`}>
+        <span className={`block font-black tracking-tighter uppercase ${
+          isFooter ? 'text-sm md:text-xl' : 'text-2xl md:text-4xl lg:text-6xl'
+        }`}>
+          <span className="text-[#BE1E2D]">Solar</span>{' '}
+          <span className="text-[#FF8A00]">Flare</span>
+        </span>
+        <span className={`block uppercase tracking-[0.2em] text-white/40 mt-0.5 md:mt-1 ${
+          isFooter ? 'text-[6px] md:text-[8px]' : 'text-[6px] md:text-[8px] lg:text-[9px]'
+        }`}>
+          DRG POWER TECHNOLOGY PVT. LTD.
+        </span>
       </div>
     </div>
   );
 };
 
+/* ----------------------------------
+   HEADER
+---------------------------------- */
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,12 +83,12 @@ const Header: React.FC = () => {
       <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
         isScrolled || !isHomePage 
           ? 'bg-black/95 backdrop-blur-xl py-2 md:py-3 shadow-2xl border-b border-white/5' 
-          : 'bg-gradient-to-b from-black/80 to-transparent py-4 md:py-6'
+          : 'bg-gradient-to-b from-black/80 to-transparent py-2 md:py-6'
       }`}>
         <div className="container mx-auto px-4 md:px-6">
           <nav className="flex items-center justify-between">
             <Link to="/" className="z-10 shrink-0">
-              <Logo />
+              <Logo variant="header" />
             </Link>
 
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -80,7 +96,7 @@ const Header: React.FC = () => {
                 <Link 
                   key={link.path}
                   to={link.path} 
-                  className={`text-[9px] font-black uppercase tracking-[0.3em] transition-all hover:text-[#FF8A00] ${
+                  className={`text-[9px] font-black uppercase tracking-[0.35em] transition-all hover:text-[#FF8A00] ${
                     location.pathname === link.path ? 'text-white' : 'text-white/60'
                   }`}
                 >
@@ -96,20 +112,21 @@ const Header: React.FC = () => {
             </div>
 
             <button
-              className="lg:hidden p-3 text-white bg-white/5 rounded-xl border border-white/10"
+              className="lg:hidden p-2 text-white bg-white/5 rounded-lg border border-white/10 relative z-10"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
             >
               <div className="w-6 h-5 relative">
-                <span className={`absolute block h-0.5 w-6 bg-current transition-all ${isOpen ? 'rotate-45 top-2' : 'top-0'}`}></span>
-                <span className={`absolute block h-0.5 w-6 bg-current transition-all top-2 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`absolute block h-0.5 w-6 bg-current transition-all ${isOpen ? '-rotate-45 top-2' : 'top-4'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 top-2' : 'top-0'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 top-2 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`absolute block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 top-2' : 'top-4'}`}></span>
               </div>
             </button>
           </nav>
         </div>
       </header>
 
+      {/* MOBILE NAV OVERLAY */}
       <div className={`fixed inset-0 z-[55] lg:hidden transition-all duration-500 ${isOpen ? 'visible' : 'invisible'}`}>
         <div className={`absolute inset-0 bg-black/98 backdrop-blur-3xl transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsOpen(false)} />
         <div className={`absolute inset-y-0 right-0 w-full sm:w-[350px] md:w-[450px] bg-[#050505] flex flex-col p-8 md:p-12 transition-transform duration-700 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
@@ -118,6 +135,7 @@ const Header: React.FC = () => {
               <Link 
                 key={link.path}
                 to={link.path} 
+                onClick={() => setIsOpen(false)}
                 className={`text-2xl md:text-3xl font-black uppercase italic tracking-tighter transition-all ${
                   location.pathname === link.path ? 'text-[#FF8A00]' : 'text-white'
                 }`}
@@ -133,25 +151,28 @@ const Header: React.FC = () => {
   );
 };
 
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
 const Footer: React.FC = () => (
-  <footer className="bg-black text-white pt-20 md:pt-32 pb-8 font-sans border-t border-white/5">
+  <footer className="bg-black text-white pt-20 md:pt-32 pb-10 font-sans border-t border-white/5">
     <div className="container mx-auto px-4 md:px-6 lg:px-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 md:gap-16 lg:gap-8 mb-20 md:mb-32">
         
         {/* Column 1: Identity */}
         <div className="lg:col-span-1 space-y-8 md:space-y-10">
-          <Logo footer />
+          <Logo variant="footer" />
           <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-xs italic">
             Delivering high-performance solar infrastructure for residential and commercial assets. Built for longevity and extreme thermal yield.
           </p>
           <div className="flex gap-4">
-            <a href="https://www.instagram.com/drg_solar_/?igsh=Nm5laW0waHNscTRt#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all" aria-label="Instagram">
-              <svg className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24">
+            <a href="https://www.instagram.com/drg_solar_/?igsh=Nm5laW0waHNscTRt#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all" aria-label="Instagram">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
               </svg>
             </a>
-            <a href="#" className="w-10 h-10 md:w-12 md:h-12 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all" aria-label="Facebook">
-              <svg className="w-5 h-5 md:w-6 md:h-6 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center rounded-xl hover:border-[#FF8A00] hover:text-[#FF8A00] transition-all" aria-label="Facebook">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
             </a>
           </div>
         </div>
@@ -162,7 +183,7 @@ const Footer: React.FC = () => (
           <ul className="space-y-4 md:space-y-5">
             {SOLUTIONS.map(sol => (
               <li key={sol.id}>
-                <Link to="/expertise#solutions" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest block">
+                <Link to="/expertise#solutions" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest block">
                   {sol.title}
                 </Link>
               </li>
@@ -176,7 +197,7 @@ const Footer: React.FC = () => (
           <ul className="space-y-4 md:space-y-5">
             {SERVICES.map(service => (
               <li key={service.id}>
-                <Link to="/expertise#services" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest block">
+                <Link to="/expertise#services" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest block">
                   {service.title}
                 </Link>
               </li>
@@ -188,11 +209,11 @@ const Footer: React.FC = () => (
         <div className="space-y-6 md:space-y-8">
           <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Company</h3>
           <ul className="space-y-4 md:space-y-5">
-            <li><Link to="/about" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">About Us</Link></li>
-            <li><Link to="/brands" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Brands</Link></li>
-            <li><Link to="/projects" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Projects</Link></li>
-            <li><Link to="/faq" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Knowledge Hub</Link></li>
-            <li><Link to="/how-it-works" className="text-xs md:text-sm font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Protocol</Link></li>
+            <li><Link to="/about" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">About Us</Link></li>
+            <li><Link to="/brands" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Brands</Link></li>
+            <li><Link to="/projects" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Projects</Link></li>
+            <li><Link to="/faq" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Knowledge Hub</Link></li>
+            <li><Link to="/how-it-works" className="text-xs font-bold text-slate-400 hover:text-[#FF8A00] transition-colors uppercase tracking-widest">Protocol</Link></li>
           </ul>
         </div>
 
@@ -201,32 +222,26 @@ const Footer: React.FC = () => (
           <h3 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Reach Us</h3>
           <div className="space-y-4 md:space-y-6">
             <div className="flex flex-col gap-1 md:gap-2">
-              <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] text-[#FF8A00]">Project Desk</span>
+              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-[#FF8A00]">Project Desk</span>
               <a href={`tel:+91${PHONE_JATIN}`} className="text-lg md:text-xl font-black tracking-tighter text-white hover:text-[#FF8A00] transition-colors">{PHONE_JATIN}</a>
             </div>
             <div className="flex flex-col gap-1 md:gap-2">
-              <span className="text-[8px] md:text-[9px] font-black uppercase tracking-[0.3em] text-[#BE1E2D]">Technical Leads</span>
+              <span className="text-[8px] font-black uppercase tracking-[0.3em] text-[#BE1E2D]">Technical Leads</span>
               <a href={`tel:+91${PHONE_DHIRAJ}`} className="text-lg md:text-xl font-black tracking-tighter text-white hover:text-[#FF8A00] transition-colors">{PHONE_DHIRAJ}</a>
             </div>
-            <div className="pt-2 border-t border-white/10 mt-2 md:mt-4">
-              <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[10px] md:text-xs font-bold text-slate-500 hover:text-white transition-colors block mb-2 md:mb-4 italic break-all">{EMAIL_ADDRESS}</a>
-              <p className="text-[9px] md:text-[10px] text-slate-600 leading-relaxed italic">{ADDRESS}</p>
+            <div className="pt-2 border-t border-white/10 mt-2">
+              <a href={`mailto:${EMAIL_ADDRESS}`} className="text-[10px] font-bold text-slate-500 hover:text-white transition-colors block mb-2 italic break-all">{EMAIL_ADDRESS}</a>
+              <p className="text-[9px] text-slate-600 leading-relaxed italic">{ADDRESS}</p>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div className="flex flex-col items-center gap-4 md:gap-6 pt-10 md:pt-12 border-t border-white/5 text-center">
-        <p className="text-[7px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/20 px-4">
-          © 2002 {COMPANY_NAME} FLARING THE FUTURE.
+      <div className="border-t border-white/5 pt-10 text-center">
+        <p className="text-[9px] uppercase tracking-[0.4em] text-white/30 px-4">
+          © 2002 {COMPANY_NAME} — Flaring the Future
         </p>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-10 text-[7px] md:text-[9px] font-black uppercase tracking-[0.4em] text-white/30 px-4">
-          <a href="#" className="hover:text-[#FF8A00] transition-colors">Compliance</a>
-          <a href="#" className="hover:text-[#FF8A00] transition-colors">Grid Health</a>
-          <a href="#" className="hover:text-[#FF8A00] transition-colors">Security</a>
-          <Link to="/contact" className="hover:text-[#FF8A00] transition-colors">Support Terminal</Link>
-        </div>
       </div>
     </div>
   </footer>
@@ -237,11 +252,11 @@ const WhatsAppButton: React.FC = () => (
     href={WHATSAPP_LINK}
     target="_blank"
     rel="noopener noreferrer"
-    className="fixed bottom-6 md:bottom-10 right-6 md:right-10 z-50 bg-[#FF8A00] text-white w-12 h-12 md:w-16 md:h-16 rounded-2xl md:rounded-3xl shadow-3xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all border border-white/20 group"
+    className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 bg-[#FF8A00] w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center hover:scale-110 transition-transform shadow-2xl"
     aria-label="WhatsApp"
   >
-    <svg className="w-6 h-6 md:w-8 md:h-8 fill-current text-white" viewBox="0 0 24 24">
-      <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    <svg className="w-6 h-6 md:w-8 md:h-8 fill-white" viewBox="0 0 24 24">
+      <path d="M20.2 3.8C18.1 1.6 15.1 0.4 12 0.4 5.4 0.4 0.1 5.7 0.1 12.3c0 2.1 0.5 4.1 1.6 5.9L0 24l5.9-1.5c1.7 0.9 3.6 1.4 5.6 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.1-3.2-8.2zM12 21.8c-1.8 0-3.5-0.5-5-1.4l-0.4-0.2-3.7 1 1-3.6-0.2-0.4c-1-1.6-1.5-3.5-1.5-5.3 0-5.6 4.5-10.1 10.1-10.1 2.7 0 5.2 1 7.1 3 1.9 1.9 3 4.5 3 7.1 0 5.6-4.5 10.1-10.1 10.1zM17.4 14.3c-0.3-0.1-1.7-0.9-2-1s-0.5-0.1-0.7 0.1c-0.2 0.3-0.8 1-1 1.2-0.2 0.2-0.3 0.2-0.6 0.1s-1.2-0.4-2.3-1.4c-0.8-0.7-1.4-1.6-1.6-1.9s0-0.3 0.1-0.4c0.1-0.1 0.3-0.3 0.4-0.5s0.2-0.3 0.3-0.5c0.1-0.2 0-0.3-0.1-0.5s-0.7-1.7-1-2.4c-0.3-0.7-0.6-0.6-0.7-0.6s-0.4 0-0.7 0c-0.2 0-0.6 0.1-0.9 0.4s-1.1 1.1-1.1 2.6c0 1.5 1.1 3 1.2 3.2s2.2 3.4 5.3 4.7c0.7 0.3 1.3 0.5 1.8 0.6 0.7 0.2 1.4 0.2 1.9 0.1 0.6-0.1 1.7-0.7 2-1.4s0.3-1.3 0.2-1.4c-0.1-0.1-0.4-0.2-0.7-0.3z"/>
     </svg>
   </a>
 );
@@ -267,9 +282,9 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   }, [pathname, hash]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#050505]">
       <Header />
-      <main id="main-content" className="grow">{children}</main>
+      <main id="main-content" className="grow pt-20 md:pt-32">{children}</main>
       <Footer />
       <WhatsAppButton />
     </div>

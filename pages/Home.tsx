@@ -7,42 +7,42 @@ import { SEO } from '../components/SEO';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-[#020202] overflow-hidden perspective-2000">
+    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center bg-[#020202] overflow-hidden perspective-2000">
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-[#BE1E2D]/10 blur-[180px] rounded-full opacity-60"></div>
         <div className="absolute bottom-1/4 -right-20 w-[600px] h-[600px] bg-[#FF8A00]/10 blur-[180px] rounded-full opacity-60"></div>
         <div className="absolute inset-0 bg-grid opacity-[0.05]"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-32 pb-16">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-7 space-y-8">
-            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-5 py-2 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-[#FF8A00] animate-pulse shadow-[0_0_10px_#FF8A00]"></span>
-              <span className="text-white text-[10px] font-black uppercase tracking-[0.5em]">{TAGLINE}</span>
+      <div className="container mx-auto px-4 md:px-6 relative z-10 pt-16 pb-12 md:pt-32 md:pb-16">
+        <div className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
+          <div className="lg:col-span-7 space-y-6 md:space-y-8">
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-4 py-1.5 md:px-5 md:py-2 rounded-full">
+              <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[#FF8A00] animate-pulse shadow-[0_0_10px_#FF8A00]"></span>
+              <span className="text-white text-[8px] md:text-[10px] font-black uppercase tracking-[0.4em] md:tracking-[0.5em]">{TAGLINE}</span>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white leading-[0.9] tracking-tighter uppercase italic">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[7.5rem] font-black text-white leading-[0.9] tracking-tighter uppercase italic">
               FLARING <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BE1E2D] via-[#FF8A00] to-[#ff4d5e]">THE SUN.</span> <br />
-              <span className="text-3xl sm:text-5xl md:text-7xl block mt-2 text-white/90">ULTRA YIELD POWER.</span>
+              <span className="text-2xl sm:text-5xl md:text-7xl block mt-1 md:mt-2 text-white/90">ULTRA YIELD POWER.</span>
             </h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-2xl font-medium leading-relaxed italic border-l-4 border-[#FF8A00] pl-6 py-2">
+            <p className="text-base sm:text-xl md:text-2xl text-slate-400 max-w-2xl font-medium leading-relaxed italic border-l-4 border-[#FF8A00] pl-4 md:pl-6 py-1 md:py-2">
               SOLAR FLARE delivers high-octane energy assets. We optimize industrial rooftops with thermal precision and Tier-1 hardware.
             </p>
 
-            <div className="flex flex-wrap gap-6 pt-4">
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-[#BE1E2D] hover:bg-[#FF8A00] text-white text-lg font-black rounded-xl transition-all shadow-2xl hover:-translate-y-1 hover:shadow-[#FF8A00]/40 uppercase tracking-widest">
+            <div className="flex flex-wrap gap-4 md:gap-6 pt-2 md:pt-4">
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex-1 sm:flex-none text-center px-6 md:px-10 py-4 md:py-5 bg-[#BE1E2D] hover:bg-[#FF8A00] text-white text-base md:text-lg font-black rounded-xl transition-all shadow-2xl hover:-translate-y-1 hover:shadow-[#FF8A00]/40 uppercase tracking-widest">
                 Get Site Audit
               </a>
-              <Link to="/expertise" className="px-10 py-5 bg-white/5 hover:bg-white/10 text-white text-lg font-black rounded-xl border border-white/10 transition-all uppercase tracking-widest backdrop-blur-sm">
+              <Link to="/expertise" className="flex-1 sm:flex-none text-center px-6 md:px-10 py-4 md:py-5 bg-white/5 hover:bg-white/10 text-white text-base md:text-lg font-black rounded-xl border border-white/10 transition-all uppercase tracking-widest backdrop-blur-sm">
                 View Tech Specs
               </Link>
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative hidden md:block">
             <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-white/10 group aspect-[4/5] transform rotate-3 hover:rotate-0 transition-transform duration-700 bg-slate-900 preserve-3d">
               <img 
                 src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200" 
@@ -70,23 +70,23 @@ const QuickForm = () => {
     window.open(`https://wa.me/919211592425?text=${encodeURIComponent(message)}`, '_blank');
   };
   return (
-    <section className="py-12 bg-[#050505] border-y border-white/5">
+    <section className="py-8 md:py-12 bg-[#050505] border-y border-white/5">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-6xl mx-auto bg-[#0a0a0a] rounded-[3rem] p-8 md:p-12 shadow-2xl border border-white/5">
-          <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="lg:w-1/4">
-              <h2 className="text-3xl font-black tracking-tighter uppercase italic text-white leading-none">Book Your <br />Technical Audit</h2>
+        <div className="max-w-6xl mx-auto bg-[#0a0a0a] rounded-[2rem] md:rounded-[3rem] p-6 md:p-12 shadow-2xl border border-white/5">
+          <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row items-center gap-6 md:gap-8">
+            <div className="lg:w-1/4 text-center lg:text-left">
+              <h2 className="text-2xl md:text-3xl font-black tracking-tighter uppercase italic text-white leading-none">Book Your <br />Technical Audit</h2>
             </div>
-            <div className="flex-1 grid md:grid-cols-3 gap-6 w-full">
-              <input required type="text" placeholder="Full Name" className="w-full bg-[#111] border-b-2 border-white/10 px-4 py-4 font-black outline-none focus:border-[#FF8A00] uppercase tracking-tighter text-white" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
-              <input required type="tel" placeholder="Phone Number" className="w-full bg-[#111] border-b-2 border-white/10 px-4 py-4 font-black outline-none focus:border-[#FF8A00] uppercase tracking-tighter text-white" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
-              <select className="w-full bg-[#111] border-b-2 border-white/10 px-4 py-4 font-black outline-none focus:border-[#FF8A00] uppercase tracking-tighter text-white" value={formData.segment} onChange={e => setFormData({...formData, segment: e.target.value})}>
+            <div className="flex-1 grid md:grid-cols-3 gap-4 md:gap-6 w-full">
+              <input required type="text" placeholder="Full Name" className="w-full bg-[#111] border-b-2 border-white/10 px-4 py-3 md:py-4 font-black outline-none focus:border-[#FF8A00] uppercase tracking-tighter text-white" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+              <input required type="tel" placeholder="Phone Number" className="w-full bg-[#111] border-b-2 border-white/10 px-4 py-3 md:py-4 font-black outline-none focus:border-[#FF8A00] uppercase tracking-tighter text-white" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+              <select className="w-full bg-[#111] border-b-2 border-white/10 px-4 py-3 md:py-4 font-black outline-none focus:border-[#FF8A00] uppercase tracking-tighter text-white" value={formData.segment} onChange={e => setFormData({...formData, segment: e.target.value})}>
                 <option value="Residential">Residential</option>
                 <option value="Commercial">Commercial</option>
                 <option value="Industrial">Industrial</option>
               </select>
             </div>
-            <button type="submit" className="lg:w-auto w-full px-12 py-5 bg-white text-black font-black uppercase tracking-widest rounded-xl hover:bg-[#FF8A00] hover:text-white transition-all active:scale-95 shadow-lg">
+            <button type="submit" className="lg:w-auto w-full px-12 py-4 md:py-5 bg-white text-black font-black uppercase tracking-widest rounded-xl hover:bg-[#FF8A00] hover:text-white transition-all active:scale-95 shadow-lg">
               Submit Request
             </button>
           </form>
@@ -151,39 +151,39 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-black text-white relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-black text-white relative overflow-hidden">
       {/* Background massive text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden z-0">
-        <h2 className="text-[12rem] md:text-[25rem] lg:text-[35rem] font-black text-white opacity-[0.03] tracking-tighter leading-none whitespace-nowrap italic">
+        <h2 className="text-[6rem] sm:text-[12rem] md:text-[25rem] lg:text-[35rem] font-black text-white opacity-[0.03] tracking-tighter leading-none whitespace-nowrap italic">
           ENGINEERING!
         </h2>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-20 md:mb-32">
-          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase italic leading-none mb-10">
+        <div className="text-center mb-12 md:mb-32">
+          <h2 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase italic leading-none mb-6 md:mb-10">
             Why <span className="text-[#BE1E2D]">SOLAR</span><span className="text-white">FLARE?</span>
           </h2>
-          <div className="w-32 md:w-48 h-2 bg-[#BE1E2D] mx-auto mb-12 -mt-6"></div>
+          <div className="w-20 md:w-48 h-1.5 md:h-2 bg-[#BE1E2D] mx-auto mb-8 md:mb-12"></div>
           
-          <p className="text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed italic">
+          <p className="text-base md:text-2xl text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed italic">
             We don't just sell panels; we build sustainable energy legacies with a <br className="hidden md:block" />
             360° precision engineering approach.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-4 lg:gap-6">
           {protocols.map((protocol, i) => (
-            <div key={i} className="group flex flex-col items-center text-center p-8 md:p-10 rounded-[2.5rem] bg-[#0c0c0c] border border-white/5 hover:bg-[#111] hover:border-[#BE1E2D]/30 transition-all duration-500 shadow-2xl">
-              <div className={`w-20 h-20 md:w-24 md:h-24 rounded-3xl flex items-center justify-center mb-8 shadow-xl transition-all duration-500 group-hover:scale-110 ${
+            <div key={i} className="group flex flex-col items-center text-center p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] bg-[#0c0c0c] border border-white/5 hover:bg-[#111] hover:border-[#BE1E2D]/30 transition-all duration-500 shadow-2xl">
+              <div className={`w-16 h-16 md:w-24 md:h-24 rounded-2xl md:rounded-3xl flex items-center justify-center mb-6 md:mb-8 shadow-xl transition-all duration-500 group-hover:scale-110 ${
                 protocol.active ? 'bg-[#BE1E2D] text-white' : 'bg-[#1a1a1a] text-white/40 group-hover:bg-[#1a1a1a]'
               }`}>
                 {protocol.icon}
               </div>
-              <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter mb-4 italic transition-colors group-hover:text-[#BE1E2D]">
+              <h3 className="text-lg md:text-2xl font-black uppercase tracking-tighter mb-3 md:mb-4 italic transition-colors group-hover:text-[#BE1E2D]">
                 {protocol.title}
               </h3>
-              <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed italic">
+              <p className="text-xs md:text-base text-slate-500 font-medium leading-relaxed italic">
                 {protocol.desc}
               </p>
             </div>
@@ -203,22 +203,22 @@ const Home: React.FC = () => {
       <WhyChooseUs />
       
       {/* Solutions Section */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-16 md:py-24 bg-black text-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <span className="text-[#FF8A00] font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Technical Modalities</span>
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase italic">Energy Solutions.</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-[#FF8A00] font-black uppercase tracking-[0.5em] text-[8px] md:text-[10px] mb-3 md:mb-4 block">Technical Modalities</span>
+            <h2 className="text-3xl md:text-7xl font-black tracking-tighter uppercase italic">Energy Solutions.</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {SOLUTIONS.map(sol => (
-              <div key={sol.id} className="p-10 bg-[#0a0a0a] border border-white/5 rounded-[3rem] hover:bg-white hover:text-black transition-all duration-700 group">
-                <div className="text-6xl mb-8">{sol.icon}</div>
-                <h3 className="text-2xl font-black uppercase italic mb-4">{sol.title}</h3>
-                <p className="text-slate-400 font-medium italic mb-8 group-hover:text-slate-600">{sol.desc}</p>
-                <div className="space-y-3">
+              <div key={sol.id} className="p-8 md:p-10 bg-[#0a0a0a] border border-white/5 rounded-[2rem] md:rounded-[3rem] hover:bg-white hover:text-black transition-all duration-700 group">
+                <div className="text-5xl md:text-6xl mb-6 md:mb-8">{sol.icon}</div>
+                <h3 className="text-xl md:text-2xl font-black uppercase italic mb-3 md:mb-4">{sol.title}</h3>
+                <p className="text-sm md:text-base text-slate-400 font-medium italic mb-6 md:mb-8 group-hover:text-slate-600">{sol.desc}</p>
+                <div className="space-y-2 md:space-y-3">
                   {sol.benefits.map((b, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900">
-                      <span className="w-1.5 h-1.5 bg-[#FF8A00] rounded-full"></span> {b}
+                    <div key={idx} className="flex items-center gap-2 md:gap-3 text-[8px] md:text-[10px] font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900">
+                      <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-[#FF8A00] rounded-full"></span> {b}
                     </div>
                   ))}
                 </div>
@@ -229,23 +229,23 @@ const Home: React.FC = () => {
       </section>
 
       {/* Expertise Section */}
-      <section className="py-24 bg-[#050505]">
+      <section className="py-16 md:py-24 bg-[#050505]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-16">
-            <span className="text-[#FF8A00] font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Sector Expertise</span>
-            <h2 className="text-4xl md:text-7xl font-black tracking-tighter text-white uppercase italic">Premium Segments.</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <span className="text-[#FF8A00] font-black uppercase tracking-[0.5em] text-[8px] md:text-[10px] mb-3 md:mb-4 block">Sector Expertise</span>
+            <h2 className="text-3xl md:text-7xl font-black tracking-tighter text-white uppercase italic">Premium Segments.</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {SERVICES.map(s => (
-              <div key={s.id} className="bg-[#0a0a0a] rounded-[2.5rem] overflow-hidden shadow-xl group border border-white/5">
-                <div className="h-64 relative overflow-hidden">
+              <div key={s.id} className="bg-[#0a0a0a] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl group border border-white/5">
+                <div className="h-48 md:h-64 relative overflow-hidden">
                   <img src={s.imageUrl} className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000" alt={s.title} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                  <h3 className="absolute bottom-6 left-6 text-3xl font-black text-white uppercase italic">{s.title}</h3>
+                  <h3 className="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-2xl md:text-3xl font-black text-white uppercase italic">{s.title}</h3>
                 </div>
-                <div className="p-8">
-                  <p className="text-slate-500 font-medium italic mb-6">{s.description}</p>
-                  <Link to="/expertise" className="text-[#FF8A00] font-black uppercase tracking-widest text-xs flex items-center gap-3 hover:gap-5 transition-all">
+                <div className="p-6 md:p-8">
+                  <p className="text-sm md:text-base text-slate-500 font-medium italic mb-4 md:mb-6">{s.description}</p>
+                  <Link to="/expertise" className="text-[#FF8A00] font-black uppercase tracking-widest text-[10px] flex items-center gap-2 hover:gap-4 transition-all">
                     Explore Technical Specs <span>→</span>
                   </Link>
                 </div>
@@ -256,11 +256,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-black text-white text-center relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-black text-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[#FF8A00]/5 blur-3xl rounded-full"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase italic leading-none mb-12">Ignite Your <br /> <span className="text-[#FF8A00]">Solar Autonomy.</span></h2>
-          <Link to="/contact" className="inline-block px-16 py-8 bg-[#BE1E2D] hover:bg-[#FF8A00] text-white text-2xl font-black rounded-full shadow-3xl hover:scale-105 transition-all uppercase tracking-[0.2em]">
+          <h2 className="text-4xl md:text-8xl font-black tracking-tighter uppercase italic leading-none mb-8 md:mb-12">Ignite Your <br /> <span className="text-[#FF8A00]">Solar Autonomy.</span></h2>
+          <Link to="/contact" className="inline-block px-10 md:px-16 py-6 md:py-8 bg-[#BE1E2D] hover:bg-[#FF8A00] text-white text-xl md:text-2xl font-black rounded-full shadow-3xl hover:scale-105 transition-all uppercase tracking-[0.2em]">
             Request Flare Audit
           </Link>
         </div>
