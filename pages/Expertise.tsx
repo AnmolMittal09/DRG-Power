@@ -7,7 +7,7 @@ import { SEO } from '../components/SEO';
 
 const Expertise: React.FC = () => {
   return (
-    <div className="animate-in fade-in duration-1000 bg-[#050505] pt-[72px]">
+    <div className="animate-in fade-in duration-1000 bg-[#050505] pt-[74px]">
       <SEO title="Technical Expertise" description="Comprehensive solar solutions and sector expertise. High-performance engineering for residential and industrial assets." />
 
       <section id="solutions" className="pt-10 pb-24 md:pb-32 bg-[#050505]">
@@ -42,7 +42,7 @@ const Expertise: React.FC = () => {
       <section id="services" className="py-24 md:py-40 bg-black border-y border-white/5">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-24 md:mb-40">
-            <span className="text-[#DC2626] font-black uppercase tracking-[0.7em] text-[10px] mb-8 block">Sector Domains</span>
+            <span className="text-[#DC2626] font-black uppercase tracking-[0.7em] text-[20px] mb-8 block">Sector Domains</span>
             <h2 className="text-4xl md:text-8xl font-black tracking-tighter uppercase italic text-white font-heading">CORE <span className="text-[#F97316]">ASSETS.</span></h2>
           </div>
 

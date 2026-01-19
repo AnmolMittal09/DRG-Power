@@ -5,14 +5,13 @@ import { SEO } from '../components/SEO';
 
 const Brands: React.FC = () => {
   return (
-    <div className="pt-48 pb-32 bg-[#050505] min-h-screen">
+    <div className="pt-74 bg-[#050505] min-h-screen">
       <SEO 
         title="Hardware Partners & Tier-1 Brands" 
         description={`Solar Flare partners with global leaders like ${PARTNER_BRAND}, Waree, and Jakson to ensure high-performance solar components.`}
       />
       <div className="container mx-auto px-6">
         <div className="text-center mb-32">
-          <span className="text-[#BE1E2D] font-black uppercase tracking-[0.6em] text-[10px] mb-8 block">Quality Ecosystem</span>
           <h1 className="text-6xl md:text-[9rem] font-black tracking-tighter uppercase italic leading-none text-white">ELITE <span className="text-gradient">HARDWARE.</span></h1>
           <p className="text-2xl text-slate-500 max-w-3xl mx-auto font-medium italic mt-8">
             Longevity in solar infrastructure is a direct result of component integrity. We partner only with the best.
