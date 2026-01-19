@@ -37,7 +37,7 @@ const Logo: React.FC<{ variant?: 'header' | 'footer' }> = ({ variant = 'header' 
 
       <div className={`ml-2 md:ml-4 pl-2 md:pl-4 border-l border-white/10 ${isFooter ? 'leading-tight' : 'leading-[0.85]'}`}>
         <span className={`block font-black tracking-tighter uppercase font-heading ${
-          isFooter ? 'text-3xl md:text-3xl' : 'text-2xl md:text-4xl lg:text-6xl'
+          isFooter ? 'text-2xl md:text-2xl' : 'text-2xl md:text-4xl lg:text-6xl'
         }`}>
           <span className="text-[#DC2626]">Solar</span>{' '}
           <span className="text-[#F97316]">Flare</span>
