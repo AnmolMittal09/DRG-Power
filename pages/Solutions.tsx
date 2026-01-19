@@ -12,7 +12,7 @@ const Solutions: React.FC = () => {
       />
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-24 md:mb-40">
-          <span className="text-[#F97316] font-black uppercase tracking-[0.6em] text-[10px] mb-8 block">Technical Architecture</span>
+          <span className="text-[#F97316] font-black uppercase tracking-[0.6em] text-[30px] mb-8 block">Technical Architecture</span>
           <h1 className="text-5xl md:text-[9rem] font-[900] tracking-tighter uppercase italic leading-none text-white font-heading">ENERGY <span className="text-gradient">MODALITIES.</span></h1>
           <p className="text-xl md:text-3xl text-slate-500 max-w-3xl mx-auto font-medium italic mt-8">
             Choosing the right system depends on your grid stability, local regulations, and energy autonomy goals.

@@ -7,7 +7,7 @@ import { SEO } from '../components/SEO';
 
 const Expertise: React.FC = () => {
   return (
-    <div className="animate-in fade-in duration-1000 bg-[#050505] pt-[74px]">
+    <div className="animate-in fade-in duration-1000 bg-[#050505] pt-[80px]">
       <SEO title="Technical Expertise" description="Comprehensive solar solutions and sector expertise. High-performance engineering for residential and industrial assets." />
 
       <section id="solutions" className="pt-10 pb-24 md:pb-32 bg-[#050505]">
