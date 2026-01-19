@@ -5,17 +5,16 @@ import { SEO } from '../components/SEO';
 
 const About: React.FC = () => {
   return (
-    <div className="pt-56 md:pt-64 pb-16 md:pb-32 bg-[#050505]">
+    <div className="pt-24 md:pt-32 pb-16 md:pb-32 bg-[#050505]">
       <SEO 
         title="Industrial Heritage" 
         description={`SOLAR FLARE, established in ${ESTABLISHED_YEAR}, is an industrial solar energy firm under the umbrella of ${GROUP_NAME}. Partnered with ${PARTNER_BRAND} since ${GROUP_LEGACY_YEAR}.`}
       />
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-24 md:mb-48">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24 md:mb-48">
           <div className="space-y-10 md:space-y-12">
             <div>
-              <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Corporate Foundation</span>
-              <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.9] italic uppercase font-heading">The Energy <br /><span className="text-[#DC2626]">Umbrella.</span></h1>
+              <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.9] italic uppercase font-heading">Corporate <br /><span className="text-[#DC2626]">Foundation</span></h1>
             </div>
             <div className="space-y-6 md:space-y-8 text-lg sm:text-xl md:text-2xl text-slate-400 font-medium leading-relaxed italic">
               <p>
@@ -68,7 +67,7 @@ const About: React.FC = () => {
 
         <div className="mb-24 md:mb-48">
           <div className="text-center mb-20 md:mb-32">
-            <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Our Leadership</span>
+            <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[20px] mb-6 block">Our Leadership</span>
             <h2 className="text-4xl md:text-8xl font-black tracking-tight text-white italic uppercase font-heading">THE CORE DESK.</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-10 max-w-7xl mx-auto">
@@ -94,7 +93,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="text-center mb-20 md:mb-32">
-          <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Operational Ethics</span>
+          <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[20px] mb-6 block">Operational Ethics</span>
           <h2 className="text-4xl md:text-8xl font-black tracking-tight text-white italic uppercase font-heading">PILLAR ASSETS.</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-white/5 border border-white/5 rounded-sm overflow-hidden shadow-2xl mb-16 md:mb-32">

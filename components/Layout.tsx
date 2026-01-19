@@ -15,6 +15,9 @@ import {
   COMPANY_NAME
 } from '../constants';
 
+// ==========================================
+// 1. BRAND LOGO COMPONENT
+// ==========================================
 const Logo: React.FC<{ variant?: 'header' | 'footer' }> = ({ variant = 'header' }) => {
   const isFooter = variant === 'footer';
   
@@ -34,13 +37,13 @@ const Logo: React.FC<{ variant?: 'header' | 'footer' }> = ({ variant = 'header' 
 
       <div className={`ml-2 md:ml-4 pl-2 md:pl-4 border-l border-white/10 ${isFooter ? 'leading-tight' : 'leading-[0.85]'}`}>
         <span className={`block font-black tracking-tighter uppercase font-heading ${
-          isFooter ? 'text-sm md:text-xl' : 'text-2xl md:text-4xl lg:text-6xl'
+          isFooter ? 'text-3xl md:text-3xl' : 'text-2xl md:text-4xl lg:text-6xl'
         }`}>
           <span className="text-[#DC2626]">Solar</span>{' '}
           <span className="text-[#F97316]">Flare</span>
         </span>
-        <span className={`block uppercase tracking-[0.2em] text-white/30 mt-0.5 md:mt-1 ${
-          isFooter ? 'text-[6px] md:text-[8px]' : 'text-[6px] md:text-[8px] lg:text-[9px]'
+        <span className={`block uppercase tracking-[0.2em] text-white mt-1 md:mt-2 ${
+          isFooter ? 'text-[8px] md:text-[10px]' : 'text-[10px] md:text-[12px] lg:text-[14px]'
         }`}>
           DRG POWER TECHNOLOGY PVT. LTD.
         </span>
@@ -49,6 +52,9 @@ const Logo: React.FC<{ variant?: 'header' | 'footer' }> = ({ variant = 'header' 
   );
 };
 
+// ==========================================
+// 2. MAIN NAVIGATION HEADER
+// ==========================================
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,6 +150,9 @@ const Header: React.FC = () => {
   );
 };
 
+// ==========================================
+// 3. GLOBAL FOOTER COMPONENT
+// ==========================================
 const Footer: React.FC = () => (
   <footer className="bg-black text-white pt-20 md:pt-32 pb-10 font-sans border-t border-white/5">
     <div className="container mx-auto px-4 md:px-6 lg:px-12">
@@ -222,6 +231,9 @@ const Footer: React.FC = () => (
   </footer>
 );
 
+// ==========================================
+// 4. FLOATING CONTACT BUTTONS
+// ==========================================
 const WhatsAppButton: React.FC = () => (
   <a
     href={WHATSAPP_LINK}
@@ -236,6 +248,9 @@ const WhatsAppButton: React.FC = () => (
   </a>
 );
 
+// ==========================================
+// 5. MASTER PAGE WRAPPER (LAYOUT)
+// ==========================================
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { pathname, hash } = useLocation();
   

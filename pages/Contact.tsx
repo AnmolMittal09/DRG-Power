@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { PHONE_JATIN, PHONE_DHIRAJ, EMAIL_ADDRESS, ADDRESS, WHATSAPP_LINK, GOOGLE_MAPS_URL } from '../constants';
 import { SEO } from '../components/SEO';
 
+// ==========================================
+// 1. PROJECT INTAKE TERMINAL (CONTACT PAGE)
+// ==========================================
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', city: '', requirement: 'Residential', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,36 +34,38 @@ const Contact: React.FC = () => {
       <section className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24">
           
+          {/* --- Sidebar: Contact Info & Map --- */}
           <div className="lg:col-span-5 space-y-12">
             <div>
-              <span className="text-[#F97316] font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Terminal Support</span>
               <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none font-heading">
                 Connect With <br /><span className="text-[#DC2626]">Solar</span> <span className="text-[#F97316]">Flare.</span>
               </h1>
               <p className="text-xl text-slate-500 mt-8 max-w-lg font-medium italic">Direct technical desk for high-performance solar infrastructure queries.</p>
             </div>
             
+            {/* --- Direct Leadership Hotlines --- */}
             <div className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
-                <a href={`tel:+91${PHONE_JATIN}`} className="group p-8 glass rounded-sm hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl hover:border-[#F97316]/30">
-                  <span className="text-3xl opacity-40 group-hover:opacity-100 transition-all origin-left grayscale group-hover:grayscale-0">📞</span>
-                  <div>
-                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">PROJECT MANAGER</p>
-                    <p className="text-[12px] font-black uppercase tracking-widest text-slate-600 mb-2">JATIN BATHEJA</p>
-                    <p className="text-xl font-black text-white font-heading">{PHONE_JATIN}</p>
-                  </div>
-                </a>
                 <a href={`tel:+91${PHONE_DHIRAJ}`} className="group p-8 glass rounded-sm hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl hover:border-[#F97316]/30">
                   <span className="text-3xl opacity-40 group-hover:opacity-100 transition-all origin-left grayscale group-hover:grayscale-0">⚙️</span>
                   <div>
-                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">DIRECTOR</p>
+                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">FOUNDER</p>
                     <p className="text-[12px] font-black uppercase tracking-widest text-slate-600 mb-2">DHIRAJ SANDUJA</p>
                     <p className="text-xl font-black text-white font-heading">{PHONE_DHIRAJ}</p>
+                  </div>
+                </a>
+                <a href={`tel:+91${PHONE_JATIN}`} className="group p-8 glass rounded-sm hover:bg-black transition-all duration-500 flex flex-col justify-between h-48 shadow-sm hover:shadow-2xl hover:border-[#F97316]/30">
+                  <span className="text-3xl opacity-40 group-hover:opacity-100 transition-all origin-left grayscale group-hover:grayscale-0">📞</span>
+                  <div>
+                    <p className="text-[9px] font-black uppercase tracking-widest text-slate-600 mb-2">DIRECTOR</p>
+                    <p className="text-[12px] font-black uppercase tracking-widest text-slate-600 mb-2">JATIN BATHEJA</p>
+                    <p className="text-xl font-black text-white font-heading">{PHONE_JATIN}</p>
                   </div>
                 </a>
               </div>
             </div>
 
+            {/* --- Corporate Communication Detail --- */}
             <div className="space-y-6">
               <div className="space-y-4">
                 <a href={`mailto:${EMAIL_ADDRESS}`} className="block p-10 bg-black rounded-sm border border-white/10 hover:border-[#F97316]/50 transition-all group shadow-2xl overflow-hidden relative">
@@ -88,6 +93,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
+            {/* --- Location Map Infrastructure --- */}
             <div className="rounded-sm overflow-hidden shadow-3xl border border-white/5 aspect-video relative group bg-black">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.838612185523!2d76.9754911762194!3d28.45435427576295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d176709f6974b%3A0xc3e13d5b00109927!2sDRG%20Power%20Technology%20Private%20Limited!5e0!3m2!1sen!2sin!4v1739989000000!5m2!1sen!2sin" 
@@ -101,6 +107,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
+          {/* --- Main Intake Form --- */}
           <div className="lg:col-span-7">
             <div className="glass p-10 md:p-20 rounded-sm shadow-2xl border border-white/5 lg:sticky lg:top-32">
               <div className="mb-16">
@@ -163,6 +170,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
+      {/* --- Trust Badge Banner --- */}
       <section className="bg-black py-24 border-t border-white/5 mt-24">
         <div className="container mx-auto px-4 md:px-6 text-center">
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-20 hover:opacity-100 transition-opacity duration-1000 grayscale group hover:grayscale-0">

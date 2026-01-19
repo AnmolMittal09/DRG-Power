@@ -14,6 +14,9 @@ import FAQ from './pages/FAQ.tsx';
 import Contact from './pages/Contact.tsx';
 import Brands from './pages/Brands.tsx';
 
+// ==========================================
+// 1. GLOBAL ROUTING CONFIGURATION
+// ==========================================
 const App: React.FC = () => {
   return (
     <Router>

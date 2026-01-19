@@ -5,6 +5,9 @@ const { Link } = ReactRouterDOM;
 import { SERVICES, SOLUTIONS, WHATSAPP_LINK, TAGLINE } from '../constants.tsx';
 import { SEO } from '../components/SEO';
 
+// ==========================================
+// 1. HERO SECTION (FOLD 1)
+// ==========================================
 const Hero = () => {
   return (
     <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center bg-[#020202] overflow-hidden perspective-2000">
@@ -25,7 +28,17 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-7xl md:text-[8.5rem] font-black text-white leading-[0.85] tracking-tighter uppercase italic font-heading">
               <span className="text-[#DC2626]">SOLAR</span> <br />
               <span className="text-[#F97316]">FLARE.</span> <br />
-              <span className="text-2xl sm:text-5xl md:text-7xl block mt-2 text-white/90">INDUSTRIAL ASSETS.</span>
+              <span className="
+                font-sans
+                italic
+                tracking-normal
+                [word-spacing:0]
+                text-2xl sm:text-5xl md:text-7xl
+                block mt-2 text-white/90
+              ">
+                INDUSTRIAL ASSETS.
+              </span>
+
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-slate-400 max-w-2xl font-medium leading-relaxed italic border-l-4 border-[#F97316] pl-6 py-2">
@@ -62,6 +75,9 @@ const Hero = () => {
   );
 };
 
+// ==========================================
+// 2. QUICK INTAKE FORM SECTION
+// ==========================================
 const QuickForm = () => {
   const [formData, setFormData] = useState({ name: '', phone: '', segment: 'Residential' });
   const handleSubmit = (e: React.FormEvent) => {
@@ -96,6 +112,9 @@ const QuickForm = () => {
   );
 };
 
+// ==========================================
+// 3. DIFFERENTIATION & USP SECTION
+// ==========================================
 const WhyChooseUs = () => {
   const protocols = [
     { title: "SOLUTION", desc: "Customized energy blueprints for peak ROI.", icon: "🎯", active: true },
@@ -144,19 +163,29 @@ const WhyChooseUs = () => {
   );
 };
 
+// ==========================================
+// 4. MAIN HOME PAGE COMPONENT (EXPORT)
+// ==========================================
 const Home: React.FC = () => {
   return (
     <div className="animate-in fade-in duration-1000 bg-[#050505]">
       <SEO title="Premium Solar Infrastructure" description="Engineering high-yield solar ecosystems for residential and industrial sectors. SOLAR FLARE certified partners." />
+      
+      {/* --- Visual Hero Section --- */}
       <Hero />
+      
+      {/* --- Fast-Lead Generation Form --- */}
       <QuickForm />
+      
+      {/* --- Core Values & Standards --- */}
       <WhyChooseUs />
       
+      {/* --- Technical Solutions Preview --- */}
       <section className="py-24 md:py-40 bg-[#050505]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-20 md:mb-32">
-            <span className="text-[#F97316] font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Technical Modalities</span>
-            <h2 className="text-4xl md:text-8xl font-black tracking-tighter uppercase italic text-white font-heading">ENERGY SOLUTIONS.</h2>
+            <span className="text-[#F97316] font-black uppercase tracking-[0.5em] text-[30px] mb-6 block">Technical Modalities</span>
+            <h2 className="text-4xl md:text-8xl font-black tracking-tighter uppercase italic text-white font-heading">ENERGY  SOLUTIONS.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {SOLUTIONS.map(sol => (
@@ -177,11 +206,12 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* --- Sector Expertise Preview --- */}
       <section className="py-24 md:py-40 bg-black">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-20 md:mb-32">
-            <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[10px] mb-6 block">Sector Expertise</span>
-            <h2 className="text-4xl md:text-8xl font-black tracking-tighter text-white uppercase italic font-heading">PREMIUM SEGMENTS.</h2>
+            <span className="text-[#DC2626] font-black uppercase tracking-[0.5em] text-[30px] mb-6 block">Sector Expertise</span>
+            <h2 className="text-4xl md:text-8xl font-black tracking-tighter text-white uppercase italic font-heading">PREMIUM  SEGMENTS.</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {SERVICES.map(s => (
@@ -203,6 +233,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* --- Final Page CTA --- */}
       <section className="py-32 md:py-56 bg-[#050505] text-white text-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[#F97316]/5 blur-3xl rounded-full"></div>
         <div className="container mx-auto px-4 relative z-10">

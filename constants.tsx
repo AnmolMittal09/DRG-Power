@@ -1,4 +1,7 @@
 
+// ==========================================
+// 1. SITE IDENTITY & BRANDING
+// ==========================================
 import React from 'react';
 import { Service, Project, Testimonial, FAQItem } from './types';
 
@@ -11,6 +14,9 @@ export const ESTABLISHED_YEAR = "2021";
 export const GROUP_LEGACY_YEAR = "2002";
 export const PARTNER_BRAND = "Livguard";
 
+// ==========================================
+// 2. CONTACT & LOCATION COORDINATES
+// ==========================================
 export const PHONE_JATIN = "9211592425";
 export const PHONE_DHIRAJ = "9313481712";
 export const PHONE_PRIMARY = PHONE_JATIN;
@@ -20,22 +26,28 @@ export const ADDRESS = "Khasra no 253, Gali No 1, Basai Enclave, VPO, Gurugram, 
 export const WHATSAPP_LINK = "https://wa.me/919211592425";
 export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/rsmXnAT8ZN6qRCdy9";
 
-export const LOGO_IMAGE = "https://raw.githubusercontent.com/AnmolMittal09/DRG-Power/main/logo%20(2).png"; 
+// ==========================================
+// 3. ASSETS & MEDIA
+// ==========================================
+export const LOGO_IMAGE = "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/main/logo%20(2).png"; 
 
+// ==========================================
+// 4. MISSION, VISION & LEADERSHIP
+// ==========================================
 export const VISION = "Powering a cleaner, greener tomorrow — one rooftop at a time.";
 export const MISSION = "Delivering smart, efficient, and affordable rooftop solar energy solutions that empower our customers and reduce carbon footprints.";
 
 export const LEADERSHIP = [
   { 
     name: "Dhiraj Sanduja", 
-    role: "Director", 
-    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/SOLAR_FLARE/b17408e96d69dc005df0de3bee0c3ffc4dac52c8/Dheeraj.png",
+    role: "Founder", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/main/Dheeraj.png",
     bio: "Brings extensive technical expertise and strategic vision, guiding the group toward sustainable growth and a greener future." 
   },
   { 
     name: "Jatin Batheja", 
-    role: "Project Manager", 
-    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/SOLAR_FLARE/b17408e96d69dc005df0de3bee0c3ffc4dac52c8/Jatin.png",
+    role: "Director", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/main/Jatin.png",
     bio: "Specializes in project management and operational excellence, ensuring every solar deployment meets the highest standards of reliability." 
   }
 ];
@@ -48,6 +60,9 @@ export const CORE_VALUES = [
   { title: "Excellence", desc: "High-performance energy infrastructure.", icon: "🤝" }
 ];
 
+// ==========================================
+// 5. VECTOR ICONS & UI ELEMENTS
+// ==========================================
 export const ICONS = {
   Sun: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" /></svg>,
   Home: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>,
@@ -58,6 +73,9 @@ export const ICONS = {
   Factory: <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
 };
 
+// ==========================================
+// 6. CORE SERVICES DATA
+// ==========================================
 export const SERVICES: Service[] = [
   {
     id: "residential",
@@ -85,6 +103,9 @@ export const SERVICES: Service[] = [
   }
 ];
 
+// ==========================================
+// 7. TECHNICAL SOLUTIONS DATA
+// ==========================================
 export const SOLUTIONS = [
   {
     id: "on-grid",
@@ -109,6 +130,9 @@ export const SOLUTIONS = [
   }
 ];
 
+// ==========================================
+// 8. PARTNER BRANDS & HARDWARE
+// ==========================================
 export const BRANDS = [
   { name: "Livguard", role: "Strategic Partner", desc: "Leading energy storage and solar solutions." },
   { name: "Adani Solar", role: "Module Partner", desc: "India's largest solar cell and module manufacturer." },
@@ -117,6 +141,9 @@ export const BRANDS = [
   { name: "Tata Power", role: "Legacy Partner", desc: "Unmatched reliability in India's power sector." }
 ];
 
+// ==========================================
+// 9. PROJECT PORTFOLIO DATA
+// ==========================================
 export const PROJECTS: Project[] = [
   { id: 1, title: "Heritage Apartments", category: "Society", location: "Gurugram", capacity: "250 kWp", imageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=70&w=1000" },
   { id: 2, title: "Modern Plastics Factory", category: "Industrial", location: "Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=70&w=1000" },
@@ -124,6 +151,9 @@ export const PROJECTS: Project[] = [
   { id: 4, title: "Green Field Estate", category: "Home", location: "Faridabad", capacity: "20 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=70&w=1000" },
 ];
 
+// ==========================================
+// 10. SOCIAL PROOF & TESTIMONIALS
+// ==========================================
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
@@ -135,6 +165,9 @@ export const TESTIMONIALS: Testimonial[] = [
   }
 ];
 
+// ==========================================
+// 11. FAQ CONTENT
+// ==========================================
 export const FAQS: FAQItem[] = [
   {
     question: "Do you serve all cities in India?",
