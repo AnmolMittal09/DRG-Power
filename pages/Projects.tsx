@@ -23,23 +23,39 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <div className="pt-48 pb-32 bg-[#050505] min-h-screen">
+    <div className="bg-[#050505] min-h-screen">
       <SEO 
         title="Project Portfolio" 
         description="Explore Solar Flare's high-yield solar installation portfolio across India's industrial corridors."
       />
-      <div className="container mx-auto px-6">
-        <div className="text-center max-w-4xl mx-auto mb-24">
-          <div className="relative overflow-visible">
-            <h1 className="relative z-10 text-6xl md:text-[8rem] font-black tracking-tighter mb-10 italic uppercase leading-none text-white">
-              <span className="inline-block pb-[0.2em]">
-                Legacy <span className="text-gradient">Projects</span>
-              </span>
-            </h1>
-          </div>
-          <p className="text-2xl text-slate-500 font-medium italic">High-performance installations across residential complexes and manufacturing hubs.</p>
+
+      {/* --- Projects Hero Section --- */}
+      <section className="relative pt-48 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#DC2626]/5 blur-[150px] rounded-full opacity-40"></div>
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#F97316]/5 blur-[150px] rounded-full opacity-40"></div>
+          <div className="absolute inset-0 bg-grid opacity-[0.05]"></div>
         </div>
 
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col items-center text-center">
+            <div className="inline-flex items-center gap-3 glass px-6 py-2 rounded-sm border border-white/5 mb-10">
+               <span className="w-2 h-2 rounded-full bg-[#F97316] animate-pulse"></span>
+               <span className="text-white text-[20px] font-black uppercase tracking-[0.5em]">Global Footprint</span>
+            </div>
+            
+            <h1 className="text-6xl md:text-8xl lg:text-[9.5rem] font-black tracking-tighter uppercase italic leading-[0.8] text-white font-heading mb-12">
+              ENGINEERED <br /> <span className="text-gradient">LEGACIES.</span>
+            </h1>
+
+            <p className="text-xl md:text-3xl text-slate-500 max-w-4xl font-medium italic leading-relaxed">
+              A detailed ledger of utility-scale infrastructure and high-yield deployments across India's industrial manufacturing hubs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-6 pb-32">
         <div className="flex flex-wrap justify-center gap-4 mb-24">
           {categories.map((cat) => (
             <button
@@ -83,7 +99,7 @@ const Projects: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <h3 className="text-4xl font-black mb-4 tracking-tighter uppercase italic">{p.title}</h3>
+                <h3 className="text-4xl font-black mb-4 tracking-tighter uppercase italic font-heading">{p.title}</h3>
                 <div className="flex items-center justify-between border-t border-white/10 pt-8 mt-4">
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Infrastructure Capacity</span>
                   <span className="font-[900] text-[#F97316] text-4xl tracking-tighter italic">{p.capacity}</span>
@@ -104,7 +120,7 @@ const Projects: React.FC = () => {
               <div key={i} className="group relative aspect-square rounded-sm overflow-hidden shadow-xl hover:shadow-3xl transition-all cursor-crosshair border border-white/5 bg-black">
                 <img src={img.url} alt={img.title} className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-700" />
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-8 text-center">
-                  <p className="text-white font-black text-xs uppercase mb-3 tracking-tighter italic">{img.title}</p>
+                  <p className="text-white font-black text-xs uppercase mb-3 tracking-tighter italic font-heading">{img.title}</p>
                   <div className="w-8 h-[2px] bg-[#F97316] mb-3"></div>
                   <p className="text-slate-400 font-bold text-[8px] uppercase tracking-widest">{img.desc}</p>
                 </div>
@@ -115,11 +131,11 @@ const Projects: React.FC = () => {
 
         <div className="p-20 bg-black text-white rounded-sm border border-white/10 shadow-3xl text-center relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-64 h-64 bg-orange-600/5 blur-[120px] rounded-full pointer-events-none"></div>
-          <h2 className="text-5xl font-black mb-6 tracking-tighter italic uppercase italic leading-none">Verify Infrastructure <br />Quality.</h2>
+          <h2 className="text-5xl font-black mb-6 tracking-tighter italic uppercase italic leading-none font-heading">Verify Infrastructure <br />Quality.</h2>
           <p className="text-xl text-slate-500 font-medium mb-12 max-w-2xl mx-auto leading-relaxed italic">Site visits to operational industrial plants in Gurugram and Manesar can be arranged for enterprise clients.</p>
           <Link 
             to="/contact" 
-            className="inline-block bg-[#DC2626] text-white px-16 py-6 rounded-sm font-black text-xl hover:scale-110 transition-all shadow-3xl shadow-red-900/40 uppercase tracking-widest active:scale-95"
+            className="inline-block bg-[#DC2626] text-white px-16 py-6 rounded-sm font-black text-xl hover:scale-110 transition-all shadow-3xl shadow-red-900/40 uppercase tracking-widest active:scale-95 btn-glow"
           >
             Request Audit
           </Link>
