@@ -1,3 +1,4 @@
+
 // Import React to resolve 'Cannot find namespace React' error when using React.ReactNode
 import React from 'react';
 
@@ -17,6 +18,7 @@ export interface Project {
   location: string;
   capacity: string;
   imageUrl: string;
+  videoUrl?: string;
 }
 
 export interface Testimonial {

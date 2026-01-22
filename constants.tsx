@@ -159,21 +159,60 @@ export const SOLUTIONS = [
 // ==========================================
 // Added 'role' property to each brand to satisfy the TypeScript access in Brands.tsx
 export const BRANDS = [
-  { name: "Livguard", desc: "Leading energy storage and solar solutions." },
-  { name: "UTL Solar", desc: "Innovative solar PCUs and high-efficiency panels." },
-  { name: "Luminous", desc: "Decades of trust in home electrical and solar solutions." },
-  { name: "Adani Solar", desc: "India's largest solar cell and module manufacturer." },  
-  { name: "Tata Power", desc: "Unmatched reliability in India's power sector." }
+  { name: "Livguard", role: "Energy Storage", desc: "Leading energy storage and solar solutions." },
+  { name: "UTL Solar", role: "Solar PCUs", desc: "Innovative solar PCUs and high-efficiency panels." },
+  { name: "Luminous", role: "Home Solar", desc: "Decades of trust in home electrical and solar solutions." },
+  { name: "Adani Solar", role: "Module Mfg", desc: "India's largest solar cell and module manufacturer." },  
+  { name: "Tata Power", role: "Grid Infrastructure", desc: "Unmatched reliability in India's power sector." }
 ];
 
 // ==========================================
 // 9. PROJECT PORTFOLIO DATA
 // ==========================================
 export const PROJECTS: Project[] = [
-  { id: 1, title: "Heritage Apartments", category: "Society", location: "Gurugram", capacity: "250 kWp", imageUrl: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=70&w=1000" },
-  { id: 2, title: "Modern Plastics Factory", category: "Industrial", location: "Manesar", capacity: "1.2 MWp", imageUrl: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=70&w=1000" },
-  { id: 3, title: "Sun City Bungalow", category: "Home", location: "Rohtak", capacity: "15 kWp", imageUrl: "https://images.unsplash.com/photo-1509391366360-fe5bb5843e03?auto=format&fit=crop&q=70&w=1000" },
-  { id: 4, title: "Green Field Estate", category: "Home", location: "Faridabad", capacity: "20 kWp", imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=70&w=1000" },
+  { 
+    id: 101, 
+    title: "Industrial Rooftop Site 01", 
+    category: "Industrial", 
+    location: "Gurugram", 
+    capacity: "450 kWp", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/1.jpeg" 
+  },
+  { 
+    id: 102, 
+    title: "Mega Plant Construction", 
+    category: "Industrial", 
+    location: "Manesar", 
+    capacity: "1.5 MWp", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/2.jpeg" 
+  },
+  { 
+    id: 103, 
+    title: "Live Grid Showcase", 
+    category: "Commercial", 
+    location: "Delhi NCR", 
+    capacity: "250 kWp", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/1.jpeg",
+    videoUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/3.mp4"
+  },
+  { 
+    id: 104, 
+    title: "Society Grid Pulse", 
+    category: "Society", 
+    location: "Faridabad", 
+    capacity: "300 kWp", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/2.jpeg",
+    videoUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/4.mp4"
+  },
+  { 
+    id: 105, 
+    title: "Industrial Sync Reel", 
+    category: "Industrial", 
+    location: "Rohtak", 
+    capacity: "1.2 MWp", 
+    imageUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/1.jpeg",
+    videoUrl: "https://raw.githubusercontent.com/AnmolMittal09/Solar_flare_images/cc6a9b765b6506e14cfb76653f58a29e5085e89b/projects/5.mp4"
+  }
 ];
 
 // ==========================================
